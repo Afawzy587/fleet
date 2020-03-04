@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>خدمات الصيانة - أوامر الشغل</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="ElKammar_Logo.png" alt="logo" srcset="" height="50">
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <span data-feather="home"></span>
+                        لوحة العرض
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bus"></i>
+                        الأسطول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-exclamation-circle"></i>
+                        أعطال وفحص
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell"></i>
+                        تذكيرات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-wrench"></i>
+                        خدمات الصيانة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-gas-pump"></i>
+                        الوقود
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user-friends"></i>
+                        جهات الإتصال
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>
+                        المشروعات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        تقارير ومرفقات
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i>
+                        إعدادات النظام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto mt-2 mt-md-0 top_nav">
+                <i class="fas fa-bell cool-grey"></i>
+                <hr>
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    أحمد محمد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+                <img src="profile-icon.png" width="60" height="60" class="rounded-circle">
+            </form>
+
+        </div>
+    </nav>
+    <main class="">
+        <div
+            class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+            <span class="page_titles">
+                <h1 class="h2"> خدمات الصيانة</h1>
+                <h4 class="sub_title"> <strong> &gt; </strong> اضافة / تعديل أمر شغل </h4>
+            </span>
+
+        </div>
+        <div class="container page_body">
+            <div class="row mt-2">
+                <div class="col mr-5 ">
+                    <form action="" class="needs-validation" novalidate>
+                        <div class="row white-bg">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>السيارة</label>
+                                    <select data-live-search="true" class="form-control selectpicker custom-select"
+                                        title="اختر السيارة" name="car" required>
+                                        <option>سيارة 100</option>
+                                        <option>سيارة 200</option>
+                                        <option>سيارة 200</option>
+                                        <option>سيارة 200</option>
+                                        <option>سيارة 200</option>
+                                        <option>سيارة 200</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>بواسطة</label>
+                                    <select data-live-search="true" class="form-control selectpicker custom-select"
+                                        title="اختر مسؤل" name="car" required>
+                                        <option>مسؤل 9</option>
+                                        <option>مسؤل 8</option>
+                                        <option>مسؤل 5</option>
+                                        <option>مسؤل 5</option>
+                                        <option>مسؤل 1</option>
+                                        <option>مسؤل 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>تاريخ الدخول</label>
+                                    <input id="datepicker1" width="100%" name="entry_date" required />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>الوقت</label>
+                                    <input id="timepicker1" width="100%" name="entry_time" required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>قراءة حالية</label>
+                                    <input type="text" width="100%" name="current_record" class="form-control"
+                                        required />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row white-bg mt-2">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>توقع تاريخ الخروج</label>
+                                    <input id="datepicker2" width="100%" name="exit_date" required />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>الوقت</label>
+                                    <input id="timepicker2" width="100%" name="exit_time" required />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>مستوي الوقود</label>
+                                    <input type="text" width="100%" name="fuel_record" class="form-control" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col work_order_number">
+                                <p>أمر شغل رقم: <span class="dodger-blue">1234</span><span class="ml-5">(auto
+                                        generate)</span></p>
+                            </div>
+                        </div>
+                        <div class="row isuues_row">
+                            <div class="col-md-9 isuues_row_title">
+                                <h2 class="small_title tangerine">الأعطال</h2>
+                                <div class="message">
+                                    <span class="alert_side"></span>
+                                    <p class="subtitle dodger-blue">
+                                        <i class="fa fa-exclamation-circle"></i>
+                                        اختر الأمر ليتم إغلاقة من خلال أمر الشغل</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 left_btn_wrapper pr-0">
+                                <a href="./issues-add-issue.html" class="btn dark_btn _btn ">أضف عطل</a>
+                            </div>
+                        </div>
+
+                        <div class="row  services_tabs ">
+                            <ul class="nav nav-tabs" role="tablist" id="myTab">
+                                <div class="col-md-6">
+                                    <li class="active white-bg">
+                                        <a href="#tabbb" role="tab" data-toggle="tab">
+                                            <p class="smal_title">مفتوح (3)</p>
+                                        </a>
+                                    </li>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <li class="white-bg">
+                                        <a href="#tabbb2" role="tab" data-toggle="tab">
+                                            <p class="smal_title">مغلق (1)</p>
+                                        </a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+
+                        <div class="row white-bg services_tabs_content">
+                            <div class="col">
+                                <div class="row">
+                                    <div class=" col tab-content">
+                                        <div class=" tab-pane active" id="tabbb">
+
+                                            <table class="table table-class contacts_table table-hover" id="table-id">
+
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <input id="issues" type="checkbox" value="issues all"
+                                                                name="all_issues" data-chx-type="issues" class="Master">
+                                                            <label for=""></label>
+                                                        </th>
+                                                        <th>التارخ والوقت</th>
+                                                        <th>العطل</th>
+                                                        <th>وصف العطل</th>
+                                                        <th>مرحلة العطل</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="">
+                                                            <input id="issues1" type="checkbox" value="issues1"
+                                                                name="issues1" data-chx-type="issues">
+                                                            <label for=""></label>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="">1 / 3 / 2020</h6>
+                                                            <h6 class="time_direction">11:30 am</h6>
+                                                        </td>
+                                                        <td>مبرد الحركة </td>
+                                                        <td>تسريب مياة من مبرد الحركة </td>
+                                                        <td class="tangerine">مفتوح</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            <input id="issues2" type="checkbox" value="issues1"
+                                                                name="issues2" data-chx-type="issues">
+                                                            <label for=""></label>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="">1 / 3 / 2020</h6>
+                                                            <h6 class="time_direction">11:30 am</h6>
+                                                        </td>
+                                                        <td>مبرد الحركة </td>
+                                                        <td>تسريب مياة من مبرد الحركة </td>
+                                                        <td class="tangerine">مفتوح</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            <input id="issues3" type="checkbox" value="issues1"
+                                                                name="issues3" data-chx-type="issues">
+                                                            <label for=""></label>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="">1 / 3 / 2020</h6>
+                                                            <h6 class="time_direction">11:30 am</h6>
+                                                        </td>
+                                                        <td>مبرد الحركة </td>
+                                                        <td>تسريب مياة من مبرد الحركة </td>
+                                                        <td class="tangerine">مفتوح</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            <input id="issues4" type="checkbox" value="issues1"
+                                                                name="issues4" data-chx-type="issues">
+                                                            <label for=""></label>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="">1 / 3 / 2020</h6>
+                                                            <h6 class="time_direction">11:30 am</h6>
+                                                        </td>
+                                                        <td>مبرد الحركة </td>
+                                                        <td>تسريب مياة من مبرد الحركة </td>
+                                                        <td class="tangerine">مفتوح</td>
+                                                    </tr>
+
+                                                <tbody>
+                                            </table>
+                                        </div>
+                                        <div class=" tab-pane" id="tabbb2">
+
+                                            <table class="table table-class contacts_table table-hover" id="table-id">
+
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <input id="issues" type="checkbox" value="issues all"
+                                                                name="all_issues" data-chx-type="closed_issues"
+                                                                class="Master">
+                                                            <label for=""></label>
+                                                        </th>
+                                                        <th>التارخ والوقت</th>
+                                                        <th>العطل</th>
+                                                        <th>وصف العطل</th>
+                                                        <th>مرحلة العطل</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="">
+                                                            <input id="closed_issues1" type="checkbox" value="issues1"
+                                                                name="closed_issues1" data-chx-type="closed_issues">
+                                                            <label for=""></label>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="">1 / 3 / 2020</h6>
+                                                            <h6 class="time_direction">11:30 am</h6>
+                                                        </td>
+                                                        <td>مبرد الحركة </td>
+                                                        <td>تسريب مياة من مبرد الحركة </td>
+                                                        <td class="darkish-green">مغلق</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            <input id="closed_issues2" type="checkbox" value="issues1"
+                                                                name="closed_issues2" data-chx-type="closed_issues">
+                                                            <label for=""></label>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="">1 / 3 / 2020</h6>
+                                                            <h6 class="time_direction">11:30 am</h6>
+                                                        </td>
+                                                        <td>مبرد الحركة </td>
+                                                        <td>تسريب مياة من مبرد الحركة </td>
+                                                        <td class="darkish-green">مغلق</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            <input id="closed_issues3" type="checkbox" value="issues1"
+                                                                name="closed_issues3" data-chx-type="closed_issues">
+                                                            <label for=""></label>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="">1 / 3 / 2020</h6>
+                                                            <h6 class="time_direction">11:30 am</h6>
+                                                        </td>
+                                                        <td>مبرد الحركة </td>
+                                                        <td>تسريب مياة من مبرد الحركة </td>
+                                                        <td class="darkish-green">مغلق</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">
+                                                            <input id="closed_issues4" type="checkbox" value="issues1"
+                                                                name="closed_issues4" data-chx-type="closed_issues">
+                                                            <label for=""></label>
+                                                        </td>
+                                                        <td>
+                                                            <h6 class="">1 / 3 / 2020</h6>
+                                                            <h6 class="time_direction">11:30 am</h6>
+                                                        </td>
+                                                        <td>مبرد الحركة </td>
+                                                        <td>تسريب مياة من مبرد الحركة </td>
+                                                        <td class="darkish-green">مغلق</td>
+                                                    </tr>
+
+                                                <tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="row" class="tab-pane " id="tabbb2"> -->
+                                <!-- </div> -->
+                            </div>
+                        </div>
+
+                        <div class="row mt-2 ">
+                            <div class="col left_btn_wrapper pr-0">
+                                <a href="" class="btn dark_btn _btn ">أضف لأمر شغل</a>
+                            </div>
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-md-6">
+                                <h2 class="small_title tangerine">اجراءات الخدمة في أمر الشغل</h2>
+                            </div>
+                            <div class="col-md-6 left_btn_wrapper pr-0">
+                                <a href="./issues-add-issue.html" class="btn dark_btn _btn inline_item mr-3">أضف اجراء
+                                    خدمة</a>
+                                <a href="./issues-add-issue.html" class="btn dark_btn _btn inline_item">أضف مورد
+                                    خدمة</a>
+                            </div>
+                        </div>
+
+                        <div class="row white-bg">
+                            <div class="col">
+                                <table class="table eq_table" id="">
+
+
+                                    <thead>
+                                        <tr>
+                                            <th>الاجراء</th>
+                                            <th>تكلفة فنيين</th>
+                                            <th>مورد اجراءات</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div>
+                                                    <select data-live-search="true"
+                                                        class="form-control selectpicker custom-select" title="اختر "
+                                                        name="car" required>
+                                                        <option>الاجراء 4</option>
+                                                        <option>الاجراء 8</option>
+                                                        <option>الاجراء 5</option>
+                                                        <option>الاجراء 2</option>
+                                                        <option>الاجراء 3</option>
+                                                        <option>الاجراء 6</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="">
+                                                    <input type="text" class="form-control smaller_input" name="cost"
+                                                        required>
+
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <select data-live-search="true"
+                                                        class="form-control selectpicker custom-select"
+                                                        title="اختر مورد" name="car" required>
+                                                        <option>مورد 4</option>
+                                                        <option>مورد 8</option>
+                                                        <option>مورد 5</option>
+                                                        <option>مورد 2</option>
+                                                        <option>مورد 3</option>
+                                                        <option>مورد 6</option>
+                                                    </select>
+                                                </div>
+
+                                            </td>
+                                            <td><a href="" class="btn dark_btn small_btn">تفعيل تذكير</a></td>
+                                        </tr>
+                                    <tbody>
+                                </table>
+                                <div class="add_item pale-teal" data-toggle="modal" data-target="#AddserviceModal">
+                                    <i class="fas fa-plus-circle darkish-green"></i>
+                                    أضف سطر
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-5">
+                            <div class="col-md-6">
+                                <h2 class="small_title tangerine">قطع الغيار المستخدمة في أمر الشغل (أوامر التوريد)</h2>
+                            </div>
+                            <div class="col-md-6 left_btn_wrapper pr-0">
+
+                                <a href="./issues-add-issue.html" class="btn dark_btn _btn ">أضف مورد
+                                    ق.غ</a>
+                            </div>
+                        </div>
+
+                        <div class="row white-bg">
+                            <div class="col">
+                                <table class="table eq_table5" id="">
+
+
+                                    <thead>
+                                        <tr>
+                                            <th>قطع غيار / زيوت / سيور</th>
+                                            <th>التكلفة </th>
+                                            <th>المورد </th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <select data-live-search="true"
+                                                    class="form-control selectpicker custom-select" title="اختر "
+                                                    name="car" required>
+                                                    <option>الاجراء 4</option>
+                                                    <option>الاجراء 8</option>
+                                                    <option>الاجراء 5</option>
+                                                    <option>الاجراء 2</option>
+                                                    <option>الاجراء 3</option>
+                                                    <option>الاجراء 6</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control smaller_input" name="cost"
+                                                    required>
+                                            </td>
+                                            <td>
+                                                <select data-live-search="true"
+                                                    class="form-control selectpicker custom-select" title="اختر مورد"
+                                                    name="car" required>
+                                                    <option>مورد 4</option>
+                                                    <option>مورد 8</option>
+                                                    <option>مورد 5</option>
+                                                    <option>مورد 2</option>
+                                                    <option>مورد 3</option>
+                                                    <option>مورد 6</option>
+                                            </td>
+                                            <td><a href="" class="btn dark_btn small_btn">تفعيل تذكير</a></td>
+                                            <td>
+                                                <div class="input-group attachement">
+                                                    <div class="custom-file">
+                                                        <input type="file" id="file" class="custom-file-input"
+                                                            id="inputGroupFile01"
+                                                            aria-describedby="inputGroupFileAddon01" name="id_image"
+                                                            required>
+                                                        <label class="custom-file-label" for="inputGroupFile01">
+                                                        </label>
+                                                    </div>
+                                                    <label>أضف مرفق</label>
+                                                    <div class="uploaded_img_url"></div>
+                                                    <div class="invalid-feedback id_image">
+                                                        من فضلك اضف مرفق
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <tbody>
+                                </table>
+                                <div class="add_item pale-teal" data-toggle="modal" data-target="#AddserviceModal">
+                                    <i class="fas fa-plus-circle darkish-green"></i>
+                                    أضف سطر
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="row mt-5">
+                                    <div class="col-md-6">
+                                        <h2 class="small_title tangerine">قطع الغيار المستخدمة في أمر الشغل </h2>
+                                    </div>
+
+                                </div>
+
+                                <div class="row white-bg">
+                                    <div class="col-md-6">
+                                        <!-- <div class="row"> -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="">إجمالي تكلفة فنيين</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="">إجمالي تكلفة قطع غيار</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="">خصم</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="">ضرائب</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <label for="">إجمالي تكلفة أمر الشغل</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div> -->
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="">مرفقات</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="">ملاحظات</label>
+                                                    <textarea name="" id="" class="form-control" rows="7"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3 bottom-actions">
+                            <div class="col">
+                                <button class="btn _btn btn-light darkish-green ml-3">حفظ وإضافة آخري</button>
+                                <button class="btn btn-success _btn darkish-green-bg ml-3" type="submit">حفظ</button>
+                                <button class="btn _btn btn-danger rose-bg ml-3">إلغاء</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <span>2020</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

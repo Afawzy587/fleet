@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>تصميم نموذج فحص داخلي جديد</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="images/ElKammar_Logo.png" alt="logo" srcset="" height="50">
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <span data-feather="home"></span>
+                        لوحة العرض
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bus"></i>
+                        الأسطول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-exclamation-circle"></i>
+                        أعطال وفحص
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell"></i>
+                        تذكيرات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-wrench"></i>
+                        خدمات الصيانة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-gas-pump"></i>
+                        الوقود
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user-friends"></i>
+                        جهات الإتصال
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>
+                        المشروعات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        تقارير ومرفقات
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i>
+                        إعدادات النظام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto mt-2 mt-md-0 top_nav">
+                <i class="fas fa-bell cool-grey"></i>
+                <hr>
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    أحمد محمد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+                <img src="profile-icon.png" width="60" height="60" class="rounded-circle">
+            </form>
+
+        </div>
+    </nav>
+    <main class="">
+        <div
+            class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+            <span class="page_titles">
+                <h1 class="h2">تصميم نموذج فحص داخلي جديد</h1>
+            </span>
+
+        </div>
+        <div class="container page_body">
+            <div class="container page_body">
+
+                <form action="" class="design_form needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col white-bg">
+                            <div class="row flex_items_btween">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>اسم النموذج</label>
+                                        <div>
+                                            <input type="text" class="form-control" name="form_name" required
+                                                pattern="^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_]*$">
+                                            <div class="invalid-feedback">
+                                                ادخل اسم النموذج
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <label>النماذج الموجودة</label>
+                                                <div>
+                                                    <select id="" class="md-select " name="inspection_forms"
+                                                    >
+                                                    <option disabled selected value> -- اختر نموذج -- </option>
+                                                    <option value="">نموذج 1 </option>
+                                                    <option value="">نموذج 5</option>
+                                                    <option value="">نموذج 2</option>
+                                                </select>
+                                                   
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                        <div class="col-md-3 left_actions">
+                                            <i class="far fa-edit darkish-green"></i>
+                                            <i class="fas fa-trash danger_status"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5 class="small_title dodger-blue">عناصر تصميم النموذج</h5>
+                                </div>
+                                <div class="col-md-5 flex_items adding_items">
+                                   
+                                        <p class="dodger-blue mr-5 mb-0" onclick="addItem('image')">إضافة صورة</p>
+                                        <p class="dodger-blue mb-0" onclick="addItem('record')">إضافة بند فحص</p>
+                                    
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_items" id="box">
+                        <div class="row white-bg form_item form_image_item ">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <button class="_btn dark_btn btn small_btn" id="button_name1">رفع صورة</button>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>تغيير اسم الزر</label>
+                                            <div>
+                                                <input type="text" class="form-control" name="button_name1" required onkeypress="setBtnValue(this)"
+                                                    pattern="^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_]*$">
+                                                <div class="invalid-feedback">
+                                                    ادخل اسم الزر
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 left_actions">
+                                <i class="fas fa-arrows-alt "></i>
+                                <i class="fas fa-trash danger_status" onclick="deleteitem(this, 'image')"></i>
+                            </div>
+                        </div>
+                        <div class="row white-bg form_item form_record_item ">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div>
+                                                <input type="text" class="form-control inner-dodger-blue" name="item_name"  required maxlength="25" placeholder="اسم البند"
+                                                    pattern="^[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z]+[\u0600-\u065F\u066A-\u06EF\u06FA-\u06FFa-zA-Z-_]*$">
+                                                <div class="invalid-feedback">
+                                                    ادخل اسم البند
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>عدد الدرجات</label>
+                                            <div>
+                                                <input type="text" class="form-control inner-dodger-blue" name="item_priority" placeholder="1 - 10"  required maxlength="2" pattern="^[0-9]*$">
+                                                <div class="invalid-feedback">
+                                                    ادخل عدد الدرجات
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 left_actions">
+                                <i class="fas fa-arrows-alt "></i>
+                                <i class="fas fa-trash danger_status" onclick="deleteitem(this, 'record')"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 bottom-actions">
+                        <div class="col">
+                            <button class="btn btn-light _btn ml-3" type="submit">حفظ واضافة آخري</button>
+                            <button class="btn btn-success _btn darkish-green-bg ml-3" type="submit">حفظ</button>
+                            <button class="btn _btn btn-danger rose-bg ml-3">إلغاء</button>
+                        </div>
+                    </div>
+            </div>
+            </form>
+        </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <span>2020</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/inspection-form-design.js"></script>
+    <script src="js/form-validation-inline.js"></script>
+</body>
+
+</html>

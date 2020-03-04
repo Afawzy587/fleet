@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>جهات الإتصال - الصلاحيات</title>
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.1.3/css/bootstrap.min.css"
+        integrity="sha384-Jt6Tol1A2P9JBesGeCxNrxkmRFSjWCBW1Af7CSQSKsfMVQCqnUVWhZzG0puJMCK6" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="sidemenu.css"> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="ElKammar_Logo.png" alt="logo" srcset="" height="50">
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <span data-feather="home"></span>
+                        لوحة العرض
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bus"></i>
+                        الأسطول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-exclamation-circle"></i>
+                        أعطال وفحص
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell"></i>
+                        تذكيرات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-wrench"></i>
+                        خدمات الصيانة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-gas-pump"></i>
+                        الوقود
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user-friends"></i>
+                        جهات الإتصال
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>
+                        المشروعات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        تقارير ومرفقات
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i>
+                        إعدادات النظام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto mt-2 mt-md-0 top_nav">
+                <i class="fas fa-bell cool-grey"></i>
+                <hr>
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    أحمد محمد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+                <img src="profile-icon.png" width="60" height="60" class="rounded-circle">
+            </form>
+
+        </div>
+    </nav>
+    <main class="">
+        <form>
+            <div
+                class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+                <h1 class="h2">خدمات الصيانة</h1>
+                <div>
+                    <button class="btn _btn btn-danger rose-bg mr-3">إلغاء</button>
+                    <button class="btn btn-success _btn darkish-green-bg mr-3" type="submit">حفظ</button>
+                </div>
+            </div>
+            <div class="container page_body">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="page_body">
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <h3 class="mtb-3 small_title subtitle">المجموعة: </h3>
+                                <h3 class="small_title tangerine subtitle">مديري النظام</h3>
+                                <table class="datatable table white-bg contacts_table table-hover permission_table">
+                                    <thead>
+                                        <tr>
+                                            <th>القائمة</th>
+                                            <th>الصلاحية</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="companyDashboard" type="checkbox"
+                                                    value="companyDashboard all" name="more_filter_chx"
+                                                    data-chx-type="dashboard-company" class="Master">
+                                                <label for="companyDashboard">لوحة العرض - الشركة</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="costs" type="checkbox" value="costs"
+                                                            name="more_filter_chx" data-chx-type="dashboard-company">
+                                                        <label for="costs"></label>
+                                                        <p>التكاليف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="fleet_status" type="checkbox" value="fleet_status"
+                                                            name="more_filter_chx" data-chx-type="dashboard-company">
+                                                        <label for="fleet_status"></label>
+                                                        <p>حالة الأسطول</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="km_avg_cost" type="checkbox" value="km_avg_cost"
+                                                            name="more_filter_chx" data-chx-type="dashboard-company">
+                                                        <label for="km_avg_cost">
+                                                        </label>
+                                                        <p>متوسط تكلفة الـ كم</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="costs_period" type="checkbox" value="costs_period"
+                                                            name="more_filter_chx" data-chx-type="dashboard-company">
+                                                        <label for="costs_period"></label>
+                                                        <p>فترة التكاليف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="fleet_status_period" type="checkbox"
+                                                            value="fleet_status_period" name="more_filter_chx"
+                                                            data-chx-type="dashboard-company">
+                                                        <label for="fleet_status_period"></label>
+                                                        <p>فترة حالة الأسطول</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="km_avg_cost_period" type="checkbox"
+                                                            value="km_avg_cost_period" name="more_filter_chx"
+                                                            data-chx-type="dashboard-company">
+                                                        <label for="km_avg_cost_period"></label>
+                                                        <p>فترة متوسط تكلفة الـ كم</p>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="Fleet" type="checkbox" value="Fleet all"
+                                                    name="more_filter_chx" data-chx-type="Fleet" class="Master">
+                                                <label for="Fleet">الأسطول</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="cars_list" type="checkbox" value="cars_list"
+                                                            name="more_filter_chx" data-chx-type="Fleet">
+                                                        <label for="cars_list"></label>
+                                                        <p>قائمة السيارات</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="gps" type="checkbox" value="gps"
+                                                            name="more_filter_chx" data-chx-type="Fleet">
+                                                        <label for="gps"></label>
+                                                        <p>تتبع</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="assign_work" type="checkbox" value="assign_work"
+                                                            name="more_filter_chx" data-chx-type="Fleet">
+                                                        <label for="assign_work">
+                                                        </label>
+                                                        <p>تعيين التشغيل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="expenses" type="checkbox" value="expenses"
+                                                            name="more_filter_chx" data-chx-type="Fleet">
+                                                        <label for="expenses"></label>
+                                                        <p>المصروفات</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_car" type="checkbox" value="add_car"
+                                                            name="more_filter_chx" data-chx-type="Fleet">
+                                                        <label for="add_car"></label>
+                                                        <p>إضافة سيارة</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="CarDashboard" type="checkbox" value="CarDashboard all"
+                                                    name="more_filter_chx" data-chx-type="dashboard-Car" class="Master">
+                                                <label for="CarDashboard">لوحة عرض السيارة</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="car_details_edit" type="checkbox" value="car_details_edit"
+                                                            name="more_filter_chx" data-chx-type="dashboard-Car">
+                                                        <label for="car_details_edit"></label>
+                                                        <p>تعديل بيانات السيارة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="car_costs" type="checkbox" value="car_costs"
+                                                            name="more_filter_chx" data-chx-type="dashboard-Car">
+                                                        <label for="car_costs"></label>
+                                                        <p>التكاليف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="fuel_log" type="checkbox" value="fuel_log"
+                                                            name="more_filter_chx" data-chx-type="dashboard-Car">
+                                                        <label for="fuel_log">
+                                                        </label>
+                                                        <p>سجل الوقود</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="car_services_log" type="checkbox" value="car_services_log"
+                                                            name="more_filter_chx" data-chx-type="dashboard-Car">
+                                                        <label for="car_services_log"></label>
+                                                        <p>سجل خدمات الصيانة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="other_expenses_log" type="checkbox"
+                                                            value="other_expenses_log" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="other_expenses_log"></label>
+                                                        <p>سجل المصروفات الآخري</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="delete_car" type="checkbox"
+                                                            value="delete_car" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="delete_car"></label>
+                                                        <p>حذف السيارة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="car_costs_period" type="checkbox"
+                                                            value="car_costs_period" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="car_costs_period"></label>
+                                                        <p>فترة التكاليف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="fuel_log_period" type="checkbox"
+                                                            value="fuel_log_period" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="fuel_log_period"></label>
+                                                        <p>فترة سجل الوقود</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="sercices_period" type="checkbox"
+                                                            value="sercices_period" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="sercices_period"></label>
+                                                        <p>فترة خدمات الصيانة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="other_expenses_period" type="checkbox"
+                                                            value="other_expenses_period" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="other_expenses_period"></label>
+                                                        <p>فترة المصروفات الآخري</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="km_log" type="checkbox"
+                                                            value="km_log" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="km_log"></label>
+                                                        <p>سجل الكيلومتر</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="assign_car" type="checkbox"
+                                                            value="assign_car" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="assign_car"></label>
+                                                        <p>استلام سيارة التشغيل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_issue" type="checkbox"
+                                                            value="add_issue" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="add_issue"></label>
+                                                        <p>إضافة عطل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_service_alaram" type="checkbox"
+                                                            value="add_service_alaram" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="add_service_alaram"></label>
+                                                        <p>إضافة تذكير صيانة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_docs_alaram" type="checkbox"
+                                                            value="add_docs_alaram" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="add_docs_alaram"></label>
+                                                        <p>إضافة تذكير وثائق</p>
+                                                    </div>
+                                                    <div class="permission_item wider">
+                                                        <input id="edit_car_alaram_contacts" type="checkbox"
+                                                            value="edit_car_alaram_contacts" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="edit_car_alaram_contacts"></label>
+                                                        <p>تعديل جهات إتصال اشعارات السيارة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="car_gps" type="checkbox"
+                                                            value="car_gps" name="more_filter_chx"
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="car_gps"></label>
+                                                        <p>تتبع</p>
+                                                    </div>
+                                                    <div class="permission_item wider">
+                                                        <input id="display_car_details" type="checkbox"
+                                                            value="display_car_details" name=""
+                                                            data-chx-type="dashboard-Car">
+                                                        <label for="display_car_details"></label>
+                                                        <p>استعراض تفاصيل بيانات السيارة</p>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="addExpense" type="checkbox" value="addExpense all"
+                                                    name="more_filter_chx" data-chx-type="addExpense" class="Master">
+                                                <label for="addExpense">إضافة مصروف</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="costs" type="checkbox" value="costs"
+                                                            name="more_filter_chx" data-chx-type="addExpense">
+                                                        <label for="costs"></label>
+                                                        <p>اضافة نوع مصروف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="fleet_status" type="checkbox" value="fleet_status"
+                                                            name="more_filter_chx" data-chx-type="addExpense">
+                                                        <label for="fleet_status"></label>
+                                                        <p>تعديل نوع مصروف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="km_avg_cost" type="checkbox" value="km_avg_cost"
+                                                            name="more_filter_chx" data-chx-type="addExpense">
+                                                        <label for="km_avg_cost">
+                                                        </label>
+                                                        <p>حذف نوع مصروف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="costs_period" type="checkbox" value="costs_period"
+                                                            name="more_filter_chx" data-chx-type="addExpense">
+                                                        <label for="costs_period"></label>
+                                                        <p>إضافة مورد</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="issues" type="checkbox" value="issues all"
+                                                    name="more_filter_chx" data-chx-type="issues" class="Master">
+                                                <label for="issues">أعطال</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="car_with_issues" type="checkbox"
+                                                            value="car_with_issues" name="more_filter_chx"
+                                                            data-chx-type="issues">
+                                                        <label for="car_with_issues"></label>
+                                                        <p>سيارات بها عطل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="display_car_issues" type="checkbox"
+                                                            value="display_car_issues" name="more_filter_chx"
+                                                            data-chx-type="issues">
+                                                        <label for="display_car_issues"></label>
+                                                        <p>استعراض أعطال السيارة </p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="issues_to_order" type="checkbox"
+                                                            value="issues_to_order" name="more_filter_chx"
+                                                            data-chx-type="issues">
+                                                        <label for="issues_to_order">
+                                                        </label>
+                                                        <p>تحويل العطل لأمر شغل صيانة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="close_issue" type="checkbox" value="close_issue"
+                                                            name="more_filter_chx" data-chx-type="issues">
+                                                        <label for="close_issue"></label>
+                                                        <p>إغلاق عطل</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="inspection" type="checkbox" value="inspection all"
+                                                    name="more_filter_chx" data-chx-type="inspection"
+                                                    class="Master">
+                                                <label for="inspection">فحص</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="inspection_control" type="checkbox"
+                                                            value="inspection_control" name="more_filter_chx"
+                                                            data-chx-type="inspection">
+                                                        <label for="inspection_control"></label>
+                                                        <p>إدارة فحص</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="create_inspection_form" type="checkbox"
+                                                            value="create_inspection_form" name="more_filter_chx"
+                                                            data-chx-type="inspection">
+                                                        <label for="create_inspection_form"></label>
+                                                        <p>تصميم نموذج فحص</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_inspection_form" type="checkbox"
+                                                            value="edit_inspection_form" name="more_filter_chx"
+                                                            data-chx-type="inspection">
+                                                        <label for="edit_inspection_form">
+                                                        </label>
+                                                        <p>تعديل نموذج فحص</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_inspection_form" type="checkbox"
+                                                            value="remove_inspection_form" name="more_filter_chx"
+                                                            data-chx-type="inspection">
+                                                        <label for="remove_inspection_form"></label>
+                                                        <p>حذف نموذج فحص</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="service_reminders" type="checkbox"
+                                                    value="service_reminders all" name="more_filter_chx"
+                                                    data-chx-type="service_reminders" class="Master">
+                                                <label for="service_reminders">تذكيرات الصيانة</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_service_reminders" type="checkbox" value="display_service_reminders"
+                                                            name="more_filter_chx" data-chx-type="service_reminders">
+                                                        <label for="display_service_reminders"></label>
+                                                        <p>استعراض سجل التذكيرات</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_service_reminders" type="checkbox" value="add_service_reminders"
+                                                            name="more_filter_chx" data-chx-type="service_reminders">
+                                                        <label for="add_service_reminders"></label>
+                                                        <p>إضافة </p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_service_reminders" type="checkbox" value="edit_service_reminders"
+                                                            name="more_filter_chx" data-chx-type="service_reminders">
+                                                        <label for="edit_service_reminders">
+                                                        </label>
+                                                        <p>تعديل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_service_reminders" type="checkbox" value="remove_service_reminders"
+                                                            name="more_filter_chx" data-chx-type="service_reminders">
+                                                        <label for="remove_service_reminders"></label>
+                                                        <p>حذف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="service_reminders_alert" type="checkbox"
+                                                            value="service_reminders_alert" name="more_filter_chx"
+                                                            data-chx-type="service_reminders">
+                                                        <label for="service_reminders_alert"></label>
+                                                        <p>إرسال اشعار</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="service_reminders_toOrder" type="checkbox"
+                                                            value="service_reminders_toOrder" name="more_filter_chx"
+                                                            data-chx-type="service_reminders">
+                                                        <label for="service_reminders_toOrder"></label>
+                                                        <p>تحويل لأمر شغل صيانة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="service_reminders_add" type="checkbox"
+                                                            value="service_reminders_add" name="more_filter_chx"
+                                                            data-chx-type="service_reminders">
+                                                        <label for="service_reminders_add"></label>
+                                                        <p>إضافة خدمة صيانة</p>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="documents_reminders" type="checkbox"
+                                                    value="documents_reminders all" name="more_filter_chx"
+                                                    data-chx-type="documents_reminders" class="Master">
+                                                <label for="documents_reminders">تذكيرات الوثائق</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_documents_reminders" type="checkbox" value="display_documents_reminders"
+                                                            name="more_filter_chx" data-chx-type="documents_reminders">
+                                                        <label for="display_documents_reminders"></label>
+                                                        <p>استعراض سجل التذكيرات</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_documents_reminders" type="checkbox" value="add_documents_reminders"
+                                                            name="more_filter_chx" data-chx-type="documents_reminders">
+                                                        <label for="add_documents_reminders"></label>
+                                                        <p>إضافة </p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_documents_reminders" type="checkbox" value="edit_documents_reminders"
+                                                            name="more_filter_chx" data-chx-type="documents_reminders">
+                                                        <label for="edit_documents_reminders">
+                                                        </label>
+                                                        <p>تعديل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_documents_reminders" type="checkbox" value="remove_documents_reminders"
+                                                            name="more_filter_chx" data-chx-type="documents_reminders">
+                                                        <label for="remove_documents_reminders"></label>
+                                                        <p>حذف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="documents_reminders_alert" type="checkbox"
+                                                            value="documents_reminders_alert" name="more_filter_chx"
+                                                            data-chx-type="documents_reminders">
+                                                        <label for="documents_reminders_alert"></label>
+                                                        <p>إرسال اشعار</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="documents_reminders_toOrder" type="checkbox"
+                                                            value="documents_reminders_toOrder" name="more_filter_chx"
+                                                            data-chx-type="documents_reminders">
+                                                        <label for="documents_reminders_toOrder"></label>
+                                                        <p>تحويل لأمر شغل صيانة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="documents_reminders_add" type="checkbox"
+                                                            value="documents_reminders_add" name="more_filter_chx"
+                                                            data-chx-type="documents_reminders">
+                                                        <label for="documents_reminders_add"></label>
+                                                        <p>إضافة خدمة صيانة</p>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="services" type="checkbox"
+                                                    value="services all" name="more_filter_chx"
+                                                    data-chx-type="services" class="Master">
+                                                <label for="services">الصيانة</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="services_log" type="checkbox" value="services_log"
+                                                            name="more_filter_chx" data-chx-type="services">
+                                                        <label for="services_log"></label>
+                                                        <p>سجل الخدمة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="services_totalCost" type="checkbox" value="services_totalCost"
+                                                            name="more_filter_chx" data-chx-type="services">
+                                                        <label for="services_totalCost"></label>
+                                                        <p>إجمالي التكلفة</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="work_order" type="checkbox"
+                                                    value="work_order all" name="more_filter_chx"
+                                                    data-chx-type="work_orders" class="Master">
+                                                <label for="work_order">أوامر الشغل</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="work_orders_log" type="checkbox" value="work_orders_log"
+                                                            name="more_filter_chx" data-chx-type="work_orders">
+                                                        <label for="work_orders_log"></label>
+                                                        <p>سجل أوامر الشغل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="work_orders_totalCost" type="checkbox" value="work_orders_totalCost"
+                                                            name="more_filter_chx" data-chx-type="work_orders">
+                                                        <label for="work_orders_totalCost"></label>
+                                                        <p>إجمالي التكلفة</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="car_services_log" type="checkbox"
+                                                    value="car_services_log all" name="more_filter_chx"
+                                                    data-chx-type="car_services_log" class="Master">
+                                                <label for="car_services_log">سجل خدمة سيارة</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="car_work_orders_log" type="checkbox" value="car_work_orders_log"
+                                                            name="more_filter_chx" data-chx-type="car_services_log">
+                                                        <label for="car_work_orders_log"></label>
+                                                        <p>سجل أوامر الشغل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="car_services_totalCost" type="checkbox" value="car_services_totalCost"
+                                                            name="more_filter_chx" data-chx-type="car_services_log">
+                                                        <label for="car_services_totalCost"></label>
+                                                        <p>إجمالي التكلفة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="car_services_edit" type="checkbox" value="car_services_edit"
+                                                            name="more_filter_chx" data-chx-type="car_services_log">
+                                                        <label for="car_services_edit">
+                                                        </label>
+                                                        <p>تعديل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="car_services_remove" type="checkbox" value="car_services_remove"
+                                                            name="more_filter_chx" data-chx-type="car_services_log">
+                                                        <label for="car_services_remove"></label>
+                                                        <p>حذف </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="work_orders2" type="checkbox"
+                                                    value="work_orders2 all" name="more_filter_chx"
+                                                    data-chx-type="work_orders2" class="Master">
+                                                <label for="work_orders2">أوامر الشغل</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_work_orders2" type="checkbox" value="display_work_orders2"
+                                                            name="more_filter_chx" data-chx-type="work_orders2">
+                                                        <label for="display_work_orders2"></label>
+                                                        <p>استعراض</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_work_orders2" type="checkbox" value="add_work_orders2"
+                                                            name="more_filter_chx" data-chx-type="work_orders2">
+                                                        <label for="add_work_orders2"></label>
+                                                        <p>إضافة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_work_orders2" type="checkbox" value="edit_work_orders2"
+                                                            name="more_filter_chx" data-chx-type="work_orders2">
+                                                        <label for="edit_work_orders2">
+                                                        </label>
+                                                        <p>تعديل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_work_orders2" type="checkbox" value="remove_work_orders2"
+                                                            name="more_filter_chx" data-chx-type="work_orders2">
+                                                        <label for="remove_work_orders2"></label>
+                                                        <p>حذف</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="services_tasks" type="checkbox"
+                                                    value="services_tasks all" name="more_filter_chx"
+                                                    data-chx-type="services_tasks" class="Master">
+                                                <label for="services_tasks">إجراءات الخدمة</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="Add_services_tasks" type="checkbox" value="Add_services_tasks"
+                                                            name="more_filter_chx" data-chx-type="services_tasks">
+                                                        <label for="Add_services_tasks"></label>
+                                                        <p>اضافة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_services_tasks" type="checkbox" value="edit_services_tasks"
+                                                            name="more_filter_chx" data-chx-type="services_tasks">
+                                                        <label for="edit_services_tasks"></label>
+                                                        <p>تعديل </p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_services_tasks" type="checkbox" value="remove_services_tasks"
+                                                            name="more_filter_chx" data-chx-type="services_tasks">
+                                                        <label for="remove_services_tasks">
+                                                        </label>
+                                                        <p>حذف</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="services_suppliers" type="checkbox"
+                                                    value="services_suppliers all" name="more_filter_chx"
+                                                    data-chx-type="services_suppliers" class="Master">
+                                                <label for="services_suppliers">موردين الخدمة</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_services_suppliers" type="checkbox" value="display_services_suppliers"
+                                                            name="more_filter_chx" data-chx-type="services_suppliers">
+                                                        <label for="display_services_suppliers"></label>
+                                                        <p>استعراض</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_services_suppliers" type="checkbox" value="add_services_suppliers"
+                                                            name="more_filter_chx" data-chx-type="services_suppliers">
+                                                        <label for="add_services_suppliers"></label>
+                                                        <p>اضافة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_services_suppliers" type="checkbox" value="edit_services_suppliers"
+                                                            name="more_filter_chx" data-chx-type="services_suppliers">
+                                                        <label for="edit_services_suppliers">
+                                                        </label>
+                                                        <p>تعديل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_services_suppliers" type="checkbox" value="remove_services_suppliers"
+                                                            name="more_filter_chx" data-chx-type="services_suppliers">
+                                                        <label for="remove_services_suppliers"></label>
+                                                        <p>حذف</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="spare_parts_suppliers" type="checkbox"
+                                                    value="spare_parts_suppliers all" name="more_filter_chx"
+                                                    data-chx-type="spare_parts_suppliers" class="Master">
+                                                <label for="spare_parts_suppliers">موردين قطع الغيار</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_spare_parts_suppliers" type="checkbox" value="display_spare_parts_suppliers"
+                                                            name="more_filter_chx" data-chx-type="spare_parts_suppliers">
+                                                        <label for="display_spare_parts_suppliers"></label>
+                                                        <p>استعراض</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_spare_parts_suppliers" type="checkbox" value="add_spare_parts_suppliers"
+                                                            name="more_filter_chx" data-chx-type="spare_parts_suppliers">
+                                                        <label for="add_spare_parts_suppliers"></label>
+                                                        <p>إضافة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_spare_parts_suppliers" type="checkbox" value="edit_spare_parts_suppliers"
+                                                            name="more_filter_chx" data-chx-type="spare_parts_suppliers">
+                                                        <label for="edit_spare_parts_suppliers">
+                                                        </label>
+                                                        <p>تعديل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_spare_parts_suppliers" type="checkbox" value="remove_spare_parts_suppliers"
+                                                            name="more_filter_chx" data-chx-type="spare_parts_suppliers">
+                                                        <label for="remove_spare_parts_suppliers"></label>
+                                                        <p>حذف</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="fuel" type="checkbox"
+                                                    value="fuel all" name="more_filter_chx"
+                                                    data-chx-type="fuel" class="Master">
+                                                <label for="fuel">الوقود</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_fuel" type="checkbox" value="display_fuel"
+                                                            name="more_filter_chx" data-chx-type="fuel">
+                                                        <label for="display_fuel"></label>
+                                                        <p>استعراض</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="fuel_cost" type="checkbox" value="fuel_cost"
+                                                            name="more_filter_chx" data-chx-type="fuel">
+                                                        <label for="fuel_cost"></label>
+                                                        <p>القيمة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="fuel_quantity" type="checkbox" value="fuel_quantity"
+                                                            name="more_filter_chx" data-chx-type="fuel">
+                                                        <label for="fuel_quantity">
+                                                        </label>
+                                                        <p>الكمية</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_fuel" type="checkbox" value="add_fuel"
+                                                            name="more_filter_chx" data-chx-type="fuel">
+                                                        <label for="add_fuel"></label>
+                                                        <p>اضافة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_fuel" type="checkbox"
+                                                            value="edit_fuel" name="more_filter_chx"
+                                                            data-chx-type="fuel">
+                                                        <label for="edit_fuel"></label>
+                                                        <p>تعديل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_fuel" type="checkbox"
+                                                            value="remove_fuel" name="more_filter_chx"
+                                                            data-chx-type="fuel">
+                                                        <label for="remove_fuel"></label>
+                                                        <p>حذف</p>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="contacts" type="checkbox"
+                                                    value="contacts all" name=""
+                                                    data-chx-type="contacts" class="Master">
+                                                <label for="contacts">جهات الاتصال</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_contacts" type="checkbox" value="display_contacts"
+                                                            name="" data-chx-type="contacts">
+                                                        <label for="display_contacts"></label>
+                                                        <p>استعراض</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_contacts" type="checkbox" value="add_contacts"
+                                                            name="more_filter_chx" data-chx-type="contacts">
+                                                        <label for="add_contacts"></label>
+                                                        <p>إضافة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_contacts" type="checkbox" value="edit_contacts"
+                                                            name="more_filter_chx" data-chx-type="contacts">
+                                                        <label for="edit_contacts">
+                                                        </label>
+                                                        <p>تعديل </p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_contacts" type="checkbox" value="remove_contacts"
+                                                            name="more_filter_chx" data-chx-type="contacts">
+                                                        <label for="remove_contacts"></label>
+                                                        <p>حذف</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="privlleges" type="checkbox"
+                                                    value="privlleges all" name="more_filter_chx"
+                                                    data-chx-type="privlleges" class="Master">
+                                                <label for="privlleges">تعديل الصلاحيات</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="add_group" type="checkbox" value="add_group"
+                                                            name="more_filter_chx" data-chx-type="privlleges">
+                                                        <label for="add_group"></label>
+                                                        <p>إضافة مجموعة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_group" type="checkbox" value="edit_group"
+                                                            name="more_filter_chx" data-chx-type="privlleges">
+                                                        <label for="edit_group"></label>
+                                                        <p>تعديل مجموعة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_group" type="checkbox" value="remove_group"
+                                                            name="more_filter_chx" data-chx-type="privlleges">
+                                                        <label for="remove_group">
+                                                        </label>
+                                                        <p>حذف مجموعة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_group_members" type="checkbox" value="edit_group_members"
+                                                            name="more_filter_chx" data-chx-type="privlleges">
+                                                        <label for="edit_group_members"></label>
+                                                        <p>تعديل أعضاء مجموعة</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="suppliers" type="checkbox"
+                                                    value="suppliers all" name="more_filter_chx"
+                                                    data-chx-type="suppliers" class="Master">
+                                                <label for="suppliers">الموردين</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_suppliers" type="checkbox" value="display_suppliers"
+                                                            name="more_filter_chx" data-chx-type="suppliers">
+                                                        <label for="display_suppliers"></label>
+                                                        <p>استعراض</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_suppliers" type="checkbox" value="add_suppliers"
+                                                            name="more_filter_chx" data-chx-type="suppliers">
+                                                        <label for="add_suppliers"></label>
+                                                        <p>اضافة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_suppliers" type="checkbox" value="edit_suppliers"
+                                                            name="more_filter_chx" data-chx-type="suppliers">
+                                                        <label for="edit_suppliers">
+                                                        </label>
+                                                        <p>تعديل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_suppliers" type="checkbox" value="remove_suppliers"
+                                                            name="more_filter_chx" data-chx-type="suppliers">
+                                                        <label for="remove_suppliers"></label>
+                                                        <p>حذف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_supply_type" type="checkbox"
+                                                            value="add_supply_type" name="more_filter_chx"
+                                                            data-chx-type="suppliers">
+                                                        <label for="add_supply_type"></label>
+                                                        <p>إضافة نوع توريد</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_supply_type" type="checkbox"
+                                                            value="edit_supply_type" name="more_filter_chx"
+                                                            data-chx-type="suppliers">
+                                                        <label for="edit_supply_type"></label>
+                                                        <p>تعديل نوع نوريد</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_supply_type" type="checkbox"
+                                                            value="remove_supply_type" name="more_filter_chx"
+                                                            data-chx-type="suppliers">
+                                                        <label for="remove_supply_type"></label>
+                                                        <p>حذف نوع نوريد</p>
+                                                    </div>
+                                             
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="projects" type="checkbox"
+                                                    value="projects all" name="more_filter_chx"
+                                                    data-chx-type="projects" class="Master">
+                                                <label for="projects">المشروعات</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_projects" type="checkbox" value="display_projects"
+                                                            name="more_filter_chx" data-chx-type="projects">
+                                                        <label for="display_projects"></label>
+                                                        <p>استعراض الأداء</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_projects" type="checkbox" value="add_projects"
+                                                            name="more_filter_chx" data-chx-type="projects">
+                                                        <label for="add_projects"></label>
+                                                        <p>اضافة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_projects" type="checkbox" value="edit_projects"
+                                                            name="more_filter_chx" data-chx-type="projects">
+                                                        <label for="edit_projects">
+                                                        </label>
+                                                        <p>تعديل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_projects" type="checkbox" value="remove_projects"
+                                                            name="more_filter_chx" data-chx-type="projects">
+                                                        <label for="remove_projects"></label>
+                                                        <p>حذف</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="projectsDashboard" type="checkbox"
+                                                    value="projectsDashboard all" name="more_filter_chx"
+                                                    data-chx-type="projectsDashboard" class="Master">
+                                                <label for="projectsDashboard">لوحة العرض المشروعات</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_projectsDashboard" type="checkbox" value="display_projectsDashboard"
+                                                            name="more_filter_chx" data-chx-type="projectsDashboard">
+                                                        <label for="display_projectsDashboard"></label>
+                                                        <p>استعراض الأداء</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="addTo_projectsDashboard" type="checkbox" value="addTo_projectsDashboard"
+                                                            name="more_filter_chx" data-chx-type="projectsDashboard">
+                                                        <label for="addTo_projectsDashboard"></label>
+                                                        <p>إضافة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_projectsDashboard" type="checkbox" value="edit_projectsDashboard"
+                                                            name="more_filter_chx" data-chx-type="projectsDashboard">
+                                                        <label for="edit_projectsDashboard">
+                                                        </label>
+                                                        <p>تعديل</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="removeFrom_projectsDashboard" type="checkbox" value="removeFrom_projectsDashboard"
+                                                            name="more_filter_chx" data-chx-type="projectsDashboard">
+                                                        <label for="removeFrom_projectsDashboard"></label>
+                                                        <p>حذف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="projectsDashboard_costs" type="checkbox"
+                                                            value="projectsDashboard_costs" name="more_filter_chx"
+                                                            data-chx-type="projectsDashboard">
+                                                        <label for="projectsDashboard_costs"></label>
+                                                        <p>التكاليف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="projectsDashboard_fuelLog" type="checkbox"
+                                                            value="projectsDashboard_fuelLog" name="more_filter_chx"
+                                                            data-chx-type="projectsDashboard">
+                                                        <label for="projectsDashboard_fuelLog"></label>
+                                                        <p>سجل الوقود</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="projectsDashboard_servicesLog" type="checkbox"
+                                                            value="projectsDashboard_servicesLog" name="more_filter_chx"
+                                                            data-chx-type="projectsDashboard">
+                                                        <label for="projectsDashboard_servicesLog"></label>
+                                                        <p> سجل خدمة الصيانة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="projectsDashboard_otherExpensesLog" type="checkbox"
+                                                            value="projectsDashboard_otherExpensesLog" name="more_filter_chx"
+                                                            data-chx-type="projectsDashboard">
+                                                        <label for="projectsDashboard_otherExpensesLog"></label>
+                                                        <p> سجل المصروفات الآخري</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="projectsDashboard_costsPeriod" type="checkbox"
+                                                            value="projectsDashboard_costsPeriod" name="more_filter_chx"
+                                                            data-chx-type="projectsDashboard">
+                                                        <label for="projectsDashboard_costsPeriod"></label>
+                                                        <p> فترة التكاليف</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="projectsDashboard_fuelLogPeriod" type="checkbox"
+                                                            value="projectsDashboard_fuelLogPeriod" name="more_filter_chx"
+                                                            data-chx-type="projectsDashboard">
+                                                        <label for="projectsDashboard_fuelLogPeriod"></label>
+                                                        <p> فترة سجل الوقود</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="projectsDashboard_servicesPeriod" type="checkbox"
+                                                            value="projectsDashboard_servicesPeriod" name="more_filter_chx"
+                                                            data-chx-type="projectsDashboard">
+                                                        <label for="projectsDashboard_servicesPeriod"></label>
+                                                        <p> فترة خدمات الصيانة</p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="projectsDashboard_otherExpensesPeriod" type="checkbox"
+                                                            value="projectsDashboard_otherExpensesPeriod" name="more_filter_chx"
+                                                            data-chx-type="projectsDashboard">
+                                                        <label for="projectsDashboard_otherExpensesPeriod"></label>
+                                                        <p> فترة المصروفات الآخري</p>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="reports_and_docs" type="checkbox"
+                                                    value="reports_and_docs all" name="more_filter_chx"
+                                                    data-chx-type="reports_and_docs" class="Master">
+                                                <label for="reports_and_docs">تقارير ومرفقات</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_reports_and_docs" type="checkbox" value="display_reports_and_docs"
+                                                            name="more_filter_chx" data-chx-type="reports_and_docs">
+                                                        <label for="display_reports_and_docs"></label>
+                                                        <p>استعراض</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="systemConfigurations" type="checkbox"
+                                                    value="systemConfigurations all" name="more_filter_chx"
+                                                    data-chx-type="systemConfigurations" class="Master">
+                                                <label for="systemConfigurations">إعدادات النظام</label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="edit_systemConfigurations" type="checkbox" value="edit_systemConfigurations"
+                                                            name="more_filter_chx" data-chx-type="systemConfigurations">
+                                                        <label for="edit_systemConfigurations"></label>
+                                                        <p>تعديل إعدادات النظام</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <span>Coded by
+                    <a href="https://si-dev.com/ru">SI-Dev</a>, 2018</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.rtlcss.com/bootstrap/v4.1.3/js/bootstrap.min.js" integrity="sha384-C/pvytx0t5v9BEbkMlBAGSPnI1TQU1IrTJ6DJbC8GBHqdMnChcb6U4xg4uRkIQCV"
+        crossorigin="anonymous"></script> -->
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+
+        // $(document).ready(function () {
+            // nav-tabs
+            // $('.nav-tabs li').on('click', function () {
+            //     $('.nav-tabs li').not(this).removeClass('active');
+            //     $(this).addClass('active');
+            // });
+
+
+            // Search-bar
+                // $(".search").keyup(function () {
+                //     var searchTerm = $(".search").val();
+                //     var listItem = $('.results tbody').children('tr');
+                //     var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
+
+                //     $.extend($.expr[':'], {
+                //         'containsi': function (elem, i, match, array) {
+                //             return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+                //         }
+                //     });
+
+                //     $(".results tbody tr").not(":containsi('" + searchSplit + "')").each(function (e) {
+                //         $(this).attr('visible', 'false');
+                //     });
+
+                //     $(".results tbody tr:containsi('" + searchSplit + "')").each(function (e) {
+                //         $(this).attr('visible', 'true');
+                //     });
+
+                //     var jobCount = $('.results tbody tr[visible="true"]').length;
+                //     $('.counter').text(jobCount + ' item');
+
+                //     if (jobCount == '0') { $('.no-result').show(); }
+                //     else { $('.no-result').hide(); }
+                // });
+
+                // table
+
+
+
+        // });
+
+    </script>
+</body>
+
+</html>

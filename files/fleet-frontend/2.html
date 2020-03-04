@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>الأسطول</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- <style>
+        body {
+            background-color: #e4e4e4;
+        }
+
+        .sidenav .nav-item {
+            background: #a3a0fb;
+            margin: 2px;
+            color: aliceblue !important;
+        }
+
+        .sidenav li.nav-item i {
+            padding-left: 0.5rem;
+        }
+
+        #navAccordion.sidenav .nav-link {
+            padding: 0.8rem 1rem;
+            color: #d1d0fd;
+        }
+
+        #navAccordion.sidenav .nav-item.active {
+            background-color: #43425d;
+        }
+
+        #navAccordion.sidenav .nav-item.active .nav-link {
+            color: #fff;
+        }
+
+        .navbar {
+            padding: 1rem 1.2rem 1rem 4.5rem;
+        }
+
+        .navbar-brand {
+            margin-left: 0;
+        }
+
+        .top_nav img {
+            padding: 0.4rem;
+        }
+
+        .navbar-collapse .form-inline i {
+            margin: 0 12px;
+        }
+
+        .cool-grey {
+            font-size: 1.2rem;
+            color: #a4afb7;
+        }
+
+        hr {
+            border: none;
+            border-left: 1.5px solid #e5eaea;
+            height: 62px;
+            width: 1px;
+            margin: 0 10px;
+            color: #ececf3;
+        }
+
+        .lightgray {
+            color: #babbbb;
+        }
+
+        a.dropdown-toggle,
+        a.dropdown-toggle::after {
+            color: #43425d;
+        }
+
+        main {
+            margin-right: 0 !important;
+        }
+
+        .page_title {
+            background-color: rgb(59, 134, 255);
+            padding: 1.777rem;
+            color: #fff;
+            margin-top: 1.4rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1.25rem;
+        }
+
+        .dark_btn {
+            background-color: #43425d;
+            color: #fff;
+        }
+
+        .page_content {
+            margin-left: 1.6rem;
+        }
+
+        .page_body {
+            padding-right: 0.5rem;
+        }
+
+        .page_body .col-md-4,
+        .col {
+            padding-right: 0;
+            /* padding: 0.5rem;
+            margin: 0 0.444rem; */
+        }
+
+        .page_body.container {
+            max-width: 100%;
+        }
+
+        .page_body .row {
+            margin-right: 0;
+        }
+
+        .white-bg {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        }
+
+        @media (min-width: 992px) {
+            main {
+                margin-right: 240px !important;
+            }
+
+            .page_body {
+                padding-right: 0;
+            }
+        }
+
+        .small_title {
+            color: #43425d;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 3;
+            margin-top: 0.6rem;
+        }
+
+        .company_form label,
+        .upload-btn-wrapper label {
+            width: 20%;
+            color: #43425d;
+        }
+
+        .company_form input {
+            display: inline-block;
+            width: 77%;
+            height: calc(1.5rem + 2px);
+        }
+
+        .company_form .form-group {
+            margin-bottom: 1rem;
+            line-height: 2rem;
+        }
+
+        .dark_btn {
+            background-color: #43425d;
+        }
+
+        .add_item {
+            cursor: pointer;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            width: fit-content;
+        }
+
+        .add_item i {
+            margin-left: 0.5rem;
+        }
+
+        .page_body .btn.xs_btn {
+            padding: 0rem 0.5rem;
+            background: #3b86ff;
+            color: #fff;
+            border-radius: 4px;
+            border: solid 1px #e8e9ec;
+        }
+
+        .form-control {
+            border: 1px solid #e8e9ec;
+        }
+
+        .form2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form2 label {
+            margin-bottom: 0;
+            width: 29%;
+        }
+
+        .form2 .input-group {
+            display: inline-flex;
+            width: 75%;
+        }
+
+        .form2 .list_actions {
+            display: inline-flex;
+        }
+
+        .form2 .form-control {
+            border-radius: .25rem !important;
+            margin-left: 0.1rem;
+        }
+
+        .form2 i {
+            margin: 0.3rem;
+        }
+
+        input::placeholder {
+            color: #e4e4e4;
+            font-size: 12px;
+        }
+
+        .form2 .input-group-append {
+            position: relative;
+        }
+
+        .form2 .dropdown-menu.show {
+            transform: translate3d(32px, 25px, 0px) !important;
+        }
+
+        .form2 .dropdown-menu {
+            min-width: 11.4rem;
+        }
+
+        .modal-title {
+            color: #fff;
+        }
+
+        .modal-body {
+            color: #fff;
+        }
+
+        .modal-body label {
+            width: 20%;
+        }
+
+        .addModal .modal-body input {
+            display: inline-block;
+            width: auto;
+        }
+
+        ._btn {
+            padding: 0.3rem 2.5rem;
+            border: none;
+        }
+
+        .modal-footer {
+            justify-content: center;
+            border: none;
+        }
+
+        .modal-footer>:not(:last-child) {
+            margin-left: 1.25rem;
+        }
+
+        .modal-footer,
+        .modal-body {
+            padding: 1.3rem;
+        }
+
+        .DeleteModal .list-group-item {
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(247, 247, 247, 0.22);
+        }
+
+        /* upload button */
+
+        .upload-btn-wrapper {
+            position: relative;
+            /* overflow: hidden; */
+            display: inline-block;
+        }
+
+        .upload-btn-wrapper button {
+            color: #fff;
+            color: #fff;
+            padding: 0.1rem 2rem;
+            font-size: smaller;
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        /* bootstrap select */
+
+        .bootstrap-select .dropdown-toggle .filter-option {
+            text-align: right;
+        }
+
+        .nav-tabs {
+            border-bottom: 1.5px solid #a4afb7;
+        }
+
+        .nav-tabs li {
+            padding: 1rem 2rem;
+        }
+
+        .nav-tabs li.active {
+            border-bottom: 2px solid rgb(59, 134, 255);
+        }
+
+        .nav-tabs li.active a {
+            color: rgb(59, 134, 255);
+        }
+
+        .nav-tabs li a {
+            color: #a4afb7;
+        }
+
+        .nav-tabs li:hover {
+            background-color: #ffffff61;
+        }
+
+        .nav-tabs li a:hover {
+            text-decoration: none;
+        }
+
+        .search_bar {
+            color: #a4afb7;
+        }
+
+        input[type="search"] {
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .search_bar .input-group-text {
+            background-color: transparent;
+            border: none;
+            color: #a4afb7;
+
+        }
+
+        .input-group.search_bar {
+            margin: 0.7rem 0;
+        }
+
+        /* table */
+    </style> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="ElKammar_Logo.png" alt="logo" srcset="" height="50">
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <span data-feather="home"></span>
+                        لوحة العرض
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bus"></i>
+                        الأسطول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-exclamation-circle"></i>
+                        أعطال وفحص
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell"></i>
+                        تذكيرات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-wrench"></i>
+                        خدمات الصيانة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-gas-pump"></i>
+                        الوقود
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user-friends"></i>
+                        جهات الإتصال
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>
+                        المشروعات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        تقارير ومرفقات
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i>
+                        إعدادات النظام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto mt-2 mt-md-0 top_nav">
+                <i class="fas fa-bell cool-grey"></i>
+                <hr>
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    أحمد محمد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+                <img src="profile-icon.png" width="60" height="60" class="rounded-circle">
+            </form>
+
+        </div>
+    </nav>
+    <main class="">
+        <div
+            class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+            <h1 class="h2">الأسطول</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                    <button class="btn dark_btn">
+                        <a href="./fleetMain-addCar.html">إضافة سيارة</a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="container page_body">
+
+            <div class="row">
+                <div class="col">
+                    <div class="page_body">
+                        <!-- Tab panes -->
+                        <!-- <div class="tab-content"> -->
+                        <!-- <div class="tab-pane active" id="previousIssue"> -->
+                        <div class="input-group input-group-lg search_bar">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-lg">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </div>
+                            <!-- <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"> -->
+                            <input class="form-control search_bar" type="search" id="search_input_all"
+                                onkeyup="FilterkeyWord_all_table()" placeholder="البحث">
+                        </div>
+                        <div class="num_rows" style="display: none;">
+
+                            <div class="form-group">
+                                <!--		Show Numbers Of Rows 		-->
+                                <select class="form-control" name="state" id="maxRows">
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                        </div>
+                        <table class="table table-class white-bg contacts_table table-hover tablesorter car_table" id="table-id">
+
+
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="wider_col"><span>السيارة</span> </th>
+                                    <th><span>المشروع</span> </th>
+                                    <th> <span>المشرف</span></th>
+                                    <th><span>كم حالي </span></th>
+                                    <th><span>متوسط كم/الشهر </span></th>
+                                    <th> <span>تكلفة الكيلومتر</span></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td class="contact_img">
+                                        <img class="" height="35" src="./bus_image.jpg" alt="profile-pic">
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <h6 class="contact_name">504 [Toyota Coaster]</h6>
+                                                <h6 class="">موديل 2018</h6>
+                                                <h6 class="">ق أ س 5478</h6>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div><i class="fa fa-circle success_status smaller_icon"></i></div>
+                                                <div><i class="fa fa-file-invoice warning_status"></i></div>
+                                                <div><i class="fa fa-wrench danger_status"></i></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>مشروع 2</td>
+                                    <td>مشرف 5</td>
+                                    <td>
+                                        <div><i class="fa fa-location-arrow success_status"></i></div>
+                                        <div>155.654 <i class="fa fa-history success_status"></i></div>
+                                    </td>
+                                    <td class="warning_status">8500</td>
+                                    <td><span class="success_status">4.2</span>/4.5</td>
+                                    <td class="car_table_actions">
+                                        <i class="fa fa-location-arrow safe_status" data-toggle="modal"
+                                            data-target="#gps_modal"></i>
+                                        <a href="./fleet-assign-to-driver.html">
+                                            <i class="fa fa-address-book safe_status"></i>
+                                        </a>
+                                        <a href="./fleet-expenses-add.html">
+                                            <i class="fa fa-money-bill safe_status"></i>
+                                        </a>
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="contact_img">
+                                        <img class="" height="35" src="./bus_image.jpg" alt="profile-pic">
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <h6 class="contact_name">124 [Toyota Coaster]</h6>
+                                                <h6 class="">موديل 2018</h6>
+                                                <h6 class="">ق أ س 5478</h6>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div><i class="fa fa-circle success_status smaller_icon"></i></div>
+                                                <div><i class="fa fa-file-invoice warning_status"></i></div>
+                                                <div><i class="fa fa-wrench danger_status"></i></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>مشروع 2</td>
+                                    <td>مشرف 2</td>
+                                    <td>
+                                        <div><i class="fa fa-location-arrow deactive"></i></div>
+                                        <div>155.654 <i class="fa fa-history success_status"></i></div>
+                                    </td>
+                                    <td class="warning_status">8500</td>
+                                    <td>
+                                        <p> <span class="success_status">4.2</span>/4.5</p>
+                                    </td>
+                                    <td class="car_table_actions">
+                                        <i class="fa fa-location-arrow safe_status" data-toggle="modal"
+                                            data-target="#gps_modal"></i>
+                                        <a href="./fleet-assign-to-driver.html">
+                                            <i class="fa fa-address-book safe_status"></i>
+                                        </a>
+                                        <a href="./fleet-expenses-add.html">
+                                            <i class="fa fa-money-bill safe_status"></i>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                
+
+
+                            <tbody>
+                        </table>
+
+                        <!--		Start Pagination -->
+                        <div class='pull-left pagination-container'>
+                            <nav>
+                                <ul class="pagination">
+                                    <!--	Here the JS Function Will Add the Rows -->
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- <div class="rows_count">Showing 11 to 20 of 91 entries</div> -->
+
+                        <!-- </div> -->
+
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- GPS MODAL -->
+    <div class="modal fade" id="gps_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <i class="fa fa-times-circle" data-dismiss="modal"></i>
+                </div>
+                <div class="modal-body">
+                    <p class="small_title">تتبع حركة السيارة</p>
+                    <div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101839.35258916968!2d31.188423265456162!3d30.059469890204635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21beeb%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1582653291265!5m2!1sen!2seg"
+                            width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    </div>
+                    <p>السرعة: 90 كم/الساعة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                2020
+            </div>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/jquery.tablesorter.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="main.js"></script>
+
+    <script>
+        $(function () {
+            $("#table-id").tablesorter();
+        });
+    </script>
+
+    <!-- <script>
+$(function () {
+  $('table')
+    .on('click', 'th', function () {
+      var index = $(this).index(),
+          rows = [],
+          thClass = $(this).hasClass('asc') ? 'desc' : 'asc';
+
+      $('#table-id th').removeClass('asc desc');
+      $(this).addClass(thClass);
+
+      $('#table-id tbody tr').each(function (index, row) {
+        rows.push($(row).detach());
+      });
+
+      rows.sort(function (a, b) {
+        var aValue = $(a).find('td').eq(index).text(),
+            bValue = $(b).find('td').eq(index).text();
+
+        return aValue > bValue
+             ? 1
+             : aValue < bValue
+             ? -1
+             : 0;
+      });
+
+      if ($(this).hasClass('desc')) {
+        rows.reverse();
+      }
+
+      $.each(rows, function (index, row) {
+        $('#table-id tbody').append(row);
+      });
+    });
+});
+</script> -->
+</body>
+
+</html>

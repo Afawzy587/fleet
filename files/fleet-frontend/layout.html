@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fleet Management System</title>
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.1.3/css/bootstrap.min.css"
+        integrity="sha384-Jt6Tol1A2P9JBesGeCxNrxkmRFSjWCBW1Af7CSQSKsfMVQCqnUVWhZzG0puJMCK6" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <!-- Custom styles -->
+    <!-- <link href="dashboard.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="sidemenu.css">
+    <style>
+        body {
+            background-color: #e4e4e4;
+        }
+
+        .sidenav .nav-item {
+            background: #a3a0fb;
+            margin: 2px;
+            color: aliceblue !important;
+        }
+
+        .sidenav li.nav-item i {
+            padding-left: 0.5rem;
+        }
+
+        #navAccordion.sidenav .nav-link {
+            padding: 0.8rem 1rem;
+            color: #d1d0fd;
+        }
+
+        #navAccordion.sidenav .nav-item.active {
+            background-color: #43425d;
+        }
+
+        #navAccordion.sidenav .nav-item.active .nav-link {
+            color: #fff;
+        }
+
+        .navbar {
+            padding: 1rem 1.2rem 1rem 4.5rem;
+        }
+
+        .navbar-brand {
+            margin-left: 0;
+        }
+
+        .top_nav img {
+            padding: 0.4rem;
+        }
+
+        .navbar-collapse .form-inline i {
+            margin: 0 12px;
+        }
+
+        .cool-grey {
+            font-size: 1.2rem;
+            color: #a4afb7;
+        }
+
+        hr {
+            border: none;
+            border-left: 1.5px solid #e5eaea;
+            height: 62px;
+            width: 1px;
+            margin: 0 10px;
+            color: #ececf3;
+        }
+
+        .lightgray {
+            color: #babbbb;
+        }
+
+        a.dropdown-toggle {
+            color: #43425d;
+        }
+
+        .dropdown-menu {
+            left: 6.5%;
+        }
+
+        .dropdown-toggle::after {
+            display: contents;
+            content: "\f107";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #a4afb7;
+        }
+
+        main {
+            margin-right: 0 !important;
+        }
+
+        .page_title {
+            background-color: rgb(59, 134, 255);
+            padding: 1.777rem;
+            color: #fff;
+            margin-top: 1.4rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1.25rem;
+        }
+
+        .dark_btn {
+            background-color: #43425d;
+            color: #fff;
+        }
+
+        .page_content {
+            margin-left: 1.6rem;
+        }
+
+        .page_body {
+            background-color: #fff;
+        }
+
+        @media (min-width: 992px) {
+            main {
+                margin-right: 240px !important;
+            }
+        }
+
+        .nav-tabs {
+            border-bottom: 1.5px solid #a4afb7;
+        }
+
+        .nav-tabs li {
+            padding: 1rem 2rem;
+        }
+
+        .nav-tabs li.active {
+            border-bottom: 2px solid rgb(59, 134, 255);
+        }
+
+        .nav-tabs li.active a {
+            color: rgb(59, 134, 255);
+        }
+
+        .nav-tabs li a {
+            color: #a4afb7;
+        }
+
+        .nav-tabs li:hover {
+            background-color: #ffffff61;
+        }
+
+        .nav-tabs li a:hover {
+            text-decoration: none;
+        }
+
+        .search_bar {
+            color: #a4afb7;
+        }
+
+        input[type="search"] {
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .search_bar .input-group-text {
+            background-color: transparent;
+            border: none;
+            color: #a4afb7;
+
+        }
+
+        .input-group.search_bar {
+            margin: 0.7rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="ElKammar_Logo.png" alt="logo" srcset="" height="50">
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <span data-feather="home"></span>
+                        لوحة العرض
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bus"></i>
+                        الأسطول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-exclamation-circle"></i>
+                        أعطال وفحص
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell"></i>
+                        تذكيرات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-wrench"></i>
+                        خدمات الصيانة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-gas-pump"></i>
+                        الوقود
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user-friends"></i>
+                        جهات الإتصال
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>
+                        المشروعات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        تقارير ومرفقات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i>
+                        إعدادات النظام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto mt-2 mt-md-0 top_nav">
+                <i class="fas fa-bell cool-grey"></i>
+                <hr>
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    أحمد محمد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">الصفحة الشخصية</a>
+                    <a class="dropdown-item" href="#">تسجيل الخروج</a>
+                </div>
+                <img src="profile-icon.png" width="60" height="60" class="rounded-circle">
+            </form>
+
+        </div>
+    </nav>
+    <main class="">
+        <div
+            class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+            <h1 class="h2">خدمات الصيانة</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                    <button class="btn dark_btn">أضف أمر شغل</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="page_content">
+            <div class="page_header">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist" id="myTab">
+                    <li class="active">
+                        <a href="#previousIssue" role="tab" data-toggle="tab">جهات الاتصال</a>
+                    </li>
+                    <li>
+                        <a href="#currentIssue" role="tab" data-toggle="tab">إدارة صلاحيات مستخدمي النظام
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#nextIssue" role="tab" data-toggle="tab">الموردين</a>
+                    </li>
+                </ul>
+                <div class="input-group input-group-lg search_bar">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                    <!-- <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"> -->
+                    <input class="form-control" type="search" placeholder="البحث" aria-label="Search">
+                </div>
+
+
+            </div>
+            <div class="page_body">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="previousIssue">
+                        Previous issue
+                    </div>
+                    <div class="tab-pane" id="currentIssue">Current issue</div>
+                    <div class="tab-pane" id="nextIssue">Next issue</div>
+                </div>
+                <br> data
+                <br> data
+                <br> dataaaaaaa
+                <br>
+                <br>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <span>Coded by
+                    <a href="https://si-dev.com/ru">SI-Dev</a>, 2018</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.rtlcss.com/bootstrap/v4.1.3/js/bootstrap.min.js"
+        integrity="sha384-C/pvytx0t5v9BEbkMlBAGSPnI1TQU1IrTJ6DJbC8GBHqdMnChcb6U4xg4uRkIQCV"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Side-menu
+        $(document).ready(function () {
+            $('#navAccordion li').on('click', function () {
+                $('#navAccordion li').not(this).removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

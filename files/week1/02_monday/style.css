@@ -1,0 +1,55 @@
+@font-face {
+    font-family: dinnextltw23 ;
+    src: url(din-next-lt-w23-regular/din-next-lt-w23-regular.ttf);
+}
+
+body {
+    background-color: #e4e4e4;
+    font-family: dinnextltw23;
+}
+
+/* colors */
+.dusk{
+    color: #43425d;
+}
+.white{
+
+    color: #ffffff;
+}
+.periwinkle-blue{
+    color: #a3a0fb;
+}
+.dodger-blue{
+    color: #3b86ff;
+}
+.pale-teal{
+    color: #9ccf9a;
+}
+.darkish-green{
+    color: #389033;
+}
+.dark-pastel-green{
+    color: #58a754;
+}
+.cool-grey{
+    color: #a4afb7;
+}
+.rose{
+    color: #cc6769;
+}
+.tangerine{
+    color: #ff9300;
+}
+.robins-egg{
+    color: #56d9fe;
+}
+.salmon{
+    color: #ff8373;
+}
+.dark_bg{
+    background-color: #43425d;
+}
+.darkish-green-bg{
+    background-color: #389033;
+
+}

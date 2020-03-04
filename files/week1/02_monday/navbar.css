@@ -1,0 +1,106 @@
+.sidenav .nav-item {
+    background: #a3a0fb;
+    margin: 2px;
+    color: aliceblue !important;
+}
+
+.sidenav li.nav-item i {
+    padding-left: 0.5rem;
+}
+
+#navAccordion.sidenav .nav-link {
+    padding: 0.8rem 1rem;
+    color: #d1d0fd;
+}
+
+#navAccordion.sidenav .nav-item.active {
+    background-color: #43425d;
+}
+
+#navAccordion.sidenav .nav-item.active .nav-link {
+    color: #fff;
+}
+
+.navbar {
+    padding: 1rem 1.2rem 1rem 4.5rem;
+}
+
+.navbar-brand {
+    margin-left: 0;
+}
+
+.top_nav img {
+    padding: 0.4rem;
+}
+
+.navbar-collapse .form-inline i {
+    margin: 0 12px;
+}
+
+.cool-grey {
+    font-size: 1.2rem;
+    color: #a4afb7;
+}
+
+hr {
+    border: none;
+    border-left: 1.5px solid #e5eaea;
+    height: 62px;
+    width: 1px;
+    margin: 0 10px;
+    color: #ececf3;
+}
+
+a.dropdown-toggle {
+    color: #43425d;
+}
+
+.dropdown-menu {
+    left: 5%;
+}
+
+.dropdown-toggle::after {
+    display: contents;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #a4afb7;
+}
+
+main {
+    margin-right: 0 !important;
+}
+
+.page_title {
+    background-color: rgb(59, 134, 255);
+    padding: 1.777rem;
+    color: #fff;
+    margin-top: 1.4rem;
+}
+
+.page_titles h1,
+.page_titles h4 {
+    display: inline-block;
+}
+
+.page_titles strong {
+    margin: 0 0.4rem;
+}
+
+.btn {
+    padding: 0.5rem 1.25rem;
+}
+
+.logo_hr {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    main {
+        margin-right: 240px !important;
+    }
+
+    .logo_hr {
+        display: block;
+    }
+}

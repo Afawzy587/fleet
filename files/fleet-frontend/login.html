@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.1.3/css/bootstrap.min.css"
+        integrity="sha384-Jt6Tol1A2P9JBesGeCxNrxkmRFSjWCBW1Af7CSQSKsfMVQCqnUVWhZzG0puJMCK6" crossorigin="anonymous">
+<link rel="stylesheet" href="css/login.css">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 registration sidebar">
+                <div class="sidebar-sticky">
+                    <h1 class="h3 centered">نظام إدارة الأسطول</h1>
+                    <p class="centered gray_text">من فضلك قم بالدخول الي حسابك</p>
+                    <div class="alert alert-danger faildlogin_msg" role="alert">
+                     البريد الالكتروني غير صحيح
+                      </div>
+                    <form class="needs-validation login-form" novalidate>
+                        <div class="form-group mb-5">
+                            <input type="email" class="form-control" id="email" placeholder="البريد الألكتروني" autocomplete="off"
+                            required>
+                        <div class="invalid-feedback">
+                       برجاء إدخال بريد الكتروني صحيح
+                        </div>
+                        </div>
+
+                        <div class="form-group mb-5">
+                            <input type="password" class="form-control" id="password" placeholder="كلمة المرور" required
+                                minlength="6">
+                            <div class="invalid-feedback">
+                                كلمة المرور لا يجب أن تقل عن 6 حروف!
+                            </div>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-5">
+                            <span>
+                                <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                                <label class="custom-control-label" for="customCheck">تذكرني</label>
+                            </span>
+                            <span class="left">
+                                <a href="forget-password.html">نسيت كلمة المرور </a>
+                            </span>
+                        </div>
+
+                        <div class="form-group mt-3 centered">
+                            <button class="btn" type="submit">دخول</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 side-bg">
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.rtlcss.com/bootstrap/v4.1.3/js/bootstrap.min.js"
+        integrity="sha384-C/pvytx0t5v9BEbkMlBAGSPnI1TQU1IrTJ6DJbC8GBHqdMnChcb6U4xg4uRkIQCV"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+  $('.side-bg').css({ height: $(window).innerHeight() });
+  $(window).resize(function(){
+      if ($(window).innerHeight() >= $( document ).innerHeight() ){
+    $('.side-bg').css({ height: $(window).innerHeight() });
+      console.log('eddd' + $( document ).height());
+
+      }
+  });
+});
+
+        (function () {
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+</body>
+
+</html>

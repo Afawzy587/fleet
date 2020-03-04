@@ -1,0 +1,78 @@
+.container {
+    max-width: 100%;
+}
+
+.registration h1 {
+    font-weight: 700;
+    color: #43425d;
+}
+
+.registration>div {
+    padding: 6rem 8rem;
+    margin: 15% auto;
+    max-width: 800px;
+}
+
+.login-form .form-control {
+    border: none;
+    border-bottom: 1.3px solid #ced4da;
+    border-radius: 0;
+}
+
+.login-form .form-control:focus {
+    box-shadow: none;
+    border-bottom: 1.5px solid #80bdff;
+}
+
+.login-form .btn[type="submit"] {
+    background-color: #43425d;
+    border-color: #43425d;
+    padding: .375rem 2.75rem;
+    color: #fff;
+}
+
+.left {
+    float: left;
+}
+
+.login-form .custom-checkbox .custom-control-label::before {
+    border: 1.3px solid #d2d4da;
+    background-color: transparent;
+}
+
+.login-form a {
+    color: #43425d;
+}
+
+.centered {
+    text-align: center;
+}
+
+.gray_text {
+    color: #d3d3d7;
+}
+
+.side-bg {
+    background: url(../img/login_image.jpg) no-repeat center center ;
+    background-size: cover;
+    width: 100%;
+}
+
+@media (max-width: 1000px){
+    .registration>div {
+        padding: 16% 5%;
+}
+}
+
+@media (max-width: 767px){
+     .side-bg {
+        display: none;
+     }
+}
+
+.alert{
+    display: none;
+}
+.faildlogin_msg{
+    display: block;
+}

@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>جهات الإتصال - الصلاحيات</title>
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.1.3/css/bootstrap.min.css"
+        integrity="sha384-Jt6Tol1A2P9JBesGeCxNrxkmRFSjWCBW1Af7CSQSKsfMVQCqnUVWhZzG0puJMCK6" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+
+    <!-- Custom styles -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- <link href="style.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="sidemenu.css"> -->
+    <!-- <style>
+        body {
+            background-color: #e4e4e4;
+        }
+
+        .sidenav .nav-item {
+            background: #a3a0fb;
+            margin: 2px;
+            color: aliceblue !important;
+        }
+
+        .sidenav li.nav-item i {
+            padding-left: 0.5rem;
+        }
+
+        #navAccordion.sidenav .nav-link {
+            padding: 0.8rem 1rem;
+            color: #d1d0fd;
+        }
+
+        #navAccordion.sidenav .nav-item.active {
+            background-color: #43425d;
+        }
+
+        #navAccordion.sidenav .nav-item.active .nav-link {
+            color: #fff;
+        }
+
+        .navbar {
+            padding: 1rem 1.2rem 1rem 4.5rem;
+        }
+
+        .navbar-brand {
+            margin-left: 0;
+        }
+
+        .top_nav img {
+            padding: 0.4rem;
+        }
+
+        .navbar-collapse .form-inline i {
+            margin: 0 12px;
+        }
+
+        .cool-grey {
+            font-size: 1.2rem;
+            color: #a4afb7;
+        }
+
+        hr {
+            border: none;
+            border-left: 1.5px solid #e5eaea;
+            height: 62px;
+            width: 1px;
+            margin: 0 10px;
+            color: #ececf3;
+        }
+
+        .lightgray {
+            color: #babbbb;
+        }
+
+        a.dropdown-toggle,
+        a.dropdown-toggle::after {
+            color: #43425d;
+        }
+
+        main {
+            margin-right: 0 !important;
+        }
+
+        .page_title {
+            background-color: rgb(59, 134, 255);
+            padding: 1.777rem;
+            color: #fff;
+            margin-top: 1.4rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1.25rem;
+        }
+
+        .dark_btn {
+            background-color: #43425d;
+            color: #fff;
+        }
+
+        .page_content {
+            margin-left: 1.6rem;
+        }
+
+        .page_body {
+            padding-right: 0.5rem;
+        }
+
+        .page_body .col-md-4,
+        .col {
+            padding-right: 0;
+            /* padding: 0.5rem;
+            margin: 0 0.444rem; */
+        }
+
+        .page_body.container {
+            max-width: 100%;
+        }
+
+        .page_body .row {
+            margin-right: 0;
+        }
+
+        .white-bg {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+        }
+
+        @media (min-width: 992px) {
+            main {
+                margin-right: 240px !important;
+            }
+            .page_body {
+                padding-right: 0;
+            }
+        }
+
+        .small_title {
+            color: #43425d;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 3;
+            margin-top: 0.6rem;
+        }
+
+        .company_form label,
+        .upload-btn-wrapper label {
+            width: 20%;
+            color: #43425d;
+        }
+
+        .company_form input {
+            display: inline-block;
+            width: 77%;
+            height: calc(1.5rem + 2px);
+        }
+
+        .company_form .form-group {
+            margin-bottom: 1rem;
+            line-height: 2rem;
+        }
+
+        .dark_btn {
+            background-color: #43425d;
+        }
+
+        .add_item {
+            cursor: pointer;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            width: fit-content;
+        }
+
+        .add_item i {
+            margin-left: 0.5rem;
+        }
+
+        .page_body .btn.xs_btn {
+            padding: 0rem 0.5rem;
+            background: #3b86ff;
+            color: #fff;
+            border-radius: 4px;
+            border: solid 1px #e8e9ec;
+        }
+
+        .form-control {
+            border: 1px solid #e8e9ec;
+        }
+
+        .form2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form2 label {
+            margin-bottom: 0;
+            width: 29%;
+        }
+
+        .form2 .input-group {
+            display: inline-flex;
+            width: 75%;
+        }
+
+        .form2 .list_actions {
+            display: inline-flex;
+        }
+
+        .form2 .form-control {
+            border-radius: .25rem !important;
+            margin-left: 0.1rem;
+        }
+
+        .form2 i {
+            margin: 0.3rem;
+        }
+
+        input::placeholder {
+            color: #e4e4e4;
+            font-size: 12px;
+        }
+
+        .form2 .input-group-append {
+            position: relative;
+        }
+
+        .form2 .dropdown-menu.show {
+            transform: translate3d(32px, 25px, 0px) !important;
+        }
+
+        .form2 .dropdown-menu {
+            min-width: 11.4rem;
+        }
+
+        .modal-title {
+            color: #fff;
+        }
+
+        .modal-body {
+            color: #fff;
+        }
+
+        .modal-body label {
+            width: 20%;
+        }
+
+        .addModal .modal-body input {
+            display: inline-block;
+            width: auto;
+        }
+
+        ._btn {
+            padding: 0.3rem 2.5rem;
+            border: none;
+        }
+
+        .modal-footer {
+            justify-content: center;
+            border: none;
+        }
+
+        .modal-footer>:not(:last-child) {
+            margin-left: 1.25rem;
+        }
+
+        .modal-footer,
+        .modal-body {
+            padding: 1.3rem;
+        }
+
+        .DeleteModal .list-group-item {
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(247, 247, 247, 0.22);
+        }
+
+        /* upload button */
+
+        .upload-btn-wrapper {
+            position: relative;
+            /* overflow: hidden; */
+            display: inline-block;
+        }
+
+        .upload-btn-wrapper button {
+            color: #fff;
+            color: #fff;
+            padding: 0.1rem 2rem;
+            font-size: smaller;
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        /* bootstrap select */
+
+        .bootstrap-select .dropdown-toggle .filter-option {
+            text-align: right;
+        }
+
+        .nav-tabs {
+            border-bottom: 1.5px solid #a4afb7;
+        }
+
+        .nav-tabs li {
+            padding: 1rem 2rem;
+        }
+
+        .nav-tabs li.active {
+            border-bottom: 2px solid rgb(59, 134, 255);
+        }
+
+        .nav-tabs li.active a {
+            color: rgb(59, 134, 255);
+        }
+
+        .nav-tabs li a {
+            color: #a4afb7;
+        }
+
+        .nav-tabs li:hover {
+            background-color: #ffffff61;
+        }
+
+        .nav-tabs li a:hover {
+            text-decoration: none;
+        }
+
+        .search_bar {
+            color: #a4afb7;
+        }
+
+        input[type="search"] {
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .search_bar .input-group-text {
+            background-color: transparent;
+            border: none;
+            color: #a4afb7;
+
+        }
+
+        .input-group.search_bar {
+            margin: 0.7rem 0;
+        }
+/* table */
+
+
+
+
+
+
+    </style> -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="ElKammar_Logo.png" alt="logo" srcset="" height="50">
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <span data-feather="home"></span>
+                        لوحة العرض
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bus"></i>
+                        الأسطول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-exclamation-circle"></i>
+                        أعطال وفحص
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell"></i>
+                        تذكيرات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-wrench"></i>
+                        خدمات الصيانة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-gas-pump"></i>
+                        الوقود
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user-friends"></i>
+                        جهات الإتصال
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>
+                        المشروعات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        تقارير ومرفقات
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i>
+                        إعدادات النظام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto mt-2 mt-md-0 top_nav">
+                <i class="fas fa-bell cool-grey"></i>
+                <hr>
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    أحمد محمد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+                <img src="profile-icon.png" width="60" height="60" class="rounded-circle">
+            </form>
+
+        </div>
+    </nav>
+    <main class="">
+        <div
+            class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+            <h1 class="h2">خدمات الصيانة</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                    <button class="btn dark_btn" data-toggle="modal" data-target="#AddModalCenter"> أضف مجموعة</button>
+                </div>
+            </div>
+
+            <!-- Add Modal -->
+            <div class="modal fade addModal" id="AddModalCenter" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered " role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            xx
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>اسم المجموعة</label>
+                                    <input type="text" class="form-control" placeholder=" اسم المجموعة" maxlength="25"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>الوصف</label>
+                                    <textarea placeholder="الوصف" class="form-control" cols="20" rows="5"
+                                        required></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn _btn btn-success dark_btn save_Add_btn"
+                                    data-dismiss="modal">حفظ</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container page_body">
+            <div class="row">
+                <div class="col">
+                    <ul class="nav nav-tabs" role="tablist" id="myTab">
+                        <li>
+                            <a href="./contacts-main.html">جهات الاتصال</a>
+                        </li>
+                        <li class="active">
+                            <a href="">إدارة صلاحيات مستخدمي النظام
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./contacts-suppliers.html">الموردين</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="page_body">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <h3 class="mtb-3 small_title"> مجموعات المستخدمين</h3>
+
+                            <div class="num_rows" style="display: none;">
+
+                                <div class="form-group">
+                                    <!--		Show Numbers Of Rows 		-->
+                                    <select class="form-control" name="state" id="maxRows">
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <table class="datatable table white-bg contacts_table table-hover" id="table-id">
+                                <thead>
+                                    <tr>
+                                        <th>المجموعة</th>
+                                        <th>الوصف</th>
+                                        <th>الأعضاء</th>
+                                        <th>إجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <!-- confirm delete Modal -->
+                                    <div class="modal fade addModal" id="Deleteconfirmation" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered " role="document">
+                                            <div class="modal-content dark_bg">
+
+                                                <div class="modal-body">
+                                                    <h5 class="white_text center">تأكيد الحذف</h5>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn _btn btn-light"
+                                                        data-dismiss="modal">إغلاق</button>
+                                                    <button type="button"
+                                                        class="btn _btn btn-danger rose-bg delete_confirmation_btn"
+                                                        data-dismiss="modal">تأكيد</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Edit Modal -->
+                                    <div class="modal fade groupsModal" id="EditModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered " role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <i class="fa fa-times-circle" data-dismiss="modal"></i>
+                                                </div>
+                                                <form>
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <div class="white-bg">
+                                                                    <p class="small_title">الإدارة</p>
+                                                                    <ul class="nav modal_sidenav " role="tablist"
+                                                                        id="myTab">
+                                                                        <li class="active">
+                                                                            <a href="#group1" role="tab"
+                                                                                data-toggle="tab"><i
+                                                                                    class="fa fa-caret-left active_pointer"></i>الإدارة
+                                                                                العامة </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#group2" role="tab"
+                                                                                data-toggle="tab"><i
+                                                                                    class="fa fa-caret-left active_pointer"></i>الإدارة
+                                                                                المالية</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#group3" role="tab"
+                                                                                data-toggle="tab"><i
+                                                                                    class="fa fa-caret-left active_pointer"></i>إدارة
+                                                                                الصيانة</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#group4" role="tab"
+                                                                                data-toggle="tab"><i
+                                                                                    class="fa fa-caret-left active_pointer"></i>إدارة
+                                                                                الصيانة</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#group5" role="tab"
+                                                                                data-toggle="tab"><i
+                                                                                    class="fa fa-caret-left active_pointer"></i>إدارة
+                                                                                الصيانة</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#group6" role="tab"
+                                                                                data-toggle="tab"><i
+                                                                                    class="fa fa-caret-left active_pointer"></i>إدارة
+                                                                                الصيانة</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <div class="tab-content">
+                                                                    <div class="tab-pane " id="previousIssue">
+                                                                        <div class="grey_bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">أعضاء
+                                                                                        المجموعة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="white-bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">اللادارة
+                                                                                        العامة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="grey_bg groupModalFooter">
+                                                                            <button type="submit"
+                                                                                class="btn _btn btn-success dark_btn save_Add_btn"
+                                                                                data-dismiss="modal">حفظ</button>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="tab-pane active" id="group1">
+                                                                        <div class="grey_bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">أعضاء
+                                                                                        المجموعة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="white-bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">اللادارة
+                                                                                        العامة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="grey_bg groupModalFooter">
+                                                                            <button type="submit"
+                                                                                class="btn _btn btn-success dark_btn save_Add_btn"
+                                                                                data-dismiss="modal">حفظ</button>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="tab-pane" id="group2">
+                                                                        <div class="grey_bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">أعضاء
+                                                                                        المجموعة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="white-bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">اللادارة
+                                                                                        المالية</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="grey_bg groupModalFooter">
+                                                                            <button type="submit"
+                                                                                class="btn _btn btn-success dark_btn save_Add_btn"
+                                                                                data-dismiss="modal">حفظ</button>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="tab-pane" id="group3">
+                                                                        <div class="grey_bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">أعضاء
+                                                                                        المجموعة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="white-bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">إدارة الصيانة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="grey_bg groupModalFooter">
+                                                                            <button type="submit"
+                                                                                class="btn _btn btn-success dark_btn save_Add_btn"
+                                                                                data-dismiss="modal">حفظ</button>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="tab-pane" id="group4">
+                                                                        <div class="grey_bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">أعضاء
+                                                                                        المجموعة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="white-bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">إدارة الصيانة
+                                                                                        </p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="grey_bg groupModalFooter">
+                                                                            <button type="submit"
+                                                                                class="btn _btn btn-success dark_btn save_Add_btn"
+                                                                                data-dismiss="modal">حفظ</button>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="tab-pane" id="group5">
+                                                                        <div class="grey_bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">أعضاء
+                                                                                        المجموعة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="white-bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">اللادارة
+                                                                                        العامة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="grey_bg groupModalFooter">
+                                                                            <button type="submit"
+                                                                                class="btn _btn btn-success dark_btn save_Add_btn"
+                                                                                data-dismiss="modal">حفظ</button>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="tab-pane" id="group6">
+                                                                        <div class="grey_bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">أعضاء
+                                                                                        المجموعة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="white-bg">
+                                                                            <ul class="modal_nav_body">
+                                                                                <li class="row_title">
+                                                                                    <p class="small_title">اللادارة
+                                                                                        العامة</p>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <input id="contact1" type="checkbox"
+                                                                                        value="contact1"
+                                                                                        name="more_filter_chx">
+                                                                                    <label for="contact1">موظف1</label>
+                                                                                </li>
+                                                                            </ul>
+
+                                                                        </div>
+                                                                        <div class="grey_bg groupModalFooter">
+                                                                            <button type="submit"
+                                                                                class="btn _btn btn-success dark_btn save_Add_btn"
+                                                                                data-dismiss="modal">حفظ</button>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>مديري النظام</td>
+                                        <td>جميع صلاحيات النظام</td>
+                                        <td>أحمد محمد ،موظف2</td>
+                                        <td class="actions">
+                                            <a href="./contacts-privilage-panel.html">
+                                                <i class="fas fa-lock tangerine"></i>
+                                            </a>
+                                            <i class="fas fa-user-friends" data-toggle="modal"
+                                                data-target="#EditModal"></i>
+                                            <a href="./contacts-add-contact.html">
+                                                <i class="far fa-edit darkish-green"></i>
+                                            </a>
+
+                                            <i class="fas fa-trash rose" data-toggle="modal"
+                                                data-target="#Deleteconfirmation"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--		Start Pagination -->
+                            <div class='pull-left pagination-container'>
+                                <nav>
+                                    <ul class="pagination">
+                                        <!--	Here the JS Function Will Add the Rows -->
+                                    </ul>
+                                </nav>
+                            </div>
+                            <!-- <div class="rows_count">Showing 11 to 20 of 91 entries</div> -->
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <span>Coded by
+                    <a href="https://si-dev.com/ru">SI-Dev</a>, 2018</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.rtlcss.com/bootstrap/v4.1.3/js/bootstrap.min.js" integrity="sha384-C/pvytx0t5v9BEbkMlBAGSPnI1TQU1IrTJ6DJbC8GBHqdMnChcb6U4xg4uRkIQCV"
+        crossorigin="anonymous"></script> -->
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

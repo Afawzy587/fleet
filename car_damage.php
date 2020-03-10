@@ -57,7 +57,7 @@
             <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group mr-2">
                     <button class="btn dark_btn">
-                        <a href="./add_damage.php?c=<?php echo $_car['car_damage_car_id'];?>"><?php echo $lang['DAMAGE_ADD'];?></a>
+                        <a href="./add_damage.php?c=<?php echo $mId;?>"><?php echo $lang['DAMAGE_ADD'];?></a>
                     </button>
                 </div>
             </div>

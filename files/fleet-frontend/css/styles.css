@@ -43,6 +43,9 @@ body {
 .cool-grey, .disable{
     color: #a4afb7;
 }
+.light-grey{
+    color: #e1e1e4;
+}
 .rose, .danger_status{
     color: #cc6769;
 }
@@ -160,6 +163,54 @@ label.error{
 
 .inline_item{
     display: inline-block;
+}
+
+.notBold, table th tr.notBold{
+    font-weight: 400!important;
+}
+
+.form-group.has-error .help-block{
+    color: #dc3545;
+}
+
+table td{
+    height: 3.5rem;
+}
+
+.bootstrap-select>.dropdown-toggle {
+text-align: left;
+}
+
+label.custom-file-label{
+    height: 1.7rem;
+    padding: 0.1rem 0.5rem;
+}
+
+.custom-file-label::after{
+    padding: .1rem .75rem;
+}
+
+label.small_label{
+    width: 17%;
+}
+
+span.select2-selection.select2-selection--multiple{
+    height: 1.7rem;
+}
+
+span.select2-selection.select2-selection--multiple,
+.select2-container--default.select2-container--focus .select2-selection--multiple{
+    border: 1px solid #e8e9ec;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice{
+    font-size: .9rem;
+    color: #3b86ff;
+    border: none;
+}
+
+input.select2-search__field::placeholder{
+    content: 'اختر';
 }
 /* Side-menu */
 .nav-link:hover {
@@ -599,7 +650,8 @@ input::placeholder {
 }
 
 .upload_logo .custom-file-input:lang(en)~.custom-file-label::after,
-.fleet_general_form .custom-file-input:lang(en)~.custom-file-label::after{
+.fleet_general_form .custom-file-input:lang(en)~.custom-file-label::after,
+.custom-file-input:lang(en)~.custom-file-label::after{
     background-color: #434261;    
 }
 
@@ -766,18 +818,21 @@ input::placeholder {
 }
 
 .permission_item input[type="checkbox"],
-.services_tabs_content input[type="checkbox"]{
+.services_tabs_content input[type="checkbox"],
+.route_type input[type="checkbox"]{
     position: absolute;
     opacity: 0;
 }
 
-.permission_item label{
+.permission_item label,
+.route_type label{
     position: inherit;
     cursor: pointer;
     padding-right: 10px;
 }
 
-.permission_item label:before{
+.permission_item label:before,
+.route_type label:before{
     content: "";
     margin: 0 10px 7px;
     display: inline-block;
@@ -810,8 +865,8 @@ input::placeholder {
     margin-top: 0.5rem;
 }
 
-.table th.wide_col{
-    width: 20%;
+.table th.wide_col, table td.wide_col{
+    width: 20%!important;
 }
 
 .table th.wide_col1{
@@ -905,7 +960,7 @@ select {
 
   /* Icon */
   i {
-    margin-left: 0.5rem;      
+    /* margin-left: 0.5rem;       */
 }
 .actions i{
     margin-left: 0;
@@ -957,14 +1012,16 @@ select {
  
  .permission_table .main_tr input[type="checkbox"],
  .permission_item input[type="checkbox"],
- .services_tabs_content input[type="checkbox"]{
+ .services_tabs_content input[type="checkbox"],
+.route_type input[type="checkbox"]{
    position: absolute;
    opacity: 0;
    cursor: pointer;
  }
  .permission_table .main_tr label,
  .permission_item label ,
-    .services_tabs_content label {
+.services_tabs_content label,
+.route_type label {
    position: inherit;
    cursor: pointer;
    padding-right: 10px;
@@ -972,7 +1029,8 @@ select {
 
  .permission_table .main_tr label:before,
  .permission_item label:before,
-    .services_tabs_content label:before {
+ .services_tabs_content label:before,
+ .route_type label:before {
    content: "";
    margin: 0 10px 7px;
    display: inline-block;
@@ -985,27 +1043,31 @@ select {
 
  .permission_table .main_tr input[type="checkbox"]:hover + label:before,
  .permission_item input[type="checkbox"]:hover + label:before ,
-    .services_tabs_content input[type="checkbox"]:hover + label:before {
+ .services_tabs_content input[type="checkbox"]:hover + label:before,
+ .route_type input[type="checkbox"]:hover + label:before {
    background: #3b86ff;
    cursor: pointer;
  }
 
  .permission_table .main_tr input[type="checkbox"]:focus +label:before,
  .permission_item input[type="checkbox"]:focus + label:before,
-    .services_tabs_content input[type="checkbox"]:focus + label:before {
+    .services_tabs_content input[type="checkbox"]:focus + label:before,
+ .route_type input[type="checkbox"]:focus + label:before {
    -webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
  }
 
  .permission_table .main_tr input[type="checkbox"]:checked + label:before,
  .permission_item input[type="checkbox"]:checked + label:before ,
-    .services_tabs_content input[type="checkbox"]:checked + label:before {
+    .services_tabs_content input[type="checkbox"]:checked + label:before,
+ .route_type input[type="checkbox"]:checked + label:before {
    background: #3b86ff;
  }
  
  .permission_table .main_tr input[type="checkbox"]:checked + label:after,
  .permission_item input[type="checkbox"]:checked + label:after ,
-    .services_tabs_content input[type="checkbox"]:checked + label:after {
+ .services_tabs_content input[type="checkbox"]:checked + label:after,
+ .route_type input[type="checkbox"]:checked + label:after {
    content: "";
    position: unset;
    left: 5px;
@@ -1142,7 +1204,8 @@ select {
 
 .add_expenses .custom-file-input:lang(en)~.custom-file-label::after,
 .add-isuue-form .custom-file-input:lang(en)~.custom-file-label::after,
-.inspection-form .custom-file-input:lang(en)~.custom-file-label::after{
+.inspection-form .custom-file-input:lang(en)~.custom-file-label::after,
+.add_fuel_form .custom-file-input:lang(en)~.custom-file-label::after{
     background-color: #43425d;
  }
 
@@ -1191,7 +1254,8 @@ select {
  .bottom_border{
     border-bottom: 1.5px solid #cacaca91;
  }
- .expenses_type_item{
+ .expenses_type_item,
+ .task_item{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1199,11 +1263,13 @@ select {
     margin-left: 2rem;
  }
 
- .expenses_type_item h5{
+ .expenses_type_item h5,
+ .task_item h5{
     margin-bottom: 0;
  }
 
- .expenses_type_item .add_item{
+ .expenses_type_item .add_item,
+ .task_item .add_item{
     margin: 0;
  }
 
@@ -2050,6 +2116,10 @@ table.eq_table5 th{
     width: 20%;
 }
 
+table.eq_table_col td{
+    width: 13.5%;
+}
+
 @media (max-width: 992px) {
     .bootstrap-select>.dropdown-toggle{
         padding: 0;
@@ -2069,7 +2139,28 @@ table.eq_table5 th{
     border-bottom: 1px solid #a4afb7;
 }
 
-.bordeless, .bordeless_tr td{
+.bordeless, .bordeless_tr td,
+.borderless, .borderless_tr td{
     border-top: none!important;
 }
 
+table tr.collapse.show {
+    display:table-row!important;
+  }
+
+  /* fuel */
+  .fuel_table i.fa-circle{
+    font-size: 0.6rem;
+  }
+
+  .fuel_table td{
+    border-bottom: 1px solid #dee2e6;
+    border-top: none;
+  }
+
+  tr.tr_collapse td{
+      height: 1rem;
+      padding: 0 0.5rem;
+      border-bottom: none;
+      border-top: 1px solid #dee2e6;
+  }

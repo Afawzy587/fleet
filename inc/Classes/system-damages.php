@@ -20,7 +20,7 @@ class systemcar_damage
 	{
 		if($GLOBALS['login']->doCheck() == true)
 		{
-			$query 				= $GLOBALS['db']->query("SELECT COUNT(*) AS `total` FROM `".$this->tableName."` GROUP BY `car_damage_car_id` ");
+			$query 				= $GLOBALS['db']->query("SELECT COUNT(*) AS `total` FROM `car_check` GROUP BY `car_check_car_id` ");
 			$queryTotal 		= $GLOBALS['db']->fetchrow();
 			$total 				= $queryTotal['total'];
 			return ($total);
@@ -31,7 +31,7 @@ class systemcar_damage
 	{
 		if($GLOBALS['login']->doCheck() == true)
 		{
-            $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."` WHERE `car_damage_car_id` = '".$car_damage_sn."' ");
+            $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."` WHERE `car_damage_car_id` = '".$car_damage_sn."' ORDER BY `car_damage_date` DESC ");
 			$queryTotal = $GLOBALS['db']->resultcount();
 			$queryTotal = $GLOBALS['db']->resultcount();
 			if($queryTotal > 0)
@@ -60,11 +60,10 @@ class systemcar_damage
 	function addNewcar_damage($car_damage)
 	{
 		$GLOBALS['db']->query("INSERT LOW_PRIORITY INTO `".$this->tableName."`
-		(`car_damage_sn`, `car_damage_name`, `car_damage_supply_id`, `car_damage_accountable_id`, `car_damage_phone`, `car_damage_contract_start`, `car_damage_contract_end`, `car_damage_address`, `car_damage_city`, `car_damage_email`, `car_damage_status`)
-		VALUES ( NULL ,  '".$car_damage['car_damage_name']."',  '".$car_damage['car_damage_supply_id']."' ,  '".$car_damage['car_damage_accountable_id']."',  '".$car_damage['car_damage_phone']."' ,  '".$car_damage['car_damage_contract_start']."',  '".$car_damage['car_damage_contract_end']."' ,  '".$car_damage['car_damage_address']."',  '".$car_damage['car_damage_city']."' ,  '".$car_damage['car_damage_email']."',  '1')");
+		(`car_damage_sn`, `car_damage_car_id`, `car_damage_by`, `car_damage_date`, `car_damage_tank`, `car_damage_kilos`, `car_damage_photo`, `car_damage_name`, `car_damage_text`, `car_damage_status`)
+		VALUES ( NULL ,  '".$car_damage['car_damage_car_id']."',  '".$car_damage['car_damage_by']."' ,  '".$car_damage['car_damage_date']."',  '".$car_damage['car_damage_tank']."' ,  '".$car_damage['car_damage_kilos']."',  '".$car_damage['car_damage_photo']."' ,  '".$car_damage['car_damage_name']."',  '".$car_damage['car_damage_text']."' , '0' )");
 		return 1;
 	}
-
 
 }
 ?>

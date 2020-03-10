@@ -40,14 +40,7 @@
                             "id" 	        	=>	$_SESSION['id'],
                         ),"admin",$_SESSION['id'],1
                     );
-//                    if($_GET['message']== "update")
-//                    {
-//                      $message = $lang['edit_users_success'];
-//                    }elseif($_GET['message']== "add"){
-//                      $message = $lang['add_users_success'];
-//                    }elseif($_GET['message']== "delete"){
-//                      $message = $lang['delete_users_success'];
-//                    }
+
             }
     }
     include './assets/layout/header.php';

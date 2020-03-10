@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>المشروعات - سجل المشروعات</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="images/ElKammar_Logo.png" alt="logo" srcset="" height="50">
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <span data-feather="home"></span>
+                        لوحة العرض
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bus"></i>
+                        الأسطول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-exclamation-circle"></i>
+                        أعطال وفحص
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell"></i>
+                        تذكيرات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-wrench"></i>
+                        خدمات الصيانة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-gas-pump"></i>
+                        الوقود
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user-friends"></i>
+                        جهات الإتصال
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>
+                        المشروعات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        تقارير ومرفقات
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i>
+                        إعدادات النظام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto mt-2 mt-md-0 top_nav">
+                <i class="fas fa-bell cool-grey"></i>
+                <hr>
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    أحمد محمد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+                <img src="profile-icon.png" width="60" height="60" class="rounded-circle">
+            </form>
+
+        </div>
+    </nav>
+    <main class="">
+        <div
+            class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+            <span class="page_titles">
+                <h1 class="h2">المشروعات</h1>
+                <h4 class="sub_title"> <strong> &gt; </strong> سجل المشروعات</h4>
+            </span>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                    <button class="btn dark_btn">
+                        <a href="">أضف مشروع</a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="container page_body">
+            <div class="row">
+                <div class="col">
+                    <div class="page_body">
+  
+                        <div class="num_rows" style="display: none;">
+
+                            <div class="form-group">
+                                <!--		Show Numbers Of Rows 		-->
+                                <select class="form-control" name="state" id="maxRows">
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                        </div>
+                        <table class="table  white-bg  table-hover" id="table-id" >
+
+
+                            <thead>
+                                <tr class="periwinkle-blue">
+                                    <td>الاسم</td>
+                                    <td>المدير / المشرف</td>
+                                    <td>ممثل العميل</td>
+                                    <td>عدد السيارات</td>
+                                    <td>سيارات إيجار</td>
+                                    <td>إجمالي السيارات</td>
+                                    <td>م.كم/شهر</td>
+                                    <td>تليفون العميل</td>
+                                    <td>تاريخ التعاقد</td>
+                                    <td>ينتهي في</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody > 
+                                <tr>
+                                    <td class="dodger-blue"><a href="">مشروع1</a></td>
+                                    <td>موظف 1</td>
+                                    <td>ممثل 1</td>
+                                    <td>20</td>
+                                    <td>5</td>
+                                    <td>25</td>
+                                    <td>200,000</td>
+                                    <td>01036521487</td>
+                                    <td>15/1/19</td>
+                                    <td>15/1/20</td>
+                                    <td>
+                                       <i class="fas fa-chart-bar dodger-blue" data-toggle="modal" data-target="#projectKmChart"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dodger-blue"><a href="">مشروع1</a></td>
+                                    <td>موظف 1</td>
+                                    <td>ممثل 1</td>
+                                    <td>20</td>
+                                    <td>5</td>
+                                    <td>25</td>
+                                    <td>200,000</td>
+                                    <td>01036521487</td>
+                                    <td>15/1/19</td>
+                                    <td>15/1/20</td>
+                                    <td>
+                                       <i class="fas fa-chart-bar dodger-blue" data-toggle="modal" data-target="#projectKmChart"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dodger-blue"><a href="">مشروع1</a></td>
+                                    <td>موظف 1</td>
+                                    <td>ممثل 1</td>
+                                    <td>20</td>
+                                    <td>5</td>
+                                    <td>25</td>
+                                    <td>200,000</td>
+                                    <td>01036521487</td>
+                                    <td>15/1/19</td>
+                                    <td>15/1/20</td>
+                                    <td>
+                                       <i class="fas fa-chart-bar dodger-blue" data-toggle="modal" data-target="#projectKmChart"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dodger-blue"><a href="">مشروع1</a></td>
+                                    <td>موظف 1</td>
+                                    <td>ممثل 1</td>
+                                    <td>20</td>
+                                    <td>5</td>
+                                    <td>25</td>
+                                    <td>200,000</td>
+                                    <td>01036521487</td>
+                                    <td>15/1/19</td>
+                                    <td>15/1/20</td>
+                                    <td>
+                                       <i class="fas fa-chart-bar dodger-blue" data-toggle="modal" data-target="#projectKmChart"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dodger-blue"><a href="">مشروع1</a></td>
+                                    <td>موظف 1</td>
+                                    <td>ممثل 1</td>
+                                    <td>20</td>
+                                    <td>5</td>
+                                    <td>25</td>
+                                    <td>200,000</td>
+                                    <td>01036521487</td>
+                                    <td>15/1/19</td>
+                                    <td>15/1/20</td>
+                                    <td>
+                                       <i class="fas fa-chart-bar dodger-blue" data-toggle="modal" data-target="#projectKmChart"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="dodger-blue"><a href="">مشروع1</a></td>
+                                    <td>موظف 1</td>
+                                    <td>ممثل 1</td>
+                                    <td>20</td>
+                                    <td>5</td>
+                                    <td>25</td>
+                                    <td>200,000</td>
+                                    <td>01036521487</td>
+                                    <td>15/1/19</td>
+                                    <td>15/1/20</td>
+                                    <td>
+                                       <i class="fas fa-chart-bar dodger-blue" data-toggle="modal" data-target="#projectKmChart"></i>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                    </td>
+                                </tr>
+                     
+               
+
+                            <tbody>
+                        </table>
+                        <!--		Start Pagination -->
+                        <div class='pull-left pagination-container'>
+                            <nav>
+                                <ul class="pagination">
+                                    <!--	Here the JS Function Will Add the Rows -->
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <span>2020</span>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="projectKmChart" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content modal_grey_bg">
+
+                <div class="modal-body white-bg chart_wrapper">
+                    <div class="chart_header">
+                        <h6 class="bold">كم شهري</h6>
+                        <div class="date_range">
+                            <p>في الفترة من</p>
+                            <span class="date_input">
+                                <input id="datepicker1" width="100%"
+                                    onchange="update_barChart_startdate('kmlog_chart',this)" />
+                            </span>
+                            <p>الي</p>
+                            <span class="date_input">
+                                <input id="datepicker2" width="100%"
+                                    onchange="update_barChart_enddate('kmlog_chart', this)" />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="chart_body">
+                        <canvas id="monthly_kmLog" width="100%"></canvas>
+                    </div>
+                    <div class="chart_info">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <p>متوسط كم شهري فعلي : <span class="safe_status">8521</span></p>
+                                <p>الحد الأقصي للكيلومتر شهرياً : <span>4984</span></p>
+                            </div>
+                            <div class="col-md-4 modal_view_option">
+                                <div class="form-group">
+                                    <label>العرض</label>
+                                    <select name="" id="" class="md-select" name="view_option"
+                                    onchange="update_barChart_view('kmlog_chart', this)"   >
+                                        <option value="month">شهر </option>
+                                        <option value="year">سنة</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body white-bg chart_wrapper">
+                    <div class="chart_header">
+                        <h6 class="bold">كم شهري</h6>
+                        <div class="date_range">
+                            <p>في الفترة من</p>
+                            <span class="date_input">
+                                <input id="datepicker3" width="100%"
+                                    onchange="update_barChart_startdate('kmCostlog_chart',this)" />
+                            </span>
+                            <p>الي</p>
+                            <span class="date_input">
+                                <input id="datepicker4" width="100%"
+                                    onchange="update_barChart_enddate('kmCostlog_chart', this)" />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="chart_body">
+                        <canvas id="monthly_kmCostlog" width="100%"></canvas>
+                    </div>
+                    <div class="chart_info">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <p>متوسط كم شهري فعلي : <span class="safe_status">8521</span></p>
+                                <p>الحد الأقصي للكيلومتر شهرياً : <span>4984</span></p>
+                            </div>
+                            <div class="col-md-4 modal_view_option">
+                                <div class="form-group">
+                                    <label>العرض</label>
+                                    <select name="" id="" class="md-select" name="view_option"
+                                    onchange="update_barChart_view('kmCostlog_chart', this)"   >
+                                        <option value="month">شهر </option>
+                                        <option value="year">سنة</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body white-bg chart_wrapper">
+                    <div class="chart_header">
+                        <h6 class="bold">كم شهري</h6>
+                        <div class="date_range">
+                            <p>في الفترة من</p>
+                            <span class="date_input">
+                                <input id="datepicker5" width="100%"
+                                    onchange="update_barChart_startdate('fuellog_chart',this)" />
+                            </span>
+                            <p>الي</p>
+                            <span class="date_input">
+                                <input id="datepicker6" width="100%"
+                                    onchange="update_barChart_enddate('fuellog_chart', this)" />
+                            </span>
+                        </div>
+                    </div>
+                    <div class="chart_body">
+                        <canvas id="fuellog" width="100%"></canvas>
+                    </div>
+                    <div class="chart_info">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <p>متوسط كم شهري فعلي : <span class="safe_status">8521</span></p>
+                                <p>الحد الأقصي للكيلومتر شهرياً : <span>4984</span></p>
+                            </div>
+                            <div class="col-md-4 modal_view_option">
+                                <div class="form-group">
+                                    <label>العرض</label>
+                                    <select name="" id="" class="md-select" name="view_option"
+                                    onchange="update_barChart_view('fuellog_chart', this)"   >
+                                        <option value="month">شهر </option>
+                                        <option value="year">سنة</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer actions">
+                     <i class="fa fa-file-pdf white"></i>
+                     <i class="fa fa-print white"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/main.js"></script>
+    <script src="js/projects_charts.js"></script>
+
+</body>
+
+</html>

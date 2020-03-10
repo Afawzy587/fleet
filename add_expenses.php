@@ -61,10 +61,17 @@
 							}
 						}
 						$add = $exp->add_car_expenses($_expenses);
-//						if ($add == 1)
-//						{
-//
-//						}
+                        if( $add == 1){
+                             if(intval($_POST["add_other"]) == 1)
+                                {
+                                    header("Location:./add_expenses.php?c=".$car);
+                                    exit;
+                                }else{
+                                    header("Location:./cars.php");
+                                    exit;
+                                }
+                        }
+						
 						$logs->addLog(NULL,
 								array(
 									"type" 		        => 	"admin",
@@ -172,9 +179,10 @@
                             </div>
                         </div>
                     </div>
+                    <input type="text" class="form-control" name="add_other"  maxlength="25" hidden>
                     <div class="row mt-3 bottom-actions">
                         <div class="col">
-                            <button class="btn btn-light _btn ml-3" type="submit">   <?php echo $lang['SAVE_ADD_OTHER'];?></button> 
+                            <button class="add_other btn btn-light _btn ml-3" type="submit">   <?php echo $lang['SAVE_ADD_OTHER'];?></button> 
                             <button class="btn btn-success _btn darkish-green-bg ml-3" type="submit"> <?php echo $lang['SAVE'];?></button>
                             <a class="btn _btn btn-danger rose-bg ml-3" data-dismiss="modal" href="./cars.php"><?php echo $lang['CANCEL'];?></a>
                         </div>

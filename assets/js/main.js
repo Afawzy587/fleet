@@ -29,7 +29,7 @@ function getPagination(table) {
                 $('.pagination').append('<li class="page-item" data-page="' + i + '">\
                                               <a class="page-link">'+ i++ + '<span class="sr-only">(current)</span></a>\
                                             </li>').show();
-            }											// end for i 
+            }										
 
             $('.pagination').append(` <li class="page-item">
               <a class="page-link" href="#" aria-label="Next">
@@ -37,9 +37,8 @@ function getPagination(table) {
                 <span class="sr-only">Next</span>
               </a>
             </li>`);
-        } 												// end if row count > max rows
+        } 												
         $('.pagination li:first-child').addClass('active'); // add active class to the first li 
-
 
         //SHOWING ROWS NUMBER OUT OF TOTAL DEFAULT
         //    showig_rows_count(maxRows, 1, totalRows);
@@ -47,17 +46,13 @@ function getPagination(table) {
 
         $('.pagination li').on('click', function (e) {		// on click each page
             e.preventDefault();
-            var pageNum = $(this).attr('data-page');	// get it's number
-            var trIndex = 0;							// reset tr counter
-            $('.pagination li').removeClass('active');	// remove active class from all li 
-            $(this).addClass('active');					// add active class to the clicked 
-
-
+            var pageNum = $(this).attr('data-page');	
+            var trIndex = 0;							
+            $('.pagination li').removeClass('active');
+            $(this).addClass('active');				
             //SHOWING ROWS NUMBER OUT OF TOTAL
             //    showig_rows_count(maxRows, pageNum, totalRows);
             //SHOWING ROWS NUMBER OUT OF TOTAL
-
-
 
             $(table + ' tr:gt(0)').each(function () {		// each tr in table not the header
                 trIndex++;								// tr index counter 
@@ -65,13 +60,11 @@ function getPagination(table) {
                 if (trIndex > (maxRows * pageNum) || trIndex <= ((maxRows * pageNum) - maxRows)) {
                     $(this).hide();
                 } else { $(this).show(); } 				//else fade in 
-            }); 										// end of for each tr in table
-        });										// end of on click pagination list
+            }); 										
+        });										
     });
     // end of on select change 
-
     // END OF PAGINATION 
-
 }
 
 //ROWS SHOWING FUNCTION
@@ -85,7 +78,6 @@ function getPagination(table) {
 
 // All Table search script
 function FilterkeyWord_all_table() {
-
     // Count td if you want to search on all table instead of specific column
 
     var count = $('.table').children('tbody').children('tr:first-child').children('td').length;
@@ -128,6 +120,75 @@ function FilterkeyWord_all_table() {
         //RESET TABLE
         $('#maxRows').trigger('change');
     }
+}
+
+function FilterkeyWord_all_table() {
+    // Count td if you want to search on all table instead of specific column
+
+    var count = $('.table').children('tbody').children('tr:first-child').children('td').length;
+
+    // Declare variables
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("search_input_all");
+    var input_value = document.getElementById("search_input_all").value;
+    filter = input.value.toLowerCase();
+    if (input_value != '') {
+        table = document.getElementsByClassName("searchTable")[0];
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 1; i < tr.length; i++) {
+
+            var flag = 0;
+
+            for (j = 0; j < count; j++) {
+                td = tr[i].getElementsByTagName("td")[j];
+                if (td) {
+
+                    var td_text = td.innerHTML;
+                    if (td.innerHTML.toLowerCase().indexOf(filter) > -1) {
+                        //var td_text = td.innerHTML;  
+                        //td.innerHTML = 'shaban';
+                        flag = 1;
+                    } else {
+                        //DO NOTHING
+                    }
+                }
+            }
+            if (flag == 1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    } else {
+        //RESET TABLE
+        $('#maxRows').trigger('change');
+    }
+}
+//update table data
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+today = mm + '/' + dd + '/' + yyyy;
+
+var tabledata_from_date = today;
+var tabledata_end_date = today;
+function changeTableFromdate(fromdate, tableId){
+    tabledata_from_date = fromdate.value;
+    update_tableData(tableId, tabledata_from_date, tabledata_end_date);
+    console.log(tabledata_from_date + '>>' + tabledata_end_date + ' ==' + tableId);
+}
+
+function changeTableTodate(todate, tableId){
+    tabledata_end_date = todate.value;
+    update_tableData(tableId, tabledata_from_date, tabledata_end_date);
+    console.log(tabledata_from_date + '>>' + tabledata_end_date + ' ==' + tableId);
+}
+
+function update_tableData(table_id, from , to){
+    console.log($('#' +table_id)[0]);
 }
 
 // delete confirmation
@@ -210,6 +271,10 @@ $('.modal_sidenav li').on('click', function () {
 });
 
 // datepickers
+$('.datepicker').datepicker({
+    uiLibrary: 'bootstrap4'
+});
+
 $('#datepicker1').datepicker({
     uiLibrary: 'bootstrap4'
 });
@@ -270,10 +335,6 @@ $('#timepicker1').timepicker({
 });
 
 $('#timepicker2').timepicker({
-    uiLibrary: 'bootstrap4'
-});
-
-$('.timepicker').timepicker({
     uiLibrary: 'bootstrap4'
 });
 

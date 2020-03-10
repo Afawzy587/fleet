@@ -82,7 +82,24 @@
             "cars_back_up"                            =>          1,
             "cars_order"                              =>          1,
             "cars_delete"                             =>          1,
-            "cars_add_expenses"                       =>          1
+            "cars_add_expenses"                       =>          1,
+            "projects_list"                           =>          1,
+            "projects_add"                            =>          1,
+            "projects_edit"                           =>          1,
+            "projects_delete"                         =>          1,
+            "car_fuel_list"                           =>          1,
+            "car_fuel_add"                            =>          1,
+            "car_fuel_edit"                           =>          1,
+            "car_fuel_delete"                         =>          1,
+            "reminders_list"                          =>          1,
+            "reminders_add"                           =>          1,
+            "reminders_edit"                          =>          1,
+            "reminders_delete"                        =>          1,
+            "services_list"                           =>          1,
+            "services_add"                            =>          1,
+            "services_edit"                           =>          1,
+            "services_delete"                         =>          1,   
+                
                 );
 
         }else{
@@ -106,6 +123,22 @@
             "check_item_list"                        =>          $sitegroup['check_item_list'],
             "check_to_order"                         =>          $sitegroup['check_to_order'],
             "end_check"                              =>          $sitegroup['end_check'],
+            "projects_list"                          =>          $sitegroup['projects_list'],
+            "projects_add"                           =>          $sitegroup['projects_add'],
+            "projects_edit"                          =>          $sitegroup['projects_edit'],
+            "projects_delete"                        =>          $sitegroup['projects_delete'],
+            "car_fuel_list"                          =>          $sitegroup['car_fuel_list'],
+            "car_fuel_add"                           =>          $sitegroup['car_fuel_add'],
+            "car_fuel_edit"                          =>          $sitegroup['car_fuel_edit'],
+            "car_fuel_delete"                        =>          $sitegroup['car_fuel_delete'],
+            "reminders_list"                          =>          $sitegroup['reminders_list'],
+            "reminders_add"                           =>          $sitegroup['reminders_add'],
+            "reminders_edit"                          =>          $sitegroup['reminders_edit'],
+            "reminders_delete"                        =>          $sitegroup['reminders_delete'],
+            "services_list"                          =>          $sitegroup['services_list'],
+            "services_add"                           =>          $sitegroup['services_add'],
+            "services_edit"                          =>          $sitegroup['services_edit'],
+            "services_delete"                        =>          $sitegroup['services_delete'],    
                 );
         
       }

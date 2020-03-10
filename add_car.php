@@ -134,11 +134,11 @@
                             }
                         }
                     }
-                   $_car['cars_docs_file'] = $_file ;
+                    $_car['cars_docs_file'] = $_file ;
 					$add = $cars->addNewcars($_car);
                     if($add == 1)
                     {
-                        header("Location:./suppliers.php");
+                        header("Location:./cars.php");
                         exit;
                     }
                     

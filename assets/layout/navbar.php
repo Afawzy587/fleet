@@ -12,14 +12,14 @@
             <li class="nav-item <?php if($page_name == "index"){echo "active";}?>">
                 <a class="nav-link" href="./index.php">
                     <i class="fas fa-chart-bar"></i>
-                    لوحة العرض
+                    <?php echo $lang['DASHBOARD'];?>
                 </a>
             </li>
             <?php
             if($group['cars_list'] == 1)
             {
                echo'<li class="nav-item ';if($page_name == "cars" || $page_name == "add_car"|| $page_name == "car_order"|| $page_name == "add_expenses"){echo "active";}echo '">
-                    <a class="nav-link" href="./cars.php"><i class="fas fa-user-friends"></i>
+                    <a class="nav-link" href="./cars.php"><i class="fas fa-bus"></i>
                     '.$lang['CARS'].'
                     </a>
                   </li>';
@@ -30,30 +30,38 @@
             if($group['check_list'] == 1)
             {
                echo'<li class="nav-item ';if($page_name == "damages" || $page_name == "car_damage" ){echo "active";}echo '">
-                    <a class="nav-link" href="./damages.php"><i class="fas fa-user-friends"></i>
+                    <a class="nav-link" href="./damages.php"><i class="fas fa-exclamation-circle"></i>
                     '.$lang['CHECKS'].'
+                    </a>
+                  </li>';
+            }
+            ?>
+            <?php
+            if($group['reminders_list'] == 1)
+            {
+               echo'<li class="nav-item ';if($page_name == "reminders" || $page_name == "reminders_doc"|| $page_name == "add_service_reminder"|| $page_name == "add_doc_reminder"){echo "active";}echo '">
+                    <a class="nav-link" href="./reminders.php"><i class="fas fa-bell"></i>
+                    '.$lang['REMINDERS'].'
                     </a>
                   </li>';
             }
             ?>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fas fa-bell"></i>
-                    تذكيرات
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
                     <i class="fas fa-wrench"></i>
                     خدمات الصيانة
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-gas-pump"></i>
-                    الوقود
-                </a>
-            </li>
+            <?php
+            if($group['car_fuel_list'] == 1)
+            {
+               echo'<li class="nav-item ';if($page_name == "fuel" ){echo "active";}echo '">
+                    <a class="nav-link" href="./fuel.php"><i class="fas fa-gas-pump"></i>
+                    '.$lang['FUEL'].'
+                    </a>
+                  </li>';
+            }
+            ?>
             <?php
             if($group['contacts_list'] == 1)
             {
@@ -64,13 +72,16 @@
                   </li>';
             }
             ?>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-briefcase"></i>
-                    المشروعات
-                </a>
-            </li>
+            <?php
+            if($group['projects_list'] == 1)
+            {
+               echo'<li class="nav-item ';if($page_name == "projects" ||$page_name == "add_project" ||$page_name == "edit_project" ){echo "active";}echo '">
+                    <a class="nav-link" href="./projects.php"><i class="fas fa-briefcase"></i>
+                    '.$lang['PROJECTS'].'
+                    </a>
+                  </li>';
+            }
+            ?>
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fas fa-chart-pie"></i>

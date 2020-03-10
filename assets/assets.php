@@ -290,6 +290,89 @@
         }
     }
 
+    function project_car_own($_Id)
+    {
+        $query = $GLOBALS['db']->query("SELECT `cars_sn`  FROM `cars` WHERE `cars_project_id` = '".$_Id."' AND `cars_owner_type_id` =1 ");
+        $queryTotal = $GLOBALS['db']->resultcount();
+        if($queryTotal > 0)
+        {
+            return($queryTotal);
+        }else
+        {
+            return (0);
+        }
+    }
+
+    function project_car_loin($_Id)
+    {
+        $query = $GLOBALS['db']->query("SELECT `cars_sn`  FROM `cars` WHERE `cars_project_id` = '".$_Id."' AND `cars_owner_type_id` =2 ");
+        $queryTotal = $GLOBALS['db']->resultcount();
+        if($queryTotal > 0)
+        {
+            return($queryTotal);
+        }else
+        {
+            return (0);
+        }
+    }
+
+    function get_car_datails($_id)
+    {
+        $query = $GLOBALS['db']->query(" SELECT * FROM `cars` WHERE `cars_sn` = '".$_id."'  LIMIT 1");
+		$queryCount = $GLOBALS['db']->resultcount();
+		if($queryCount == 1)
+		{
+			$_data = $GLOBALS['db']->fetchitem($query);
+			return( '<h6 class="contact_name">'.$_data['cars_code'].' - '.'['.$_data['cars_model'].']'.'</h6>
+                  <h6 class="dodger-blue"> '.$GLOBALS['lang']['CAR_MODEL'].' '.$_data['cars_year'].'</h6>
+                  <h6 class="tangerine">'.$_data['cars_plate_number'].'</h6>
+                  ');
+		}
+		else
+		{
+			return ($GLOBALS['lang']['NOT_FOUND']);
+		}
+    }
+
+    function reminder_doc_number($_Id)
+    {
+        $query = $GLOBALS['db']->query("SELECT `reminders_sn`  FROM `reminders` WHERE `reminders_car_id` = '".$_Id."' AND `reminders_type` = 'doc' AND `reminders_status` = 0 ");
+        $queryTotal = $GLOBALS['db']->resultcount();
+        if($queryTotal > 0)
+        {
+            return($queryTotal);
+        }else
+        {
+            return (0);
+        }
+    }
+
+    function reminder_service_number($_Id)
+    {
+        $query = $GLOBALS['db']->query("SELECT `reminders_sn`  FROM `reminders` WHERE `reminders_car_id` = '".$_Id."' AND `reminders_type` = 'service' AND `reminders_status` = 0 ");
+        $queryTotal = $GLOBALS['db']->resultcount();
+        if($queryTotal > 0)
+        {
+            return($queryTotal);
+        }else
+        {
+            return (0);
+        }
+    }
+
+    function get_reminders_memmbers($_Id)
+    {
+        $query = $GLOBALS['db']->query("SELECT u.`users_name` FROM `reminders_members` r INNER JOIN `users` u ON u.`users_sn` = r.`reminders_members_user_id` WHERE  r.`reminders_members_reminder_id` = '".$_Id."' ORDER BY r.`reminders_members_sn` DESC ");
+        $queryTotal = $GLOBALS['db']->resultcount();
+        if($queryTotal > 0)
+        {
+            return($GLOBALS['db']->fetchlist());
+        }else
+        {
+            return ($GLOBALS['lang']['NOT_FOUND']);
+        }
+    }
+
 
 
 

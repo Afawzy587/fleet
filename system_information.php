@@ -31,6 +31,7 @@
                 $wheel_size    = $informations->getdatatable("wheel_size");                                            // wheel_size
                 $supply_type   = $informations->getdatatable("supply_type");                                          // supply_type
                 $job_type      = $informations->getdatatable("job_type");                                             // job_type
+                $doc_type      = $informations->getdatatable("doc_type");                                             // job_type
                 $logs->addLog(4,
                                 array(
                                     "type" 		        => 	"user",
@@ -440,7 +441,9 @@
                 <div class="col-md-4">
                     <?php   buliddropmenu($job_type,"SYS_JOB_TYPE","job_type");?>
                 </div>
-                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <?php   buliddropmenu($doc_type,"SYS_DOC_TYPE","doc_type");?>
+                </div>
             </div>
         </div>
 </main>

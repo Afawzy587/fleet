@@ -115,7 +115,6 @@
                                                         <h6 class="contact_name">'.$u['cars_code'].' - '.'['.$u['cars_model'].']'.'</h6>
                                                         <h6 class=""> '.$lang['CAR_MODEL'].' '.$u['cars_year'].'</h6>
                                                         <h6 class="">'.$u['cars_plate_number'].'</h6>
-
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div><i class="fa fa-circle success_status smaller_icon"></i></div>

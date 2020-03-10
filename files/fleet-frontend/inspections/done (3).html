@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>سجل أعطال سيارة</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="images/ElKammar_Logo.png" alt="logo" srcset="" height="50">
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <span data-feather="home"></span>
+                        لوحة العرض
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bus"></i>
+                        الأسطول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-exclamation-circle"></i>
+                        أعطال وفحص
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell"></i>
+                        تذكيرات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-wrench"></i>
+                        خدمات الصيانة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-gas-pump"></i>
+                        الوقود
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user-friends"></i>
+                        جهات الإتصال
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>
+                        المشروعات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        تقارير ومرفقات
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i>
+                        إعدادات النظام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto mt-2 mt-md-0 top_nav">
+                <i class="fas fa-bell cool-grey"></i>
+                <hr>
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    أحمد محمد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+                <img src="profile-icon.png" width="60" height="60" class="rounded-circle">
+            </form>
+
+        </div>
+    </nav>
+    <main class="">
+        <div
+            class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+            <span class="page_titles">
+                <h1 class="h2">سجل أعطال سيارة</h1>
+            </span>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                    <button class="btn dark_btn">
+                        <a href="">أضف عطل</a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="container page_body">
+        <div class="container page_body">
+            <div class="row car_dashboard_header white-bg blue_border">
+                <div class="col-md-2"><img src="images/bus_image.jpg" width="100%"></div>
+                <div class="col-md-3">
+                    <p>104 - [Toyota Coaster]</p>
+                    <p>موديل 2018</p>
+                    <p>ق أ س 8513</p>
+                </div>
+                <div class="col-md-2 cars_status">
+                    <p><i class="fas fa-circle working_car"></i>تعمل</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="inline_content">
+                        <p>اسم المشروع : </p>
+                        <p class="safe_status">مشروع 1 </p>
+                    </div>
+                    <div class="inline_content">
+                        <p>مدير / مشرف المشروع: </p>
+                        <p class="safe_status">مشرف 1 </p>
+                    </div>
+                </div>
+                <div class="col-md-2 car_actions">
+                    <a href="">
+                        <i class="far fa-edit safe_status"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col _page_body white-bg">
+                
+                        <div class="num_rows" style="display: none;">
+
+                            <div class="form-group">
+                                <!--		Show Numbers Of Rows 		-->
+                                <select class="form-control" name="state" id="maxRows">
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                        </div>
+                        <table class="table table-class  contacts_table table-hover" id="table-id" >
+
+
+                            <thead>
+                                <tr>
+                                    <th class="center">التاريخ والوقت</th>
+                                    <th>العطل</th>
+                                    <th>ملاحظات</th>
+                                    <th>مرحلة العطل</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody > 
+                                <tr>
+                                    <td  class="center">
+                                        <h6>3/5/2020</h6>
+                                        <h6 class="time_direction">10:45 AM</h6>
+                                    </td>
+                                    <td>زجاج</td>
+                                    <td> شرخ بالزجاج الأمامي</td>
+                                    <td><h6 class="success_status">مغلق</h6></td>
+                                    <td class="actions closed_actions">
+                                        <i class="fa fa-wrench warning_status"></i>
+                                        <i class="fa fa-times-circle close_action"></i>
+                                        <a href="">
+                                            <i class="far fa-edit success_status"></i>
+                                        </a>
+                    
+                                        <i class="fas fa-trash danger_status" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                    </td>
+                                </tr>
+                              
+                                <tr>
+                                    <td  class="center">
+                                        <h6>3/5/2020</h6>
+                                        <h6 class="time_direction">10:45 AM</h6>
+                                    </td>
+                                    <td>الأنوار</td>
+                                    <td>أنوار الجانب الأيمن لا تعمل</td>
+                                    <td><h6 class="warning_status">مفتوح</h6></td>
+                                    <td class="actions">
+                                        <i class="fa fa-wrench warning_status"></i>
+                                        <i class="fa fa-times-circle close_action"></i>
+                                        <a href="">
+                                            <i class="far fa-edit success_status"></i>
+                                        </a>
+                    
+                                        <i class="fas fa-trash danger_status" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                    </td>
+                                </tr>
+                               
+                     
+               
+
+                            </tbody>
+                        </table>
+                        <!--		Start Pagination -->
+                        <div class='pull-left pagination-container'>
+                            <nav>
+                                <ul class="pagination">
+                                    <!--	Here the JS Function Will Add the Rows -->
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <span>2020</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

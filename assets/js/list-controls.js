@@ -1,6 +1,5 @@
 $(document).ready(function(){
-    $( ".add_information" ).click(function()
-    {
+    $(".add_information").click(function(){
         
         var name    = $(this).closest("form").find("input[name='name']").val();
         var address = $(this).closest("form").find("input[name='address']").val();
@@ -26,8 +25,7 @@ $(document).ready(function(){
             }
         });    
     }); 
-    $( ".edit_group" ).click(function()
-    {
+    $(".edit_group").click(function(){
         var id                 = $(this).attr('id');
         var name               = $("#name_"+id).val();
         var description        = $("#description_"+id).val();
@@ -59,8 +57,7 @@ $(document).ready(function(){
         }
         
     });
-    $( ".add_group" ).click(function()
-    {
+    $(".add_group").click(function(){
         
         var name        = $(this).closest("form").find("input[name='name']").val();
         var description = $(this).closest("form").find("textarea[name='description']").val();
@@ -92,8 +89,7 @@ $(document).ready(function(){
         }
         
     });
-    $( ".add_name" ).click(function()
-    {
+    $(".add_name").click(function(){
         var name    = $(this).closest("form").find("input[name='name']").val();
         var table   = $(this).closest("form").find("input[name='in']").val();
         var page    = "system_information_js.php?do=add_name";
@@ -190,23 +186,22 @@ $(document).ready(function(){
         }
 	});
     $('select.select_item').on('change',function(){
-	var t_id       = $(this).val();
-    var details    = t_id.split('-');
-    var table      = details[0];
-    var page  ="system_information_js.php?do=edit_name";
-	if(t_id){
-		$.ajax({
-			type:'POST',
-			url:page,
-			data:'details='+t_id,
-			success:function(html){
-				$('div#'+table+'_edit_name').html(html);
-								  }
-			   });
-				  }
+        var t_id       = $(this).val();
+        var details    = t_id.split('-');
+        var table      = details[0];
+        var page  ="system_information_js.php?do=edit_name";
+        if(t_id){
+            $.ajax({
+                type:'POST',
+                url:page,
+                data:'details='+t_id,
+                success:function(html){
+                    $('div#'+table+'_edit_name').html(html);
+                                      }
+                   });
+        }
 	});
-    $( ".update_name" ).click(function()
-    {
+    $(".update_name").click(function(){
         var name    = $(this).closest("form").find("input[name='name']").val();
         var id      = $(this).closest("form").find("input[name='id']").val();
         var table   = $(this).closest("form").find("input[name='in']").val();
@@ -320,11 +315,10 @@ $(document).ready(function(){
 			});
 		}
 	});
-	$("button.checkall").on("click", function() {
+	$("button.checkall").on("click", function(){
       $("#checkhour").prop("checked");
     });
-    $( ".update_user_group" ).click(function()
-    {
+    $(".update_user_group").click(function(){
         var phone   = $(this).closest("form").find("input[name='phone']").val();
         var page    = "system_information_js.php?do=add_information";
         jQuery.ajax( 
@@ -347,9 +341,7 @@ $(document).ready(function(){
             }
         });    
     });
-	
-    $( ".edit_expenses" ).click(function()
-    {
+    $(".edit_expenses").click(function(){
         var id                 = $(this).attr('id');
         var name               = $("#myInput_"+id).val();
         var page               = "system_information_js.php?do=edit_expenses";
@@ -377,9 +369,7 @@ $(document).ready(function(){
         }
         
     });	 
-	
-	$( ".add_expenses" ).click(function()
-    {
+	$(".add_expenses").click(function(){
         var name               = $("#myInput").val();
         var page               = "system_information_js.php?do=add_expenses";
         if(name != "")
@@ -406,9 +396,7 @@ $(document).ready(function(){
         }
         
     });	
-	
-	$( ".delete_expenses" ).click(function()
-    {
+	$(".delete_expenses").click(function(){
         var id                 = $(this).attr('id');
         var page               = "system_information_js.php?do=delete_expenses";
         if(id != "")
@@ -435,7 +423,6 @@ $(document).ready(function(){
         }
         
     });
-    
     $('select.project').on('change',function(){
 	var projectID = $(this).val();
 	if(projectID){
@@ -449,6 +436,7 @@ $(document).ready(function(){
 			   });
 				  }
 	});
-    
-    
+    $('.add_other').click(function() {
+        $('[name="add_other"]').val('1');
+    });
 });

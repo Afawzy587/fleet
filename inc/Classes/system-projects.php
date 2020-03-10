@@ -16,15 +16,6 @@ class systemprojects
             return($GLOBALS['db']->fetchlist());
         }else{return null;}
 	}
-	function getselectprojects()
-	{
-        $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."`  ORDER BY `projects_sn`  DESC ");
-        $queryTotal = $GLOBALS['db']->resultcount();
-        if($queryTotal > 0)
-        {
-            return($GLOBALS['db']->fetchlist());
-        }else{return null;}
-	}
 
 	function getTotalprojects($addon = "")
 	{
@@ -36,39 +27,42 @@ class systemprojects
 
 	function getprojectsInformation($projects_sn)
 	{
-		
         $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."` WHERE `projects_sn` = '".$projects_sn."' LIMIT 1 ");
         $queryTotal = $GLOBALS['db']->resultcount();
         if($queryTotal > 0)
         {
-            $sitegroup = $GLOBALS['db']->fetchitem($query);
+            $siteprojects       = $GLOBALS['db']->fetchitem($query);
+            $querytype          = $GLOBALS['db']->query("SELECT t.`transfer_type_name` , p.`project_car_types_car_number` FROM `project_car_types` p INNER JOIN `transfer_type` t ON p.`project_car_types_type_id` = t.`transfer_type_sn`  WHERE `project_car_types_project_id` = '".$siteprojects['projects_sn']."'");
+            $querytypeTotal     = $GLOBALS['db']->resultcount();
+            if($querytypeTotal > 0)
+            {
+                    $cartype = $GLOBALS['db']->fetchlist();
+                    
+                    foreach($cartype as $k => $v){
+                        
+                        $transfer_type_name  .= $v['transfer_type_name'];
+                        if($k != ($querytypeTotal-1))
+                        {
+                            $transfer_type_name .= ' / ';
+                        }
+                        $car_number          += $v['project_car_types_car_number'];
+                    }
+            }
+            $queryroad          = $GLOBALS['db']->query("SELECT COUNT(*) AS count FROM `project_roads`  WHERE `project_roads_project_id` = '".$siteprojects['projects_sn']."'");
+            $siteroad       = $GLOBALS['db']->fetchitem($queryroad);
             return array(
-                "projects_sn"			            => 		$siteprojects['projects_sn'],
+                "projects_sn"			        => 		$siteprojects['projects_sn'],
                 "projects_name"			        => 		$siteprojects['projects_name'],
-                "projects_managment_id"			=> 		$siteprojects['projects_managment_id'],
-                "projects_job_id"			        => 		$siteprojects['projects_job_id'],
-                "projects_qualification"			=> 		$siteprojects['projects_qualification'],
-                "projects_birthday"			    => 		$siteprojects['projects_birthday'],
-                "projects_hiring_date"			    => 		$siteprojects['projects_hiring_date'],
-                "projects_phone"			        => 		$siteprojects['projects_phone'],
-                "projects_email"			        => 		$siteprojects['projects_email'],
-                "projects_net_salary"			    => 		$siteprojects['projects_job_serial'],
-                "projects_email"			        => 		$siteprojects['projects_net_salary'],
-                "projects_salary_exchanges"		=> 		$siteprojects['projects_salary_exchanges'],
-                "projects_photo"			        => 		$siteprojects['projects_photo'],
-                "projects_personal_id"			    => 		$siteprojects['projects_personal_id'],
-                "projects_license_id"			    => 		$siteprojects['projects_license_id'],
-                "projects_license_place"			=> 		$siteprojects['projects_license_place'],
-                "projects_license_expired"			=> 		$siteprojects['projects_license_expired'],
-                "projects_contract_finish"			=> 		$siteprojects['projects_contract_finish'],
-                "projects_contract_photo"			=> 		$siteprojects['projects_contract_photo'],
-                "projects_notes"			        => 		$siteprojects['projects_notes'],
-                "projects_username"			    => 		$siteprojects['projects_username'],
-                "projects_group_id"			    => 		$siteprojects['projects_group_id'],
-                "projects_last_login"			    => 		$siteprojects['projects_last_login'],
-                "projects_status"			        => 		$siteprojects['projects_status'],
-                "projects_kick"			        => 		$siteprojects['projects_kick']
-            );
+                "projects_manger_id"			=> 		$siteprojects['projects_manger_id'],
+                "projects_client"			    => 		$siteprojects['projects_client'],
+                "projects_contract_start"       => 		$siteprojects['projects_contract_start'],
+                "projects_contract_end"			=> 		$siteprojects['projects_contract_end'],
+                "projects_client_phone"			=> 		$siteprojects['projects_client_phone'],
+                "transfer_type_name"			=> 		$transfer_type_name,
+                "project_car_types_car_number"  => 		$car_number,
+                "roadcount"                     => 		$siteroad['count'],
+                );
+                
         }else{return null;}
 	}
 	
@@ -82,42 +76,12 @@ class systemprojects
             return array(
                 "projects_sn"			            => 		$siteprojects['projects_sn']
             );
-
-
         }else{return true;}
 	}
 
 	function setprojectsInformation($projects)
 	{
-        if($projects['projects_photo'] != "")
-		{
-			$projects_photo = "`projects_photo`='".$projects['projects_photo']."',";
-		}else
-		{
-			$projects_photo = "";
-		}
-		
-		 if($projects['projects_personal_id'] != "")
-		{
-			$projects_personal_id = "`projects_personal_id`='".$projects['projects_personal_id']."',";
-		}else
-		{
-			$projects_personal_id = "";
-		}
-		 if($projects['projects_contract_photo'] != "")
-		{
-			$projects_contract_photo = "`projects_contract_photo`='".$projects['projects_contract_photo']."',";
-		}else
-		{
-			$projects_contract_photo = "";
-		}
-	    if($projects['projects_password'] != "")
-		{
-			$projects_password = "`projects_password`='".$projects['projects_password']."',";
-		}else
-		{
-			$projects_password = "";
-		}
+        
 		$GLOBALS['db']->query("UPDATE LOW_PRIORITY `".$this->tableName."` SET
             `projects_name`			        = 		'".$projects['projects_name']."',".$projects_password."
             `projects_managment_id`			= 		'".$projects['projects_managment_id']."',".$projects_contract_photo."
@@ -144,39 +108,16 @@ class systemprojects
 	function addNewprojects($projects)
 	{
 		$GLOBALS['db']->query("INSERT LOW_PRIORITY INTO `".$this->tableName."`
-		(`projects_sn`, `projects_name`, `projects_managment_id`, `projects_job_id`, `projects_qualification`, `projects_birthday`,
-        `projects_hiring_date`, `projects_phone`, `projects_email`, `projects_job_serial`, `projects_net_salary`, `projects_salary_exchanges`, 
-        `projects_photo`, `projects_personal_id`, `projects_license_id`, `projects_license_place`, `projects_license_expired`, `projects_contract_finish`,
-        `projects_contract_photo`, `projects_notes`, `projects_username`, `projects_password`, `projects_group_id`,`projects_status`, `projects_kick`)
-		VALUES ( NULL ,  '".$projects['projects_name']."' ,  '".$projects['projects_managment_id']."',  '".$projects['projects_job_id']."' ,  '".$projects['projects_qualification']."',  '".$projects['projects_birthday']."' , 
-        '".$projects['projects_hiring_date']."','".$projects['projects_phone']."' ,  '".$projects['projects_email']."',  '".$projects['projects_job_serial']."' ,  '".$projects['projects_net_salary']."',  '".$projects['projects_salary_exchanges']."' , 
-        '".$projects['projects_photo']."','".$projects['projects_personal_id']."' ,  '".$projects['projects_license_id']."',  '".$projects['projects_license_place']."' ,  '".$projects['projects_license_expired']."',  '".$projects['projects_contract_finish']."', 
-        '".$projects['projects_contract_photo']."','".$projects['projects_notes']."' ,  '".$projects['projects_username']."',  '".$projects['projects_password']."' ,  '".$projects['projects_group_id']."','1', 1 )");
-		return 1;
+		(`projects_sn`, `projects_name`, `projects_manger_id`, `projects_client`, `projects_contract_start`, `projects_contract_end`, `projects_client_phone`, `projects_status`) 
+        VALUES ( NULL ,  '".$projects['projects_name']."' ,  '".$projects['projects_manger_id']."' , '".$projects['projects_client']."' , '".$projects['projects_contract_start']."' ,'".$projects['projects_contract_end']."' , '".$projects['projects_client_phone']."' ,   1 )");
+		$project_id = $GLOBALS['db']->fetchLastInsertId();
+        foreach($projects['project_car_types_car_number'] as $k => $v)
+        {
+            $GLOBALS['db']->query("INSERT LOW_PRIORITY INTO `project_car_types` 
+            (`project_car_types_sn`, `project_car_types_project_id`, `project_car_types_type_id`, `project_car_types_car_number`, `project_car_types_max_kilometer`, `project_car_types_status`)
+            VALUES ( NULL ,'".$project_id."',  '".$projects['project_car_types_type_id'][$k]."', '".$v."','".$projects['project_car_types_max_kilometer'][$k]."', 1 )");
+        }
+        return 1;
 	}
-
-	function deleteprojects($projects_sn)
-	{
-		$GLOBALS['db']->query("DELETE LOW_PRIORITY FROM `".$this->tableName."` WHERE `projects_sn` = '".$projects_sn."' LIMIT 1 ");
-		return 1;
-	}
-	
-	function activestatusprojects($projects_sn,$status)
-	{  
-		if($status==1)
-		{
-			$GLOBALS['db']->query("UPDATE LOW_PRIORITY `".$this->tableName."` SET
-			`status`    =	'0'
-			 WHERE `projects_sn` 		 = 	'".$projects_sn."' LIMIT 1 ");
-			return 1;
-		}else
-		{
-			$GLOBALS['db']->query("UPDATE LOW_PRIORITY `".$this->tableName."` SET
-				`status`    =	'1'
-			 	WHERE `projects_sn` 		 = 	'".$projects_sn."' LIMIT 1 ");
-			return 1;
-		}
-	}
-
 }
 ?>

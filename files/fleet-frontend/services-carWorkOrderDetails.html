@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>سجل أوامر شغل سيارة </title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="images/ElKammar_Logo.png" alt="logo" srcset="" height="50">
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <span data-feather="home"></span>
+                        لوحة العرض
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bus"></i>
+                        الأسطول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-exclamation-circle"></i>
+                        أعطال وفحص
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell"></i>
+                        تذكيرات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-wrench"></i>
+                        خدمات الصيانة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-gas-pump"></i>
+                        الوقود
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user-friends"></i>
+                        جهات الإتصال
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>
+                        المشروعات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        تقارير ومرفقات
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i>
+                        إعدادات النظام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto mt-2 mt-md-0 top_nav">
+                <i class="fas fa-bell cool-grey"></i>
+                <hr>
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    أحمد محمد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+                <img src="profile-icon.png" width="60" height="60" class="rounded-circle">
+            </form>
+
+        </div>
+    </nav>
+    <main class="">
+        <div
+            class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+            <span class="page_titles">
+                <h1 class="h2">سجل أوامر شغل سيارة </h1>
+            </span>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                    <button class="btn dark_btn">
+                        <a href="">عودة</a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="container page_body">
+            <div class="container page_body">
+                <div class="row car_dashboard_header white-bg blue_border">
+                    <div class="col-md-2"><img src="images/bus_image.jpg" width="100%"></div>
+                    <div class="col-md-3">
+                        <p>104 - [Toyota Coaster]</p>
+                        <p>موديل 2018</p>
+                        <p>ق أ س 8513</p>
+                    </div>
+                    <div class="col-md-2 cars_status">
+                        <p><i class="fas fa-circle working_car"></i>تعمل</p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="inline_content">
+                            <p>اسم المشروع : </p>
+                            <p class="safe_status">مشروع 1 </p>
+                        </div>
+                        <div class="inline_content">
+                            <p>مدير / مشرف المشروع: </p>
+                            <p class="safe_status">مشرف 1 </p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 car_actions">
+                        <a href="">
+                            <i class="far fa-edit safe_status"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col ">
+                        <div class="row mt-3">
+                            <div class="col">
+                                <p>أمر شغل رقم: <span class="dodger-blue">1533</span></p>
+                            </div>
+                        </div>
+                        <div class="row mt-3 white-bg">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h6 class="inline_item mr-3 periwinkle-blue">تاريخ الدخول</h6>
+                                        <h6 class="inline_item">10 / 8 / 2020</h6>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="inline_item mr-3 periwinkle-blue">عدد الكيلومترات عند دخول أمر الشغل
+                                        </h6>
+                                        <h6 class="inline_item">120,456</h6>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="inline_item mr-3 periwinkle-blue">التكلفة</h6>
+                                        <h6 class="inline_item">2,456</h6>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-3">
+                                        <h6 class="inline_item mr-3 periwinkle-blue">تاريخ الخروج</h6>
+                                        <h6 class="inline_item">10 / 8 / 2020</h6>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6 class="inline_item mr-3 periwinkle-blue">مورد الخدمة</h6>
+                                        <h6 class="inline_item">داخلي</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col flex_items_btween">
+                                <p>اجراءات أمر شغل : </p>
+                                <div>
+                                    <a href="./services-addWorkOrder.html" class="mr-3">
+                                        <i class="far fa-edit darkish-green mr-0"></i>
+                                    </a>
+
+                                    <i class="fas fa-trash rose" data-toggle="modal"
+                                        data-target="#Deleteconfirmation"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row white-bg">
+                            <div class="col">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class="periwinkle-blue bordeless_tr">
+                                            <td >الإجراء</td>
+                                            <td>تكلفة فنيين</td>
+                                            <td>تكلفة قطع غيار</td>
+                                            <td>وصف الإجراء</td>
+                                            <td width="7%"></td>
+                                            <td>إجمالي</td>
+                                            <td>تذكير</td>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>زيت المحرك</td>
+                                                <td>50</td>
+                                                <td>700</td>
+                                                <td>تغيير زيت المحرك</td>
+                                                <td></td>
+                                                <td>750</td>
+                                                <td><i class="fas fa-history darkish-green "></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>زيت المحرك</td>
+                                                <td>50</td>
+                                                <td>700</td>
+                                                <td>تغيير زيت المحرك</td>
+                                                <td></td>
+                                                <td>750</td>
+                                                <td><i class="fas fa-history darkish-green "></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>زيت المحرك</td>
+                                                <td>50</td>
+                                                <td>700</td>
+                                                <td>تغيير زيت المحرك</td>
+                                                <td></td>
+                                                <td>750</td>
+                                                <td><i class="fas fa-history darkish-green disable"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>زيت المحرك</td>
+                                                <td>50</td>
+                                                <td>700</td>
+                                                <td>تغيير زيت المحرك</td>
+                                                <td></td>
+                                                <td>750</td>
+                                                <td><i class="fas fa-history darkish-green "></i></td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td ></td>
+                                                <td class="bold">170</td>
+                                                <td class="bold">4600</td>
+                                                <td ></td>
+                                                <td class="bold">المجموع</td>
+                                                <td class="bold">11111</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bordeless"></td>
+                                                <td class="bordeless"></td>
+                                                <td></td>
+                                                <td class="bordeless"></td>
+                                                <td>خصم</td>
+                                                <td>200</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bordeless dodger-blue bold">مرفقات أمر الشغل</td>
+                                                <td class="bordeless"></td>
+                                                <td class="bordeless"></td>
+                                                <td class="bordeless"></td>
+                                                <td>ضرائب</td>
+                                                <td>526</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bordeless dodger-blue">
+                                                    <div><span class=" "><i class="fas fa-paperclip"></i>فاتورة_زيت_المحرك.pdf</span></div>
+                                                    <div><span class=""><i class="fas fa-paperclip"></i>فاتورة_زيت_المحرك.pdf</span></div>
+                                                    <div><span class=""><i class="fas fa-paperclip"></i>فاتورة_زيت_المحرك.pdf</span></div>
+                                                </td>
+                                                <td class="bordeless"></td>
+                                                <td class="bordeless"></td>
+                                                <td class="bordeless"></td>
+                                                <td class="bold border_bottom">إجمالي التكلفة</td>
+                                                <td class="bold border_bottom">4000</td>
+                                                <td></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <span>2020</span>
+            </div>
+        </div>
+    </footer>
+    <!-- confirm delete Modal -->
+    <div class="modal fade addModal" id="Deleteconfirmation" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content dark_bg">
+
+                <div class="modal-body">
+                    <h5 class="white_text center">تأكيد الحذف</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn _btn btn-light" data-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn _btn btn-danger rose-bg delete_confirmation_btn"
+                        data-dismiss="modal">تأكيد</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

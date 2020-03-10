@@ -41,7 +41,6 @@
                     $_suppllier['suppliers_contract_start']           =       format_data_base(sanitize($_POST["start_date"]));
                     $_suppllier['suppliers_contract_end']             =       format_data_base(sanitize($_POST["end_date"]));
                     $_suppllier['suppliers_email']                    =       sanitize($_POST["email"]);
-//					                    print_r($_suppllier);
 
                    if($check == 1)
 					{ 
@@ -50,8 +49,6 @@
 						   $add = $suppliers->addNewsuppliers($_suppllier);
 //						   header("Location:./suppliers.php");
 				   }
-                    
-                    
 
                 }
             }

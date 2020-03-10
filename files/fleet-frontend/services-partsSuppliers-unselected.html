@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>خدمات الصيانة - مراكز / موردين خدمة الصيانة  </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="images/ElKammar_Logo.png" alt="logo" srcset="" height="50">
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto sidenav" id="navAccordion">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <span data-feather="home"></span>
+                        لوحة العرض
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bus"></i>
+                        الأسطول
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-exclamation-circle"></i>
+                        أعطال وفحص
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-bell"></i>
+                        تذكيرات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-wrench"></i>
+                        خدمات الصيانة
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-gas-pump"></i>
+                        الوقود
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-user-friends"></i>
+                        جهات الإتصال
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-briefcase"></i>
+                        المشروعات
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-chart-pie"></i>
+                        تقارير ومرفقات
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog"></i>
+                        إعدادات النظام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </li>
+            </ul>
+            <form class="form-inline ml-auto mt-2 mt-md-0 top_nav">
+                <i class="fas fa-bell cool-grey"></i>
+                <hr>
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    أحمد محمد
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Dashboard</a>
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+                <img src="profile-icon.png" width="60" height="60" class="rounded-circle">
+            </form>
+
+        </div>
+    </nav>
+    <main class="">
+        <div
+            class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
+            <span class="page_titles">
+                <h1 class="h2"> خدمات الصيانة</h1>
+                <h4 class="sub_title">
+                    <strong> &gt; </strong> مراكز / موردين خدمة الصيانة</h4>
+            </span>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                <div class="btn-group mr-2">
+                    <button class="btn dark_btn">
+                        <a href="./Contacts-add-supplier2.html">أضف مورد ق.غ </a>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="container page_body">
+            <div class="row">
+                <div class="col">
+                    <ul class="nav nav-tabs" role="tablist" id="myTab">
+                        <li >
+                            <a href="./services-main.html">سجل الخدمة</a>
+                        </li>
+                        <li>
+                            <a href="./services-workOrderUnselected.html">أوامر الشغل
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./services-tasks-unselected.html">إجراءات الخدمة</a>
+                        </li>
+                        <li >
+                            <a href="./services-servicesSuppliers-unselected.html">مراكز / موردين الخدمة</a>
+                        </li>
+                        <li class="active">
+                            <a href="">موردين قطع الغيار</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="page_body">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="previousIssue">
+                                <div class="row flex_items">
+                                    <div class="col">
+                                        <div class="input-group input-group-lg search_bar">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroup-sizing-lg">
+                                                    <i class="fas fa-search"></i>
+                                                </span>
+                                            </div>
+                                            <input class="form-control search_bar" type="search" id="search_input_all"
+                                                onkeyup="FilterkeyWord_all_table()" placeholder="البحث">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="num_rows" style="display: none;">
+
+                                    <div class="form-group">
+                                        <!--		Show Numbers Of Rows 		-->
+                                        <select class="form-control" name="state" id="maxRows">
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="50">50</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <table class="table white-bg  table-hover table-responsive-md searchTable" id="table-id">
+
+
+                                    <thead>
+                                        <tr class="periwinkle-blue ">
+                                            <td>المورد / مركز الصيانة</td>
+                                            <td>الشخص المسؤل</td>
+                                            <td>التليفون</td>
+                                            <td>المدينة</td>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>الاسكندرية</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>مسؤل 1</td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>الدولية للصيانة</td>
+                                            <td>زكريا الدرديري </td>
+                                            <td>012698452148</td>
+                                            <td>القاهرة</td>
+                                            <td>
+                                                <a href="./Contacts-add-supplier2.html">
+                                                    <i class="far fa-edit darkish-green"></i>
+                                                </a>
+                                                <i class="fas fa-trash rose ml-2" data-toggle="modal" data-target="#Deleteconfirmation"></i>
+                                           
+                                            </td>
+                                        </tr>
+                                    <tbody>
+                                </table>
+
+                                <!--		Start Pagination -->
+                                <div class='pull-left pagination-container'>
+                                    <nav>
+                                        <ul class="pagination">
+                                            <!--	Here the JS Function Will Add the Rows -->
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- <div class="rows_count">Showing 11 to 20 of 91 entries</div> -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                2020
+            </div>
+        </div>
+    </footer>
+
+    <!-- confirm delete Modal -->
+    <div class="modal fade addModal" id="Deleteconfirmation" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content dark_bg">
+
+                <div class="modal-body">
+                    <h5 class="white_text center">تأكيد الحذف</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn _btn btn-light" data-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn _btn btn-danger rose-bg delete_confirmation_btn"
+                        data-dismiss="modal">تأكيد</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -16,15 +16,6 @@ class systemcars
             return($GLOBALS['db']->fetchlist());
         }else{return null;}
 	}
-	function getselectcars()
-	{
-        $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."`  ORDER BY `cars_sn`  DESC ");
-        $queryTotal = $GLOBALS['db']->resultcount();
-        if($queryTotal > 0)
-        {
-            return($GLOBALS['db']->fetchlist());
-        }else{return null;}
-	}
 
 	function getTotalcars($addon = "")
 	{
@@ -33,7 +24,6 @@ class systemcars
         $total 				= $queryTotal['total'];
         return ($total);
 	}
-
 	function getcarsInformation($cars_sn)
 	{
 		
@@ -101,7 +91,6 @@ class systemcars
             );
         }else{return null;}
 	}
-	
 	function iscarsExists($name)
 	{
         $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."` WHERE `cars_name` = '".$name."' LIMIT 1 ");
@@ -116,7 +105,6 @@ class systemcars
 
         }else{return true;}
 	}
-
 	function setcarsInformation($cars)
 	{
         if($cars['cars_photo'] != "")
@@ -149,7 +137,6 @@ class systemcars
           WHERE `cars_sn`    	            = 	    '".$cars['cars_sn']."' LIMIT 1 ");
 		return 1;
 	}
-
 	function addNewcars($cars)
 	{
 		$GLOBALS['db']->query("INSERT LOW_PRIORITY INTO `".$this->tableName."`
@@ -180,8 +167,6 @@ class systemcars
         }
         return 1;
 	}
-    
-    
     function add_car_order($order)
 	{
 		$GLOBALS['db']->query("INSERT LOW_PRIORITY INTO `car_orders`(`car_orders_sn`, `car_orders_car_id`, `car_orders_supervisor_id`, `car_orders_driver_id`, `car_orders_project_id`, `car_orders_road_id`, `car_orders_delivery_by`, `car_orders_delivery_kilos`, `car_orders_delivery_date`, `car_orders_delivery_time`, `car_orders_expect_kilos`, `car_orders_expect_date`, `car_orders_expect_time`, `car_orders_check_id`, `car_orders_status`) 

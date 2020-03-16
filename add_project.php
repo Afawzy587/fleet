@@ -29,7 +29,7 @@
             }else
             {
                 $transfer_type = $informations->getdatatable("transfer_type");                                         // transfer_type
-				$users         = $user->getsiteusers();   
+				$users         = $user->getselectusers();   
                 if($_POST)
                 {
 
@@ -151,17 +151,9 @@
                                         <div class="row" id="truck_type_item">
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label class="col-xs-3"><?php  echo $lang['P_CAR_NUM'];?></label>
-                                                    <div class="col-xs-5">
-                                                        <input class="form-control small_input" name="car_number[]" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
                                                     <label class="col-xs-3"><?php  echo $lang['SYS_TRANSFER'];?></label>
                                                     <div class="col-xs-5">
-                                                        <select class="form-control md-select" title="<?php  echo $lang['CHOOSE'];?>" name="truck_type[]">
+                                                        <select class="select_type form-control md-select" title="<?php  echo $lang['CHOOSE'];?>" name="truck_type[]">
                                                             <option disabled selected value><?php echo $lang['CHOOSE'];?> </option>
                                                             <?php
                                                                 foreach($transfer_type as $k => $t)
@@ -174,6 +166,15 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="col-xs-3"><?php  echo $lang['P_CAR_NUM'];?></label>
+                                                    <div class="col-xs-5">
+                                                        <input class="form-control small_input" id="car_number"  name="car_number[]" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-xs-3"><?php  echo $lang['PRO_MAX_KILO'];?></label>

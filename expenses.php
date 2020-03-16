@@ -108,8 +108,7 @@
 														</div>
 														<div class="modal-footer">
 															<button type="button" class="delete_expenses btn _btn btn-light" id='.$v['expenses_sn'].' data-dismiss="modal">'.$lang['CONFORM'].'</button>
-															<button type="button" class="btn _btn btn-danger rose-bg delete_confirmation_btn"
-																data-dismiss="modal">'.$lang['SYS_CANCEL'].'</button>
+															<button type="button" class="btn _btn btn-danger rose-bg delete_confirmation_btn" data-dismiss="modal">'.$lang['SYS_CANCEL'].'</button>
 														</div>
 													</div>
 												</div>
@@ -118,7 +117,7 @@
 									}
 								?>
                                 <div class="col-md-4 bottom_border expenses_type_item">
-                                    <p class="add_item pale-teal" data-toggle="modal" data-target="#AddModalCenter"><i class="fas fa-plus-circle darkish-green"></i>أضف نوع مصروف جديد</p>
+                                    <p class="add_item pale-teal" data-toggle="modal" data-target="#AddModalCenter"><i class="fas fa-plus-circle darkish-green"></i><?php echo $lang['ADD_NEW_EXPENCES'];?></p>
                                 </div>
                             </div>
                             

@@ -439,4 +439,86 @@ $(document).ready(function(){
     $('.add_other').click(function() {
         $('[name="add_other"]').val('1');
     });
+    $(".delete_services").click(function(){
+        var id                 = $(this).attr('id');
+        var page               = "system_information_js.php?do=delete_services";
+        if(id != "")
+        {
+			jQuery.ajax( 
+			{
+				async :true,
+				type  :"POST",
+				url   :page,
+				data  :"&id=" +id,
+				success : function(responce) {
+					if(responce == 100)
+					{
+						location.reload(true);
+					}else 
+						{
+							alert('not  delete')
+						}
+				},
+				error : function() {
+					return true;
+				}
+			});        
+        }
+        
+    });
+	$(".end_damage").click(function(){
+        var id                 = $(this).attr('id');
+        var page               = "system_information_js.php?do=end_damage";
+        if(id != "")
+        {
+			jQuery.ajax( 
+			{
+				async :true,
+				type  :"POST",
+				url   :page,
+				data  :"&id=" +id,
+				success : function(responce) {
+					if(responce == 100)
+					{
+						$("#tr_"+id).animate({height: 'auto', opacity: '0.2'}, "slow");
+                        $("#tr_"+id).animate({width: 'auto', opacity: '0.9'}, "slow");
+                        $("#tr_"+id).animate({height: 'auto', opacity: '0.2'}, "slow");
+                        $("#tr_"+id).animate({width: 'auto', opacity: '1'}, "slow");
+						
+						setTimeout(location.reload(true), 1000);
+					}else 
+					{
+						alert('not  end')
+					}
+				},
+				error : function() {
+					return true;
+				}
+			});        
+        }
+        
+    });
+    $('select.select_type').on('change',function(){
+        var id    = $(this).val();
+        var page  ="system_information_js.php?do=type_max";
+        if(id){
+            $.ajax({
+                type:'POST',
+                url:page,
+                data:'id='+id,
+                success:function(data)
+                {
+                                            alert(data)
+
+                    if(data > 0)
+                    {
+                        $('#car_number').setAttribute("max",data); 
+                    }else{
+                        $('#car_number').setAttribute("placeholder",data); 
+                    }
+                    
+                }
+                });
+        }
+	});
 });

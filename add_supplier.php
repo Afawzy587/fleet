@@ -22,7 +22,7 @@
 	}else{
 			$supply_type   = $informations->getdatatable("supply_type");                                          // supply_type
 			$users         = $user->getsiteusers();                                          // supply_type
-            if($group['contacts_add'] == 0){
+            if($group['suppliers_add'] == 0){
                 header("Location:./permission.php");
                 exit;
             }else
@@ -152,7 +152,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group form_btn">
-                                        <button class="dark_btn btn _btn small_btn" type="button" data-toggle="modal" data-target="#AddModalCenter"> <?php echo $lang['ADD_SYS_SUPPLY_TYPE'];?></button>
+                                        <?php
+                                            if($group['supply_type_add'] == 1){
+                                                echo'<button class="dark_btn btn _btn small_btn" type="button" data-toggle="modal" data-target="#AddModalCenter">'.$lang['ADD_SYS_SUPPLY_TYPE'].'</button>';
+                                            }
+                                        ?>
+                                        
                                     </div>
                                     <div class="form-group">
                                         <label> <?php echo $lang['CONTRACT_DATE'];?></label>

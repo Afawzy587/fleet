@@ -34,8 +34,8 @@ class systemgroups
         {
             $sitegroup = $GLOBALS['db']->fetchitem($query);
             return array(
-                "groups_sn"			                     => 		 $sitegroups['groups_sn'],
-                "groups_name"			                 => 		 $sitegroups['groups_name'],
+                "groups_sn"			                     => 		 $sitegroup['groups_sn'],
+                "groups_name"			                 => 		 $sitegroup['groups_name'],
                 "system_information"                     =>          $sitegroup['system_information'],
             	"contacts_list"                          =>          $sitegroup['contacts_list'],
             	"contacts_add"                           =>          $sitegroup['contacts_add'],
@@ -55,6 +55,30 @@ class systemgroups
                 "check_item_list"                        =>          $sitegroup['check_item_list'],
                 "check_to_order"                         =>          $sitegroup['check_to_order'],
                 "end_check"                              =>          $sitegroup['end_check'],
+                "groups_add"                             =>          $sitegroup['groups_add'],
+                "groups_edit"                            =>          $sitegroup['groups_edit'],
+                "groups_delete"                          =>          $sitegroup['groups_delete'],
+                "groups_member"                          =>          $sitegroup['groups_member'],
+                "supply_type_add"                        =>          $sitegroup['supply_type_add'],
+                "suppliers_list"                         =>          $sitegroup['suppliers_list'],
+                "suppliers_add"                          =>          $sitegroup['suppliers_add'],
+                "suppliers_edit"                         =>          $sitegroup['suppliers_edit'],
+                "suppliers_delete"                       =>          $sitegroup['suppliers_delete'],
+                "projects_list"                          =>          $sitegroup['projects_list'],
+                "projects_add"                           =>          $sitegroup['projects_add'],
+                "projects_edit"                          =>          $sitegroup['projects_edit'],
+                "projects_delete"                        =>          $sitegroup['projects_delete'],
+                "car_fuel_cost"                          =>          $sitegroup['car_fuel_cost'],
+                "car_fuel_amount"                        =>          $sitegroup['car_fuel_amount'],
+                "car_fuel_list"                          =>          $sitegroup['car_fuel_list'],
+                "car_fuel_add"                           =>          $sitegroup['car_fuel_add'],
+                "car_fuel_edit"                          =>          $sitegroup['car_fuel_edit'],
+                "car_fuel_delete"                        =>          $sitegroup['car_fuel_delete'],
+                "job_orders_list"                        =>          $sitegroup['job_orders_list'],
+                "job_orders_add"                         =>          $sitegroup['job_orders_add'],
+                "job_orders_edit"                        =>          $sitegroup['job_orders_edit'],
+                "job_orders_delete"                      =>          $sitegroup['job_orders_delete'],
+                "job_orders_cost"                        =>          $sitegroup['job_orders_cost'],
             );
         }else{return null;}
 	}

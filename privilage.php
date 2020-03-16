@@ -35,6 +35,30 @@
 				$_group['check_item_list']                   =       intval($_POST["check_item_list"]);
 				$_group['check_to_order']                    =       intval($_POST["check_to_order"]);
 				$_group['end_check']                         =       intval($_POST["end_check"]);
+				$_group['groups_add']                        =       intval($_POST["groups_add"]);
+				$_group['groups_edit']                       =       intval($_POST["groups_edit"]);
+				$_group['groups_delete']                     =       intval($_POST["groups_delete"]);
+				$_group['groups_member']                     =       intval($_POST["groups_member"]);
+				$_group['suppliers_list']                    =       intval($_POST["suppliers_list"]);
+				$_group['suppliers_add']                     =       intval($_POST["suppliers_add"]);
+				$_group['suppliers_edit']                    =       intval($_POST["suppliers_edit"]);
+				$_group['suppliers_delete']                  =       intval($_POST["suppliers_delete"]);
+				$_group['supply_type_add']                   =       intval($_POST["supply_type_add"]);
+				$_group['projects_list']                     =       intval($_POST["projects_list"]);
+				$_group['projects_add']                      =       intval($_POST["projects_add"]);
+				$_group['projects_edit']                     =       intval($_POST["projects_edit"]);
+				$_group['projects_delete']                   =       intval($_POST["projects_delete"]);
+				$_group['car_fuel_list']                     =       intval($_POST["car_fuel_list"]);
+				$_group['car_fuel_cost']                     =       intval($_POST["car_fuel_cost"]);
+				$_group['car_fuel_amount']                   =       intval($_POST["car_fuel_amount"]);
+				$_group['car_fuel_add']                      =       intval($_POST["car_fuel_add"]);
+				$_group['car_fuel_edit']                     =       intval($_POST["car_fuel_edit"]);
+				$_group['car_fuel_delete']                   =       intval($_POST["car_fuel_delete"]);
+				$_group['job_orders_list']                   =       intval($_POST["job_orders_list"]);
+				$_group['job_orders_add']                    =       intval($_POST["job_orders_add"]);
+				$_group['job_orders_edit']                   =       intval($_POST["job_orders_edit"]);
+				$_group['job_orders_delete']                 =       intval($_POST["job_orders_delete"]);
+				$_group['job_orders_cost']                   =       intval($_POST["job_orders_cost"]);
 				print_r($_group);
 //				$edit = $groups->setgroupsInformation($_group);
 //				if($edit == 1)
@@ -54,7 +78,7 @@
         <form method="post"  action="privilage.php?g=<?php echo $mId;?>"  enctype="multipart/form-data">
             <div
                 class="page_title d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom">
-                <h1 class="h2">خدمات الصيانة</h1>
+                <h1 class="h2"><?php echo $lang['GR_CONTACTS'];?></h1>
                 <div>
                     <a class="btn _btn btn-danger rose-bg ml-3" data-dismiss="modal" href="./groups.php"><?php echo $lang['CANCEL'];?></a>
                     <button class="btn btn-success _btn darkish-green-bg mr-3" type="submit"><?php echo $lang['SAVE'];?></button>
@@ -66,13 +90,13 @@
                         <div class="page_body">
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <h3 class="mtb-3 small_title subtitle">المجموعة: </h3>
-                                <h3 class="small_title tangerine subtitle">مديري النظام</h3>
+                                <h3 class="mtb-3 small_title subtitle"><?php echo $lang['GR_NAME'];?>   : </h3>
+                                <h3 class="small_title tangerine subtitle"><?php echo $u['groups_name'];?></h3>
                                 <table class="datatable table white-bg contacts_table table-hover permission_table">
                                     <thead>
                                         <tr>
-                                            <th>القائمة</th>
-                                            <th>الصلاحية</th>
+                                            <th><?php echo $lang['GR_MAIN'];?></th>
+                                            <th><?php echo $lang['groups_name'];?></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -144,6 +168,88 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="work_orders2" type="checkbox" value="work_orders2 all" name="more_filter_chx" data-chx-type="work_orders2" class="Master"
+                                                       <?php if($u['job_orders_list'] == 1 && $u['job_orders_add'] == 1 && $u['job_orders_edit'] == 1  && $u['job_orders_delete'] == 1  && $u['job_orders_cost'] == 1 ){ echo 'checked';}?>
+                                                       >
+                                                <label for="work_orders2"><?php echo $lang['GR_JOB_ORDERS'];?></label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_work_orders2" type="checkbox" value="1" name="job_orders_list" data-chx-type="work_orders2" <?php if($u['job_orders_list'] == 1){ echo 'checked';}?>>
+                                                        <label for="display_work_orders2"></label>
+                                                        <p><?php echo $lang['GR_CONTACTS_VIEW'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_work_orders2" type="checkbox" value="1" name="job_orders_add" data-chx-type="work_orders2" <?php if($u['job_orders_add'] == 1){ echo 'checked';}?>>
+                                                        <label for="add_work_orders2"></label>
+                                                        <p><?php echo $lang['GR_ADD'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_work_orders2" type="checkbox" value="1" name="job_orders_edit" data-chx-type="work_orders2" <?php if($u['job_orders_edit'] == 1){ echo 'checked';}?>>
+                                                        <label for="edit_work_orders2">
+                                                        </label>
+                                                        <p><?php echo $lang['GR_EDIT'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_work_orders2" type="checkbox" value="1" name="job_orders_delete" data-chx-type="work_orders2" <?php if($u['job_orders_delete'] == 1){ echo 'checked';}?>>
+                                                        <label for="remove_work_orders2"></label>
+                                                        <p><?php echo $lang['GR_DELETE'];?></p>
+                                                    </div>
+                                                    
+                                                    <div class="permission_item">
+                                                        <input id="edit_work_orders2" type="checkbox" value="1" name="job_orders_cost" data-chx-type="work_orders2" <?php if($u['job_orders_cost'] == 1){ echo 'checked';}?>>
+                                                        <label for="edit_work_orders2"></label>
+                                                        <p><?php echo $lang['GR_TOTAL_COST'];?></p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="fuel" type="checkbox" value="fuel all" name="more_filter_chx" data-chx-type="fuel" class="Master"
+                                                       <?php if($u['car_fuel_list'] == 1 && $u['car_fuel_cost'] == 1 && $u['car_fuel_amount'] == 1 && $u['car_fuel_add'] == 1  && $u['car_fuel_edit'] == 1  && $u['car_fuel_delete'] == 1 ){ echo 'checked';}?>>
+                                                <label for="fuel"><?php echo $lang['FUEL'];?></label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_fuel" type="checkbox" value="1" name="car_fuel_list" data-chx-type="fuel" <?php if($u['car_fuel_list'] == 1){ echo 'checked';}?>>
+                                                        <label for="display_fuel"></label>
+                                                        <p><?php echo $lang['GR_CONTACTS_VIEW'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="fuel_cost" type="checkbox" value="1" name="car_fuel_cost" data-chx-type="fuel" <?php if($u['car_fuel_cost'] == 1){ echo 'checked';}?>>
+                                                        <label for="fuel_cost"></label>
+                                                        <p> <?php echo $lang['VALUE'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="fuel_quantity" type="checkbox" value="1" name="car_fuel_amount" data-chx-type="fuel" <?php if($u['car_fuel_amount'] == 1){ echo 'checked';}?>>
+                                                        <label for="fuel_quantity">
+                                                        </label>
+                                                        <p> <?php echo $lang['QUANTITY'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_fuel" type="checkbox" value="1" name="car_fuel_add" data-chx-type="fuel" <?php if($u['car_fuel_add'] == 1){ echo 'checked';}?>>
+                                                        <label for="add_fuel"></label>
+                                                        <p><?php echo $lang['GR_ADD'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_fuel" type="checkbox" value="1" name="car_fuel_edit" data-chx-type="fuel" <?php if($u['car_fuel_edit'] == 1){ echo 'checked';}?>>
+                                                        <label for="edit_fuel"></label>
+                                                        <p><?php echo $lang['GR_EDIT'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_fuel" type="checkbox" value="1" name="car_fuel_delete"  data-chx-type="fuel" <?php if($u['car_fuel_delete'] == 1){ echo 'checked';}?>>
+                                                        <label for="remove_fuel"></label>
+                                                        <p><?php echo $lang['GR_DELETE'];?></p>
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
                                        <tr>
                                             <td class="main_tr">
                                                 <input id="contacts" type="checkbox" value="contacts all" name="" data-chx-type="contacts" class="Master"
@@ -173,6 +279,110 @@
                                                         <input id="remove_contacts" type="checkbox" value="1" name="contacts_delete" data-chx-type="contacts" <?php if($u['contacts_delete'] == 1){ echo 'checked';}?>>
                                                         <label for="remove_contacts"></label>
                                                         <p><?php echo $lang['GR_DELETE'];?></p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="privlleges" type="checkbox" value="privlleges all" name="more_filter_chx" data-chx-type="privlleges" class="Master"
+                                                       <?php if($u['groups_add'] == 1 &&$u['groups_edit'] == 1 &&$u['groups_delete'] == 1 &&$u['groups_member'] == 1 ){ echo 'checked';}?>
+                                                       >
+                                                <label for="privlleges"><?php echo $lang['GR_E_PR'];?></label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="add_group" type="checkbox" value="1" name="groups_add" data-chx-type="privlleges" <?php if($u['groups_add'] == 1){ echo 'checked';}?>>
+                                                        <label for="add_group"></label>
+                                                        <p><?php echo $lang['GR_ADD_GROUP'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_group" type="checkbox" value="1" name="groups_edit" data-chx-type="privlleges" <?php if($u['groups_edit'] == 1){ echo 'checked';}?>>
+                                                        <label for="edit_group"></label>
+                                                        <p><?php echo $lang['GR_EDIT_GROUP'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_group" type="checkbox" value="1" name="groups_delete" data-chx-type="privlleges" <?php if($u['groups_delete'] == 1){ echo 'checked';}?>>
+                                                        <label for="remove_group">
+                                                        </label>
+                                                        <p><?php echo $lang['GR_DELETE_GROUP'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_group_members" type="checkbox" value="1" name="groups_member" data-chx-type="privlleges" <?php if($u['groups_member'] == 1){ echo 'checked';}?>>
+                                                        <label for="edit_group_members"></label>
+                                                        <p><?php echo $lang['GR_EDIT_MEMBER'];?></p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                          <tr>
+                                            <td class="main_tr">
+                                                <input id="suppliers" type="checkbox" value="suppliers all" name="more_filter_chx"data-chx-type="suppliers" class="Master"
+                                                       <?php if($u['suppliers_list'] == 1 &&$u['suppliers_add'] == 1 &&$u['suppliers_edit'] == 1 && $u['suppliers_delete'] == 1 && $u['supply_type_add'] == 1 ){ echo 'checked';}?>
+                                                       >
+                                                <label for="suppliers"><?php echo $lang['CONT_SUPLLIERS'];?></label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_suppliers" type="checkbox" value="1" name="suppliers_list" data-chx-type="suppliers" <?php if($u['suppliers_list'] == 1){ echo 'checked';}?>>
+                                                        <label for="display_suppliers"></label>
+                                                        <p> <?php echo $lang['GR_CONTACTS_VIEW'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_suppliers" type="checkbox" value="1" name="suppliers_add" data-chx-type="suppliers" <?php if($u['suppliers_add'] == 1){ echo 'checked';}?>>
+                                                        <label for="add_suppliers"></label>
+                                                        <p> <?php echo $lang['GR_ADD'];?> </p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_suppliers" type="checkbox" value="1"  name="suppliers_edit" data-chx-type="suppliers" <?php if($u['suppliers_edit'] == 1){ echo 'checked';}?>>
+                                                        <label for="edit_suppliers">
+                                                        </label>
+                                                        <p><?php echo $lang['GR_EDIT'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_suppliers" type="checkbox" value="1" name="suppliers_delete" data-chx-type="suppliers" <?php if($u['suppliers_delete'] == 1){ echo 'checked';}?>>
+                                                        <label for="remove_suppliers"></label>
+                                                        <p><?php echo $lang['GR_DELETE'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_supply_type" type="checkbox" value="1" name="supply_type_add" data-chx-type="suppliers" <?php if($u['supply_type_add'] == 1){ echo 'checked';}?>>
+                                                        <label for="add_supply_type"></label>
+                                                        <p><?php echo $lang['GR_A_I_TYPE'];?></p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="main_tr">
+                                                <input id="projects" type="checkbox" value="projects all" name="more_filter_chx" data-chx-type="projects" class="Master"
+                                                       <?php if($u['projects_list'] == 1 &&$u['projects_add'] == 1 &&$u['projects_edit'] == 1 && $u['projects_delete'] == 1  ){ echo 'checked';}?>
+                                                       >
+                                                <label for="projects"><?php echo $lang['PROJECTS'];?></label>
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="permission_item">
+                                                        <input id="display_projects" type="checkbox" value="1" name="projects_list" data-chx-type="projects" <?php if($u['projects_list'] == 1){ echo 'checked';}?>>
+                                                        <label for="display_projects"></label>
+                                                        <p><?php echo $lang['GR_CONTACTS_VIEW'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="add_projects" type="checkbox" value="1" name="projects_add" data-chx-type="projects" <?php if($u['projects_add'] == 1){ echo 'checked';}?>>
+                                                        <label for="add_projects"></label>
+                                                        <p> <?php echo $lang['GR_ADD'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="edit_projects" type="checkbox" value="1" name="projects_edit" data-chx-type="projects" <?php if($u['projects_edit'] == 1){ echo 'checked';}?>>
+                                                        <label for="edit_projects">
+                                                        </label>
+                                                        <p> <?php echo $lang['GR_EDIT'];?></p>
+                                                    </div>
+                                                    <div class="permission_item">
+                                                        <input id="remove_projects" type="checkbox" value="1"  name="projects_delete" data-chx-type="projects" <?php if($u['projects_delete'] == 1){ echo 'checked';}?>>
+                                                        <label for="remove_projects"></label>
+                                                        <p> <?php echo $lang['GR_DELETE'];?></p>
                                                     </div>
                                                 </div>
                                             </td>

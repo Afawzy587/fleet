@@ -22,7 +22,7 @@
 	}else{
 			$supply_type   = $informations->getdatatable("supply_type");                                          // supply_type
 			$users         = $user->getsiteusers();                                          // supply_type
-            if($group['contacts_edit'] == 0){
+            if($group['suppliers_edit'] == 0){
                 header("Location:./permission.php");
                 exit;
             }else
@@ -56,9 +56,9 @@
 
 					}
 				}else{
-                header("Location:./error.php");
-                exit;
-            }
+                    header("Location:./error.php");
+                    exit;
+                }
                 
             }
         include './assets/layout/header.php';

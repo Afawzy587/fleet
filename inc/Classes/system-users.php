@@ -16,6 +16,22 @@ class systemusers
             return($GLOBALS['db']->fetchlist());
         }else{return null;}
 	}
+    
+    function searchusers($search)
+	{
+        $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."` WHERE 
+        `users_sn` !='".$_SESSION['id']."' AND
+        (`users_name` LIKE '%".$search."%' 
+          OR `users_job_serial` LIKE '%".$search."%' 
+          OR `users_email` LIKE '%".$search."%' 
+          OR `users_phone` LIKE '%".$search."%')
+        ORDER BY `users_sn`  DESC ");
+        $queryTotal = $GLOBALS['db']->resultcount();
+        if($queryTotal > 0)
+        {
+            return($GLOBALS['db']->fetchlist());
+        }else{return null;}
+	}
 	function getselectusers()
 	{
         $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."`  ORDER BY `users_sn`  DESC ");
@@ -41,7 +57,7 @@ class systemusers
         $queryTotal = $GLOBALS['db']->resultcount();
         if($queryTotal > 0)
         {
-            $sitegroup = $GLOBALS['db']->fetchitem($query);
+            $siteusers = $GLOBALS['db']->fetchitem($query);
             return array(
                 "users_sn"			            => 		$siteusers['users_sn'],
                 "users_name"			        => 		$siteusers['users_name'],

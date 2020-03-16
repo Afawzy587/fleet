@@ -36,6 +36,7 @@
                 $services      = $_services->getsiteservices();
                 $_cars         = $cars->getsitecars();
                 $users         = $user->getsiteusers();
+                $mId           = $_GET['c'];
                 if($_POST)
                 {
 
@@ -60,8 +61,15 @@
                     {
                         if(intval($_POST["add_other"]) == 1)
                         {
-                            header("Location:./add_service_reminder.php");
-                            exit;
+                            if($mId != 0)
+                            {
+                                header("Location:./add_service_reminder.php?c=".$mId);
+                                exit;
+                            }else{
+                                header("Location:./add_service_reminder.php");
+                                exit;
+                            }
+                            
                         }else{
                             header("Location:./reminders.php");
                             exit;
@@ -101,11 +109,20 @@
                                             <div class="form-group">
                                                 <label class="col-xs-3"><?php echo $lang['CAR'] ;?></label>
                                                 <div class="col-xs-5">
-                                                    <select data-live-search="true" class="form-control selectpicker" title="<?php echo $lang['CHOOSE'] ;?>" name="car">
-                                                        <?php foreach($_cars as $k => $c){
-													           echo '<option value="'.$c['cars_sn'].'">'.$c['cars_code'].'</option>';
-													   }?>
-                                                    </select>
+                                                    <?php 
+                                                        if($mId != 0)
+                                                        {
+                                                            echo'<input type="text" class="form-control" value="'.get_data('cars','cars_code','cars_sn',$mId).'" readonly>';
+                                                            echo'<input type="text" class="form-control" name="car" value="'.$mId.'" hidden readonly>';
+                                                        }else{
+                                                            echo'<select data-live-search="true" class="form-control selectpicker" title="'.$lang['CHOOSE'].'" name="car">';
+                                                                    foreach($_cars as $k => $c){
+                                                                           echo '<option value="'.$c['cars_sn'].'">'.$c['cars_code'].'</option>';
+                                                                    }
+                                                           echo'</select>';
+                                                        }
+                                                    ?>
+                                                    
                                                 </div>
                                             </div>
                                         </div>

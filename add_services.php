@@ -26,7 +26,7 @@
             if ($_POST)
             {
                 $_service['services_name']                     =       sanitize($_POST["task_name"]);
-                $_service['services_text']                     =       sanitize($_POST["task_description"],"area");
+                $_service['services_notes']                    =       sanitize($_POST["task_description"],"area");
 
                     $add = $services  ->addNewservices($_service);
                     if ($add == 1)

@@ -18,7 +18,7 @@
             <?php
             if($group['cars_list'] == 1)
             {
-               echo'<li class="nav-item ';if($page_name == "cars" || $page_name == "add_car"|| $page_name == "car_order"|| $page_name == "add_expenses"){echo "active";}echo '">
+               echo'<li class="nav-item ';if($page_name == "cars" ||$page_name == "car_dashboard" || $page_name == "add_car"|| $page_name == "car_order"|| $page_name == "add_expenses"){echo "active";}echo '">
                     <a class="nav-link" href="./cars.php"><i class="fas fa-bus"></i>
                     '.$lang['CARS'].'
                     </a>
@@ -39,19 +39,24 @@
             <?php
             if($group['reminders_list'] == 1)
             {
-               echo'<li class="nav-item ';if($page_name == "reminders" || $page_name == "reminders_doc"|| $page_name == "add_service_reminder"|| $page_name == "add_doc_reminder"){echo "active";}echo '">
+               echo'<li class="nav-item ';if($page_name == "reminders" || $page_name == "reminders_doc"|| $page_name == "add_service_reminder"|| $page_name == "add_doc_reminder"|| $page_name == "reminders_view"|| $page_name == "edit_service_reminder"|| $page_name == "edit_doc_reminder"){echo "active";}echo '">
                     <a class="nav-link" href="./reminders.php"><i class="fas fa-bell"></i>
                     '.$lang['REMINDERS'].'
                     </a>
                   </li>';
             }
             ?>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-wrench"></i>
-                    خدمات الصيانة
-                </a>
-            </li>
+           
+            <?php
+            if($group['services_list'] == 1)
+            {
+               echo'<li class="nav-item ';if($page_name == "services" || $page_name == "job_orders" ){echo "active";}echo '">
+                    <a class="nav-link" href="./services.php"><i class="fas fa-wrench"></i>
+                    '.$lang['SERVICES'].'
+                    </a>
+                  </li>';
+            }
+            ?>
             <?php
             if($group['car_fuel_list'] == 1)
             {

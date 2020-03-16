@@ -83,9 +83,9 @@
                                             <i class="fas fa-search"></i>
                                         </span>
                                     </div>
-                                    <input class="form-control search_bar" type="search" id="search_input_all" onkeyup="FilterkeyWord_all_table()" placeholder="<?php echo $lang['SEARCH'];?>">
+                                    <input class="form-control search_bar" type="search" id="search_text" value="" placeholder="<?php echo $lang['SEARCH'];?>">
                                 </div>
-                                <table class="table table-class white-bg contacts_table table-hover tablesorter car_table" id="table-id">
+                                <table class="table table-class white-bg contacts_table table-hover tablesorter car_table" id="result">
                                    <?php  if(empty($cars))
                                     {
                                         echo "<tr><th colspan=\"5\">".$lang['NO_CARS']."</th></tr>";
@@ -140,9 +140,10 @@
                                                     <i class="fa fa-money-bill safe_status"></i>
                                                 </a>
                                             </td>
-                                        </tr>';}
-                                    }?>
-                                <tbody>
+                                        </tr><tbody>';}
+                                    }
+                                    ?>
+                                
                                 </table>
                                 <!--		Start Pagination -->
                                 <div class='pull-left pagination-container'>
@@ -160,7 +161,21 @@
     </main>
 <?php include './assets/layout/footer.php';?>
 <script>
-        $(function () {
-            $("#table-id").tablesorter();
-        });
-    </script>
+$(document).ready(function(){
+ $('#search_text').keyup(function(){
+  var query = $(this).val();
+  if(query != '')
+  {
+       $.ajax({
+       url:"search.php?do=car",
+       method:"POST",
+       data:{query:query},
+       success:function(data)
+       {
+            $('#result').html(data);
+       }
+      });
+  }
+ });
+});
+</script>

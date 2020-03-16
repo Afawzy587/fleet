@@ -9,7 +9,7 @@
 	include("./inc/fundamentals.php");
 
     include("./inc/Classes/system-users.php");
-	$users = new systemusers();
+	$_users = new systemusers();
      
 	if($login->doCheck() == false)
 	{
@@ -25,12 +25,12 @@
                 $page;
                 $pager       = new pager();
                 $page 		 = intval($_GET['page']);
-                $total       = $users->getTotalusers();
+                $total       = $_users->getTotalusers();
                 $pager->doAnalysisPager("page",$page,$basicLimit,$total,"users.php".$paginationAddons,$paginationDialm);
                 $thispage    = $pager->getPage();
                 $limitmequry = " LIMIT ".($thispage-1) * $basicLimit .",". $basicLimit;
                 $pager       = $pager->getAnalysis();
-                $users       = $users->getsiteusers($limitmequry);
+                $users       = $_users->getsiteusers($limitmequry);
                 $logs->addLog(NULL,
                         array(
                             "type" 		        => 	"admin",
@@ -94,9 +94,9 @@
                                             <i class="fas fa-search"></i>
                                         </span>
                                     </div>
-                                    <input class="form-control search_bar" type="search" id="search_input_all" onkeyup="FilterkeyWord_all_table()" placeholder="البحث">
+                                    <input class="form-control search_bar" type="search" id="search_text" placeholder="<?php echo $lang['SEARCH'];?>">
                                 </div>
-                                <table class="table table-class white-bg contacts_table table-hover" >
+                                <table class="table table-class white-bg contacts_table table-hover" id="result">
                                 <?php  if(empty($users))
                                     {
                                         echo "<tr><th colspan=\"5\">".$lang['US_NO_USERS']."</th></tr>";
@@ -189,7 +189,8 @@
                                             ';
                                             
                                         }
-                                    }?>    
+                                    }
+                                    ?>    
                                 </table>
                                                                     
 
@@ -208,3 +209,22 @@
         </div>
     </main>
 <?php include './assets/layout/footer.php';?>
+<script>
+$(document).ready(function(){
+ $('#search_text').keyup(function(){
+  var query = $(this).val();
+  if(query != '')
+  {
+       $.ajax({
+       url:"search.php?do=users",
+       method:"POST",
+       data:{query:query},
+       success:function(data)
+       {
+            $('#result').html(data);
+       }
+      });
+  }
+ });
+});
+</script>

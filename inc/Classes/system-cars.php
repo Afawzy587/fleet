@@ -16,6 +16,23 @@ class systemcars
             return($GLOBALS['db']->fetchlist());
         }else{return null;}
 	}
+    
+    function searchaboutcar($search)
+	{
+        $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."` 
+        WHERE `cars_code` LIKE '%".$search."%' 
+        OR `cars_plate_number` LIKE '%".$search."%' 
+        OR `cars_chassis` LIKE '%".$search."%' 
+        OR `cars_factory` LIKE '%".$search."%' 
+        OR `cars_model` LIKE '%".$search."%' 
+        OR `cars_year` LIKE '%".$search."%' 
+        ORDER BY `cars_sn`  DESC ");
+        $queryTotal = $GLOBALS['db']->resultcount();
+        if($queryTotal > 0)
+        {
+            return($GLOBALS['db']->fetchlist());
+        }else{return null;}
+	}
 
 	function getTotalcars($addon = "")
 	{

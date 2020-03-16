@@ -29,7 +29,7 @@
             {
 				
                 $fuel_type     = $informations->getdatatable("fuel_type");                                             // fuel_type
-				$users         = $user->getsiteusers();   
+				$users         = $user->getselectusers();   
 				$cars          = $_cars->getsitecars();   
                 if($_POST)
                 {

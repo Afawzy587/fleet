@@ -473,6 +473,81 @@
 //                    echo '</select>';
                 }
             break;
+                
+            // ******************** services ****************//
+            case"delete_services":
+                if($_POST)
+                {
+                    $id                  = intval($_POST['id']);
+                    if($group["services_delete"] == 0){
+                        header("Location:./permission.php");
+                        exit;
+                    }else
+                    { 
+						$delete   = $informations->deleteservices($id);
+						$logs->addLog(NULL,
+									array(
+										"type" 		        => 	"user",
+										"module" 	        => 	"services",
+										"mode" 		        => 	"delete",
+										"total" 		    => 	$id,
+										"id" 	        	=>	$_SESSION['id'],
+									),"user",$_SESSION['id'],1
+								);
+						if($delete == 1)
+						{
+							echo 100;
+							exit;
+						}  
+                    }
+                }
+            break;  
+			
+			// ****************** car_damage *************** //
+			case"end_damage":
+                if($_POST)
+                {
+                    $id                  = intval($_POST['id']);
+                    if($group["end_check"] == 0){
+                        header("Location:./permission.php");
+                        exit;
+                    }else
+                    { 
+						$end   = $informations->end_damage($id);
+						$logs->addLog(NULL,
+									array(
+										"type" 		        => 	"user",
+										"module" 	        => 	"car_damage",
+										"mode" 		        => 	"end",
+										"total" 		    => 	$id,
+										"id" 	        	=>	$_SESSION['id'],
+									),"user",$_SESSION['id'],1
+								);
+						if($end == 1)
+						{
+							echo 100;
+							exit;
+						}  
+                    }
+                }
+            break;
+                
+            //***************** max_car_type ************* //
+           case"type_max":
+                if($_POST)
+                {
+                    $id      = intval($_POST['id']);
+                    $total   = $informations->gettype_max($id);
+                    if($total > 0){
+                        echo $total;
+                        exit;
+                    }else{
+                        
+                        echo $lang['NO_CAR_IN_THIS_TYPE'];
+                        exit;
+                    }
+                }
+            break;
         }
     }
 ?>

@@ -15,6 +15,27 @@ class systemcar_damage
 			}else{return null;}
 		}else{$GLOBALS['login']->doDestroy();return false;}
 	}
+    
+    function searchdamage($search)
+	{
+		if($GLOBALS['login']->doCheck() == true)
+		{
+			$query = $GLOBALS['db']->query("SELECT d.* FROM `".$this->tableName."` d INNER JOIN `cars` c ON d.`car_damage_car_id` = c.`cars_sn` 
+            WHERE 
+            c.`cars_code` LIKE '%".$search."%' 
+            OR c.`cars_plate_number` LIKE '%".$search."%' 
+            OR c.`cars_chassis` LIKE '%".$search."%' 
+            OR c.`cars_factory` LIKE '%".$search."%' 
+            OR c.`cars_model` LIKE '%".$search."%' 
+            OR c.`cars_year` LIKE '%".$search."%' 
+            GROUP BY d.`car_damage_car_id` ORDER BY d.`car_damage_car_id` DESC ");
+			$queryTotal = $GLOBALS['db']->resultcount();
+			if($queryTotal > 0)
+			{
+				return($GLOBALS['db']->fetchlist());
+			}else{return null;}
+		}else{$GLOBALS['login']->doDestroy();return false;}
+	}
 
 	function getTotalcar_damage($addon = "")
 	{
@@ -33,7 +54,6 @@ class systemcar_damage
 		{
             $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."` WHERE `car_damage_car_id` = '".$car_damage_sn."' ORDER BY `car_damage_date` DESC ");
 			$queryTotal = $GLOBALS['db']->resultcount();
-			$queryTotal = $GLOBALS['db']->resultcount();
 			if($queryTotal > 0)
 			{
 				return($GLOBALS['db']->fetchlist());
@@ -41,19 +61,47 @@ class systemcar_damage
 		}else{$GLOBALS['login']->doDestroy();return false;}
 	}
 	
+	
+	function getdamageInformation($car_damage_sn)
+	{
+		
+        $query = $GLOBALS['db']->query("SELECT * FROM `".$this->tableName."` WHERE `car_damage_sn` = '".$car_damage_sn."' LIMIT 1 ");
+        $queryTotal = $GLOBALS['db']->resultcount();
+        if($queryTotal > 0)
+        {
+            $sitedamage = $GLOBALS['db']->fetchitem($query);
+            return array(
+                "car_damage_sn"			            => 		$sitedamage['car_damage_sn'],
+                "car_damage_car_id"			        => 		$sitedamage['car_damage_car_id'],
+                "car_damage_by"			            => 		$sitedamage['car_damage_by'],
+                "car_damage_date"			        => 		$sitedamage['car_damage_date'],
+                "car_damage_tank"			        => 		$sitedamage['car_damage_tank'],
+                "car_damage_kilos"			        => 		$sitedamage['car_damage_kilos'],
+                "car_damage_photo"			        => 		$sitedamage['car_damage_photo'],
+                "car_damage_name"			        => 		$sitedamage['car_damage_name'],
+                "car_damage_text"			        => 		$sitedamage['car_damage_text'],
+                "car_damage_status"			        => 		$sitedamage['car_damage_status'],
+            );
+        }else{return null;}
+	}
+	
 	function setcar_damageInformation($car_damage)
 	{
+		if($car_damage['car_damage_photo'] != "")
+		{
+			$car_damage_photo = "`car_damage_photo`='".$car_damage['car_damage_photo']."',";
+		}else
+		{
+			$car_damage_photo = "";
+		}
 		$GLOBALS['db']->query("UPDATE LOW_PRIORITY `".$this->tableName."` SET
-          `car_damage_name`                   =          '".$car_damage['car_damage_name']."',
-          `car_damage_supply_id`              =          '".$car_damage['car_damage_supply_id']."',
-          `car_damage_accountable_id`         =          '".$car_damage['car_damage_accountable_id']."',
-          `car_damage_phone`                  =          '".$car_damage['car_damage_phone']."',
-          `car_damage_contract_start`         =          '".$car_damage['car_damage_contract_start']."',
-          `car_damage_contract_end`           =          '".$car_damage['car_damage_contract_end']."',
-          `car_damage_address`                =          '".$car_damage['car_damage_address']."',
-          `car_damage_city`                   =          '".$car_damage['car_damage_city']."',
-          `car_damage_email`                  =          '".$car_damage['car_damage_email']."'
-          WHERE `car_damage_sn`    	         = 	        '".$car_damage['car_damage_sn']."' LIMIT 1 ");
+          `car_damage_car_id`       =          '".$car_damage['car_damage_car_id']."',".$car_damage_photo."
+          `car_damage_by`           =          '".$car_damage['car_damage_by']."',
+          `car_damage_date`         =          '".$car_damage['car_damage_date']."',
+          `car_damage_kilos`        =          '".$car_damage['car_damage_kilos']."',
+          `car_damage_name`         =          '".$car_damage['car_damage_name']."',
+          `car_damage_text`         =          '".$car_damage['car_damage_text']."'
+          WHERE `car_damage_sn`    	= 	        '".$car_damage['car_damage_sn']."' LIMIT 1 ");
 		return 1;
 	}
 

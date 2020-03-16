@@ -32,7 +32,7 @@ class systemservices
         $queryTotal = $GLOBALS['db']->resultcount();
         if($queryTotal > 0)
         {
-            $sitegroup = $GLOBALS['db']->fetchitem($query);
+            $siteservices = $GLOBALS['db']->fetchitem($query);
             return array(
                 "services_sn"			                     => 		 $siteservices['services_sn'],
                 "services_name"			                     => 		 $siteservices['services_name'],

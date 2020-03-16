@@ -7,16 +7,16 @@
     define("inside",true);
 	// get funcamental file which contain config and template files,settings.
 	include("./inc/fundamentals.php");
-
+    $_SESSION['page']  = $basename;
     include("./inc/Classes/system-reminders.php");
-	$reminders = new systemreminders();
+	$_reminders = new systemreminders();
      
 	if($login->doCheck() == false)
 	{
         header("Location:./login.php");
         exit;
 	}else{
-            if($group['contacts_list'] == 0){
+            if($group['reminders_list'] == 0){
                 header("Location:./permission.php");
                 exit;
             }else
@@ -25,12 +25,12 @@
                 $page;
                 $pager       = new pager();
                 $page 		 = intval($_GET['page']);
-                $total       = $reminders->getTotalreminders_service();
+                $total       = $_reminders->getTotalreminders_service();
                 $pager->doAnalysisPager("page",$page,$basicLimit,$total,"reminders.php".$paginationAddons,$paginationDialm);
                 $thispage    = $pager->getPage();
                 $limitmequry = " LIMIT ".($thispage-1) * $basicLimit .",". $basicLimit;
                 $pager       = $pager->getAnalysis();
-                $reminders       = $reminders->getsitereminders_service($limitmequry);
+                $reminders       = $_reminders->getsitereminders_service($limitmequry);
                 $logs->addLog(NULL,
                         array(
                             "type" 		        => 	"user",
@@ -93,13 +93,13 @@
                                                     <i class="fas fa-search"></i>
                                                 </span>
                                             </div>
-                                            <input class="form-control search_bar" type="search" id="search_input_all" onkeyup="FilterkeyWord_all_table()" placeholder="<?php echo $lang['SEARCH'];?>">
+                                            <input class="form-control search_bar" type="search" id="search_text" placeholder="<?php echo $lang['SEARCH'];?>">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                    <table class="table white-bg  table-hover table-responsive-md searchTable" id="service_reminders">
+                                    <table class="table white-bg  table-hover table-responsive-md searchTable" id="result">
                                     <?php  if(empty($reminders))
                                     {
                                         echo "<tr><th colspan=\"5\">".$lang['NO_REMINDERS']."</th></tr>";
@@ -118,10 +118,10 @@
                                         foreach($reminders as $k => $u){
                                             echo '<tr>
                                                 <td class="contact_img">
-                                                    <a href="./reminders_view.php?r='.$u['reminders_sn'].'"><img height="35" src="'.$path.get_data('cars','cars_photo','cars_sn',$u['reminders_car_id']).'" alt="bus-pic"></a>
+                                                    <a href="./reminders_view.php?r='.$u['reminders_car_id'].'"><img height="35" src="'.$path.get_data('cars','cars_photo','cars_sn',$u['reminders_car_id']).'" alt="bus-pic"></a>
                                                 </td>
                                                 <td>
-                                                    <a href="./reminders_view.php?r='.$u['reminders_sn'].'">
+                                                    <a href="./reminders_view.php?r='.$u['reminders_car_id'].'">
                                                         '.get_car_datails($u['reminders_car_id']).'
                                                     </a>
                                                 </td>
@@ -135,9 +135,15 @@
                                                 </td>
                                                 <td>
                                                     <span>';
-                                                        foreach(get_reminders_memmbers($u['reminders_sn']) as $k => $v){
-                                                            echo '<div>'.$v['users_name'].'</div>';
-                                                        }
+                                                        if(is_array(get_reminders_memmbers($u['reminders_sn'])))
+                                                           {
+                                                               foreach(get_reminders_memmbers($u['reminders_sn']) as $k => $v){
+                                                                    echo '<div>'.$v['users_name'].'</div>';
+                                                                }   
+                                                           }else{
+                                                               echo get_reminders_memmbers($u['reminders_sn']);
+                                                           }
+                                                        
                                                 echo'</span>
                                                 </td>
                                             </tr>';
@@ -146,11 +152,9 @@
                                         ?>
                                     <tbody>
                                 </table>
-                                    <!--		Start Pagination -->
                                     <div class='pull-left pagination-container'>
                                         <?php echo $pager;?>
                                     </div>
-                                    <!-- <div class="rows_count">Showing 11 to 20 of 91 entries</div> -->
      
                                     </div>
                                 </div>
@@ -162,3 +166,22 @@
         </div>
     </main>
 <?php include './assets/layout/footer.php';?>
+<script>
+$(document).ready(function(){
+ $('#search_text').keyup(function(){
+  var query = $(this).val();
+  if(query != '')
+  {
+       $.ajax({
+       url:"search.php?do=reminders",
+       method:"POST",
+       data:{query:query},
+       success:function(data)
+       {
+            $('#result').html(data);
+       }
+      });
+  }
+ });
+});
+</script>

@@ -96,6 +96,8 @@
             <div class="row">
                 <div class="col _page_body white-bg">
                         <table class="table table-class  contacts_table table-hover" id="table-id" >
+                           <input type="hidden" value="car_damage" id="table">
+                           <input type="hidden" value="check_item_delete" id="permission">
                             <thead>
                                 <tr>
                                     <th class="center"><?php echo $lang['DATE'];?> </th>
@@ -107,7 +109,7 @@
                             </thead>
                             <tbody > 
                             <?php foreach($_damage as $k => $d){
-                                    echo'<tr>
+                                    echo'<tr id=tr_'.$d['car_damage_sn'].'>
                                             <td  class="center">
                                                 <h6>'.$d['car_damage_date'].'</h6>
                                                 <!--<h6 class="time_direction">10:45 AM</h6>--!>
@@ -128,14 +130,34 @@
                                                 echo '<i class="fa fa-wrench warning_status"></i>';
                                                         if($group['end_check'] ==1)
                                                         {
-                                                            echo '<i class="fa fa-times-circle close_action"></i>';
+                                                            echo '<i class="end_damage fa fa-times-circle close_action" id="'.$d['car_damage_sn'].'"></i>';
                                                         }
-                                                        
-                                                  echo' <a href="">
-                                                            <i class="far fa-edit success_status"></i>
-                                                        </a>
+                                                        if($group['check_item_edit'] ==1)
+                                                        {
+                                                            echo '<a href="./edit_damage.php?d='.$d['car_damage_sn'].'">
+																	<i class="far fa-edit success_status"></i>
+																  </a>';
+                                                        }
+                                                      if($group['check_item_delete'] ==1)
+                                                        {
+														  	echo'<i class="fas fa-trash danger_status" data-toggle="modal" data-target="#Delete_'.$d['car_damage_sn'].'"></i>
+																<!-- confirm delete Modal -->
+																<div class="modal fade addModal" id="Delete_'.$d['car_damage_sn'].'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+																	<div class="modal-dialog modal-dialog-centered " role="document">
+																		<div class="modal-content dark_bg">
 
-                                                        <i class="fas fa-trash danger_status" data-toggle="modal" data-target="#Deleteconfirmation"></i>';
+																			<div class="modal-body">
+																				<h5 class="white_text center">'.$lang['CONFORM_DELETE'].'</h5>
+																			</div>
+																			<div class="modal-footer" id="item_'.$k.'">
+																				<button type="button" id="item_'.$d['car_damage_sn'].'" class="btn _btn  btn-light  delete" data-dismiss="modal">'.$lang['CONFORM'].'</button>
+																				<button type="button" class="btn _btn  btn-danger rose-bg" data-dismiss="modal">'.$lang['CONFORM_CANCEL'].'</button>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															';
+                                                        }  
                                             }
                                             echo'</td>
                                         </tr>';
@@ -143,18 +165,12 @@
                                     }?>    
                             </tbody>
                         </table>
-                        <!--		Start Pagination -->
-                        <div class='pull-left pagination-container'>
-                            <nav>
-                                <ul class="pagination">
-                                    <!--	Here the JS Function Will Add the Rows -->
-                                </ul>
-                            </nav>
-                        </div>
                     </div>
                 </div>
         </div>
     </div>
  </main>
 <?php include './assets/layout/footer.php';?>
+
+
 

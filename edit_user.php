@@ -116,7 +116,7 @@
 						$edit = $users->setusersInformation($_user);
                         if($edit == 1)
 						{
-                        header("Location:./users.php?message=update");
+                            header("Location:./users.php?message=update");
 						}
 
 

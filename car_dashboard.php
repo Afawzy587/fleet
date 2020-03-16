@@ -80,7 +80,7 @@
                     <div class="col-md-2 car_actions">
                         <?php if($group['cars_edit'] == 1)
                                 {
-                                    echo'<a href=""><i class="far fa-edit darkish-green"></i></a>';
+                                    echo'<a href="edit_car.php?c='.$_reminder['reminders_car_id'].'"><i class="far fa-edit darkish-green"></i></a>';
                                 }
                                 
                                 if($group['cars_delete'] == 1)

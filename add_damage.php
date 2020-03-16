@@ -103,7 +103,7 @@
         <div class="container page_body">
             <div class="container page_body">
 
-                <form action="" class="add-isuue-form needs-validation" method="post" action="./add_damage.php?c=<?php echo $car;?>" novalidate>
+                <form action="" class="add-isuue-form needs-validation" method="post" action="./add_damage.php?c=<?php echo $car;?>" novalidate  enctype="multipart/form-data">
                     <div class="row">
                         <div class="col white-bg">
                             <div class="row ">
@@ -118,7 +118,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>بواسطة</label>
+                                        <label><?php echo $lang['BY']; ?></label>
                                         <select data-live-search="true" class="form-control selectpicker " name="by" required>
                                             <option disabled selected value><?php echo $lang['CHOOSE'];?> </option>
                                             <?php foreach($_users as $k => $s){

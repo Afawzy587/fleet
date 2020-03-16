@@ -16,7 +16,7 @@
         header("Location:./login.php");
         exit;
 	}else{
-            if($group['contacts_list'] == 0){
+            if($group['suppliers_list'] == 0){
                 header("Location:./permission.php");
                 exit;
             }else
@@ -69,7 +69,7 @@
                 <div class="btn-group mr-2">
                        
                         <?php
-                            if($group['contacts_add'] == 1)
+                            if($group['suppliers_add'] == 1)
                             {
                                 echo '<button class="btn dark_btn"><a href="./add_supplier.php">'.$lang['SU_ADD'].'</a></button>';
                             }
@@ -104,7 +104,7 @@
                         <!-- Tab panes -->
 <!--                        <div class="tab-content">-->
                             <input type="hidden" value="suppliers" id="table">
-                            <input type="hidden" value="contacts_delete" id="permission">
+                            <input type="hidden" value="suppliers_delete" id="permission">
 <!--                            <div class="tab-pane active" id="previousIssue">-->
                                 <table class="datatable table white-bg contacts_table table-hover mt-5" >
                                 <?php  if(empty($suppliers))

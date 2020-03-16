@@ -127,7 +127,6 @@ class system_informations
         }else{return 0;}
 	}
     
-    
     // ############### hard delete ###############//
     function deleterowfromtable($table,$id)
 	{
@@ -206,6 +205,35 @@ class system_informations
 			if($queryTotal > 0)
 			{
 				return($GLOBALS['db']->fetchlist());
+            }else{return null;}
+		}else{$GLOBALS['login']->doDestroy();return false;}
+	}
+    
+    function deleteservices($services_sn)
+	{
+		$GLOBALS['db']->query("DELETE LOW_PRIORITY FROM `services` WHERE `services_sn` = '".$services_sn."' LIMIT 1 ");
+		return 1;
+	}
+	
+	//*************** end_damage *********************//
+	function end_damage($id)
+	{
+		$GLOBALS['db']->query("UPDATE LOW_PRIORITY `car_damage` SET
+            `car_damage_status`			        = 		'1'
+          WHERE `car_damage_sn`    	        = 	    '".$id."' LIMIT 1 ");
+		return 1;
+	}
+    
+     // ################# get table data #############################//
+    function gettype_max($id)
+	{
+		if($GLOBALS['login']->doCheck() == true)
+		{
+            $query = $GLOBALS['db']->query("SELECT * FROM `cars` WHERE `cars_car_type` = '".$id."' AND `cars_car_status` = '1' AND `cars_project_id` = '0'");
+			$queryTotal = $GLOBALS['db']->resultcount();
+			if($queryTotal > 0)
+			{
+				return($queryTotal);
             }else{return null;}
 		}else{$GLOBALS['login']->doDestroy();return false;}
 	}

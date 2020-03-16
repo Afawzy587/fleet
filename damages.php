@@ -9,7 +9,7 @@
 	include("./inc/fundamentals.php");
 
     include("./inc/Classes/system-damages.php");
-	$car_damage = new systemcar_damage();
+	$_car_damage = new systemcar_damage();
      
 	if($login->doCheck() == false)
 	{
@@ -25,12 +25,12 @@
                 $page;
                 $pager       = new pager();
                 $page 		 = intval($_GET['page']);
-                $total       = $car_damage->getTotalcar_damage();
+                $total       = $_car_damage->getTotalcar_damage();
                 $pager->doAnalysisPager("page",$page,$basicLimit,$total,"damages.php".$paginationAddons,$paginationDialm);
                 $thispage    = $pager->getPage();
                 $limitmequry = " LIMIT ".($thispage-1) * $basicLimit .",". $basicLimit;
                 $pager       = $pager->getAnalysis();
-                $car_damage   = $car_damage->getsitecar_damage($limitmequry);
+                $car_damage   = $_car_damage->getsitecar_damage($limitmequry);
                 $logs->addLog(NULL,
                         array(
                             "type" 		        => 	"admin",
@@ -76,10 +76,10 @@
                                 </span>
                             </div>
                             <!-- <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"> -->
-                            <input class="form-control search_bar" type="search" id="search_input_all"onkeyup="FilterkeyWord_all_table()" placeholder="<?php echo $lang['SEARCH'];?>">
+                            <input class="form-control search_bar" type="search" id="search_text" placeholder="<?php echo $lang['SEARCH'];?>">
                         </div>
                         
-                        <table class="table table-class white-bg contacts_table table-hover" id="table-id" >
+                        <table class="table table-class white-bg contacts_table table-hover" id="result" >
                             
                             <?php  if(empty($car_damage))
                                     {
@@ -135,3 +135,22 @@
         </div>
     </main>
 <?php include './assets/layout/footer.php';?>
+<script>
+$(document).ready(function(){
+ $('#search_text').keyup(function(){
+  var query = $(this).val();
+  if(query != '')
+  {
+       $.ajax({
+       url:"search.php?do=damage",
+       method:"POST",
+       data:{query:query},
+       success:function(data)
+       {
+            $('#result').html(data);
+       }
+      });
+  }
+ });
+});
+</script>

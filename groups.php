@@ -54,7 +54,7 @@
             <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group mr-2">
                         <?php
-                            if($group['contacts_add'] == 1)
+                            if($group['groups_add'] == 1)
                             {
                                 echo '<button class="btn dark_btn" data-toggle="modal" data-target="#AddModalCenter">'.$lang['GR_ADD'].' </button>';
                             }
@@ -160,68 +160,78 @@
                                                     }
                                                 echo'</td>
                                                 <td>';
-                                                if($group['contacts_edit'] == 1)
+                                                if($group['groups_edit'] == 1)
                                                 {
-                                                    echo'<a href="./privilage.php?g='.$u['groups_sn'].'"><i class="fas fa-lock tangerine"></i></a>
-                                                    <i class="fas fa-user-friends" data-toggle="modal" data-target="#Edit_'.$u['groups_sn'].'"></i>';
-                                                    echo '<i class="far fa-edit darkish-green" data-toggle="modal" data-target="#Edit_contact_'.$u['groups_sn'].'"></i>';
+                                                    echo'<a href="./privilage.php?g='.$u['groups_sn'].'"><i class="fas fa-lock tangerine"></i></a>';
                                                 }
-                                                if($group['contacts_delete'] == 1)
+                                                if($group['groups_member'] == 1)
+                                                {
+                                                    echo' <i class="fas fa-user-friends" data-toggle="modal" data-target="#Edit_'.$u['groups_sn'].'"></i>';
+                                                }
+                                                if($group['groups_edit'] == 1)
+                                                {
+                                                    echo '<i class="far fa-edit darkish-green" data-toggle="modal" data-target="#Edit_contact_'.$u['groups_sn'].'"></i>
+                                                        <!-- edit contact Modal -->
+                                                        <div class="modal fade addModal" id="Edit_contact_'.$u['groups_sn'].'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered " role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    </div>
+                                                                    <form name="add-group-form" method="post"  class="needs-validation" novalidate>
+                                                                        <div class="modal-body">
+                                                                            <div class="form-group">
+                                                                                <label>'.$lang['GR_NAME'].'</label>
+                                                                                <div>
+                                                                                    <input type="text" class="form-control" placeholder="'.$lang['GR_NAME'].'" id="name_'.$u['groups_sn'].'"  name="name" value ="'.$u['groups_name'].'" maxlength="25" required>
+                                                                                    <div class="invalid-feedback">
+                                                                                        '.$lang['GR_ADD_NAME'].'
+                                                                                    </div>
+                                                                                </div>
+                                                                                <input type="text" class="form-control" placeholder="'.$lang['GR_NAME'].'" name="id" value ="'.$u['groups_sn'].'" maxlength="25" required hidden>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label>'.$lang['GR_DESCRIPTION'].'</label>
+                                                                                <textarea placeholder="'.$lang['SAVE'].'" class="form-control" cols="20" rows="5" id="description_'.$u['groups_sn'].'" name="description"  required>'.$u['groups_notes'].'</textarea>
+                                                                                <div class="invalid-feedback">
+                                                                                    '.$lang['GR_ADD_DESCRIPTION'].'
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="submit" id="'.$u['groups_sn'].'" class="edit_group btn _btn btn-success dark_btn save_Add_btn" data-dismiss="modal">'.$lang['SAVE'].'</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    ';
+                                                }
+                                                if($group['groups_delete'] == 1)
                                                 {
 
-                                                    echo '<i class="fas fa-trash rose" data-toggle="modal" data-target="#Delete_'.$u['groups_sn'].'"></i>';
+                                                    echo '<i class="fas fa-trash rose" data-toggle="modal" data-target="#Delete_'.$u['groups_sn'].'"></i>
+                                                        <!-- confirm delete Modal -->
+                                                        <div class="modal fade addModal" id="Delete_'.$u['groups_sn'].'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered " role="document">
+                                                                <div class="modal-content dark_bg">
+
+                                                                    <div class="modal-body">
+                                                                        <h5 class="white_text center">'.$lang['CONFORM_DELETE'].'</h5>
+                                                                    </div>
+                                                                    <div class="modal-footer" id="item_'.$k.'">
+                                                                        <button type="button" class="btn _btn btn-light" data-dismiss="modal">'.$lang['CONFORM_CANCEL'].'</button>
+                                                                        <button type="button" id="item_'.$u['groups_sn'].'" class="btn _btn btn-danger rose-bg  delete" data-dismiss="modal">'.$lang['CONFORM'].'</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    ';
                                                 }
                                                 echo '
                                                 </td>
                                                 </tr>
-                                                <!-- confirm delete Modal -->
-                                                <div class="modal fade addModal" id="Delete_'.$u['groups_sn'].'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered " role="document">
-                                                        <div class="modal-content dark_bg">
-
-                                                            <div class="modal-body">
-                                                                <h5 class="white_text center">'.$lang['CONFORM_DELETE'].'</h5>
-                                                            </div>
-                                                            <div class="modal-footer" id="item_'.$k.'">
-                                                                <button type="button" class="btn _btn btn-light" data-dismiss="modal">'.$lang['CONFORM_CANCEL'].'</button>
-                                                                <button type="button" id="item_'.$u['groups_sn'].'" class="btn _btn btn-danger rose-bg  delete" data-dismiss="modal">'.$lang['CONFORM'].'</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- edit contact Modal -->
-                                            <div class="modal fade addModal" id="Edit_contact_'.$u['groups_sn'].'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered " role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                        </div>
-                                                        <form name="add-group-form" method="post"  class="needs-validation" novalidate>
-                                                            <div class="modal-body">
-                                                                <div class="form-group">
-                                                                    <label>'.$lang['GR_NAME'].'</label>
-                                                                    <div>
-                                                                        <input type="text" class="form-control" placeholder="'.$lang['GR_NAME'].'" id="name_'.$u['groups_sn'].'"  name="name" value ="'.$u['groups_name'].'" maxlength="25" required>
-                                                                        <div class="invalid-feedback">
-                                                                            '.$lang['GR_ADD_NAME'].'
-                                                                        </div>
-                                                                    </div>
-                                                                    <input type="text" class="form-control" placeholder="'.$lang['GR_NAME'].'" name="id" value ="'.$u['groups_sn'].'" maxlength="25" required hidden>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>'.$lang['GR_DESCRIPTION'].'</label>
-                                                                    <textarea placeholder="'.$lang['SAVE'].'" class="form-control" cols="20" rows="5" id="description_'.$u['groups_sn'].'" name="description"  required>'.$u['groups_notes'].'</textarea>
-                                                                    <div class="invalid-feedback">
-                                                                        '.$lang['GR_ADD_DESCRIPTION'].'
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="submit" id="'.$u['groups_sn'].'" class="edit_group btn _btn btn-success dark_btn save_Add_btn" data-dismiss="modal">'.$lang['SAVE'].'</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                
+                                            
                                                 
                                                 <!-- Edit Modal -->
                                     <div class="modal fade groupsModal" id="Edit_'.$u['groups_sn'].'" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -317,7 +327,6 @@
                                         }
                                     }?>    
                                 </table>
-                                                                    
 
                                 <!--		Start Pagination -->
                                 <div class='pull-left pagination-container'>
